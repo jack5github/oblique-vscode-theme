@@ -1,0 +1,22 @@
+{
+	"name": "vscode-theme",
+	"displayName": "INSERT NAME OF EXTENSION HERE",
+	"description": "INSERT DESCRIPTION OF EXTENSION HERE",
+	"version": "0.0.1",
+	"keywords": [],
+	"engines": {
+		"vscode": "^1.109.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "IN-MARKETPLACE THEME NAME",
+				"uiTheme": "vs-dark",
+				"path": "./themes/IN-MARKETPLACE THEME NAME-color-theme.json"
+			}
+		]
+	}
+}
