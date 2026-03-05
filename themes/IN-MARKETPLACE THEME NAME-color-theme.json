@@ -4,7 +4,8 @@
 	"colors": {
 		/*
 		This comment contains some general notes about this Visual Studio Code colour theme.
-		Cyan is a colour that is used commonly in place of greyscale. The reason for this is that on low-power screens, particularly those of laptops, purely grey colours have a "sickly" tinge to them, and through my testing, I found that reducing the red channel makes the colours look more natural.
+		- Cyan is a colour that is used commonly in place of greyscale. The reason for this is that on low-power screens, particularly those of laptops, purely grey colours have a "sickly" tinge to them, and through my testing, I found that reducing the red channel makes the colours look more natural.
+		- I am developing this theme despite having protanopia colour-blindness. It is possible that some of the colours may look odd to those without colour-blindness. If that ends up being the case, I want to rectify that, so long as that does not sacrifice the usability of this theme for those with colour-blindness.
 		*/
 		// **Topbar**
 		// ***Background***
@@ -14,11 +15,26 @@
 		*/
 		"titleBar.activeBackground": "#091111",
 		// ***Command Pallete***
+		// ****Background****
 		/*
 		The Command Palette is a very important part of the program, and must communicate this when open, while blending in with the rest of the theme.
+		The background of the Command Pallete can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
+		The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well.
+		*/
+		"quickInput.background": "#121e1e",
+		"list.activeSelectionBackground": "#263131",
+		// ****Foreground****
+		/*
 		The picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
 		*/
 		"pickerGroup.foreground": "#ff6833",
+		// ****Keybindings****
+		/*
+		Keyboard shortcuts sometimes appear in the Command Pallete. These have a brighter colour than desired. The colour must be dark enough that they stand out against the currently selected option, but not so dark that they become invisible.
+		Starting with the background colour and moving towards white, a mix of 28:1 works well.
+		Keybindings on active items have the same background colour as the active item itself.
+		*/
+		"keybindingLabel.background": "#1a2626",
 		// **Left Sidebars**
 		// ***Backgrounds***
 		/*
@@ -50,6 +66,11 @@
 		Before creating this theme, I used #ffffff. This is far too bright, yet the standard text colour of #acc6c6 is too dark. I settled on a 7:5 mix, as that is the point where the colour is just white enough to appear active.
 		*/
 		"activityBar.foreground": "#dce7e7",
+		/*
+		The active icon border should be disabled, as it is distracting. Instead, a background should be used. It cannot blend in with the sidebar, as that does not look good when the Explorer panel is active, so it is instead a brighter colour, namely that of the active file tab.
+		*/
+		"activityBar.activeBorder": "#00000000", // Fully transparent
+		"activityBar.activeBackground": "#192424",
 		// ***Icon Badges***
 		/*
 		Icon badges in Visual Studio Code are meant to represent notifications, however they are used for a large variey of purposes, so many that their presence becomes somewhat of an annoyance. In my theme their background should be toned down, though still be visible. Their foreground can be the same as the active icon colour for simplicity.
@@ -57,6 +78,12 @@
 		*/
 		"activityBarBadge.background": "#1b2727",
 		"activityBarBadge.foreground": "#dce7e7",
+		// ***Menus***
+		/*
+		Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Pallete, they can share all of its colours.
+		*/
+		"menu.background": "#121e1e",
+		"menu.selectionBackground": "#263131",
 		// ***Tabs***
 		/*
 		It is common to see tabs in sidebar windows. In my theme, they are the same colour as the editor area, for there is enough separation between them that it is possible to use the same colour. This is done to ensure the tabs are not distracting.
@@ -83,8 +110,14 @@
 		The focus border is the line that appears around the active element, which is often the sidebar when one of its icons is clicked.
 		#dc3b02 is too dark, yet #ff4200 is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 		*/
-		// TODO: Change the background colours of input boxes to make the focus border more visible on them
+		// TODO: Change the background colours of input boxes to make the focus border more visible on them (input.background)
 		"focusBorder": "#e33c02",
+		// ***Extensions***
+		/*
+		It is possible for extensions to have verified publishers, which gives them a checkmark before their name. The colour "button blue" is synonymous with such checkmarks thanks to Twitter (though both it and X suck though), so I will continue to use it here.
+		Before creating this theme, I used #1da1f2fe. The alpha of #fe was likely a remnant of a visual bug with an old version of Visual Studio Code, so it has been discarded. As for the colour itself, it is too bright, so I have settled on a 7:1 mix with the sidebar background colour. Any darker and it looks too faded.
+		*/
+		"extensionIcon.verifiedForeground": "#1b8fd6",
 		// **Editor Area**
 		/*
 		The background of the editor area needs to be a dark colour, but just light enough that it isn't difficult to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
@@ -103,13 +136,19 @@
 		"tab.inactiveBackground": "#0a1515",
 		"tab.activeBackground": "#192424",
 		"tab.hoverBackground": "#121e1e",
+		"tab.unfocusedHoverBackground": "#121e1e",
+		/*
+		If a tab is not focused, it should be dimmed, so I am repurposing the hover colour here.
+		*/
+		"tab.unfocusedActiveBackground": "#121e1e",
 		// ****Tab Borders****
 		/*
 		Borders are required to separate tabs from the editor area. Borders should not be used to separate tabs from each other, as this proves to be distracting.
-		The active tab border should be the same as the focus colour. Inactive tabs should not have a border.
+		The active tab border should be the same as the focus colour. Unfocused active tabs can have the same colour, as their borders are thinner which makes them dimmer by themselves. Inactive tabs should not have a border.
 		*/
 		"tab.border": "#00000000", // Fully transparent
 		"tab.activeBorder": "#e33c02",
+		"tab.unfocusedActiveBorder": "#e33c02",
 		// ****Background****
 		/*
 		The tab bar background colours should be the same as the inactive tab colours, to further the illusion that the tabs are part of the editor area.
@@ -120,8 +159,24 @@
 		Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
 		Before creating this theme, I used an alpha of #20, but this is a bit too bright. Any darker than #1b is too dark. The selection background can be the same when the window is inactive, for the rest of the window communicates this to the user.
 		*/
-		"editor.inactiveSelectionBackground": "#ffffff1b",
 		"editor.selectionBackground": "#ffffff1b",
+		// TODO: Make the inactive selection colour dimmer
+		"editor.inactiveSelectionBackground": "#ffffff1b",
+		// **Status Bar**
+		// ***Background***
+		/*
+		The status bar is located at the bottom of the window, and is used to show information such as the existing problems, file information, formatter information and notifications. It looks at its best when it is dark, but not too dark.
+		Before creating this theme, I would use #001818, which is about the colour of the sidebar, so I will be using this theme's version of that colour here.
+		*/
+		"statusBar.background": "#091111",
+		"statusBar.noFolderBackground": "#091111",
+		// TODO: Add debugging colours
+		// ***Border***
+		/*
+		The chosen background colour needs a border to distinguish it from the sidebar. For that reason, I am using the same border colour as the tabs in the sidebar, as that colour is distinguished from all side panels and the editor area.
+		*/
+		"statusBar.border": "#192424",
+		"statusBar.noFolderBorder": "#192424",
 		// **Editor Text**
 		/*
 		The text colour of the editor area is placed here in the theme file, directly above `tokenColors`, as all token colour changes operate on this base colour. A white-like colour is the only sensible choice for a base text colour.
