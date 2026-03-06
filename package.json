@@ -1,9 +1,25 @@
 {
-	"name": "vscode-theme",
-	"displayName": "INSERT NAME OF EXTENSION HERE",
-	"description": "INSERT DESCRIPTION OF EXTENSION HERE",
+	"name": "oblique-vscode-theme",
+	"displayName": "Oblique Theme",
+	"description": "Purposeful theme for Visual Studio Code (colour-blind friendly)",
+	"author": {
+		"name": "Jack Stringer"
+	},
 	"version": "0.0.1",
-	"keywords": [],
+	"repository": {
+		"url": "https://github.com/jack5github/oblique-vscode-theme"
+	},
+	"keywords": [
+		"color-blindness",
+		"dark-mode",
+		"dark-theme",
+		"dark",
+		"theme",
+		"visual-studio-code",
+		"vscode-extension",
+		"vscode-theme",
+		"vscode"
+	],
 	"engines": {
 		"vscode": "^1.109.0"
 	},
@@ -13,9 +29,9 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "IN-MARKETPLACE THEME NAME",
+				"label": "Oblique Dark Orange",
 				"uiTheme": "vs-dark",
-				"path": "./themes/IN-MARKETPLACE THEME NAME-color-theme.json"
+				"path": "./themes/Oblique Dark Orange-color-theme.json"
 			}
 		]
 	}

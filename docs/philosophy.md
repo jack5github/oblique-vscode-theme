@@ -7,6 +7,7 @@
   - Alternate versions of this theme that use different accent colours may be created in the future, provided those colours are similarly voted on.
 - This theme must be useable by those with protanopia colour-blindness.
   - It is possible that some colours may look strange to those without colour-blindness. If so, they can be changed, so long as this theme's usability is not affected for those with colour-blindness.
+- The theme icon is an abstract version of the original Obsidian texture from Minecraft, using the theme's semantic colours.
 
 # Text Colour Philosophy
 
@@ -16,10 +17,11 @@
 - **Variables are yellow.**
   - Variables represent pieces of data that come together to form a picture of some aspect of a program. Yellow is a colour associated with creativity, but also danger, which is true for any use of variables.
   - In Markdown, `single-line code blocks` are treated the same, as they are most commonly referring to a variable name and must be differentiated from normal text.
+  - For variables that are uppercase constants, their hue is shifted towards green, the colour of numbers.
 - **Strings are white.**
   - Strings represent text that is either displayed to the user or used in processing. In dark mode, this theme uses shades of white for text, as do documents and terminals, so strings should be white too.
-- **Numbers and constants are green.**
-  - Numbers and constants represent data that quantifies aspects of a program. Green is associated with wealth and growth, which is often true for number usage, constants and iteratives respectively.
+- **Numbers and constant values are green.**
+  - Numbers and constant values represent data that quantifies aspects of a program. Green is associated with wealth and growth, which is often true for number usage, constants and iteratives respectively.
   - In Markdown, *italics* are treated the same, due to the creator (Jack5) using it to emphasise approximate names and entities, and the variable colour being in use by single-line code blocks.
 - **Classes are red.**
   - Classes represent groups of functions and variables that form a rigid structure, inherited in many places throughout a program. Red is a colour associated with strength and anger, representing the power of classes and the maintenance pains caused by inheritance.
