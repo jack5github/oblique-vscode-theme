@@ -5,6 +5,7 @@
 	"author": {
 		"name": "Jack Stringer"
 	},
+	"publisher": "Jack Stringer",
 	"icon": "icon.png",
 	"version": "0.0.1",
 	"repository": {
