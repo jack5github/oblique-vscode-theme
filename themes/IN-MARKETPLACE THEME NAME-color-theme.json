@@ -2,11 +2,6 @@
 	"$schema": "vscode://schemas/color-theme",
 	"name": "IN-MARKETPLACE THEME NAME",
 	"colors": {
-		/*
-		This comment contains some general notes about this Visual Studio Code colour theme.
-		- Cyan is a colour that is used commonly in place of greyscale. The reason for this is that on low-power screens, particularly those of laptops, purely grey colours have a "sickly" tinge to them, and through my testing, I found that reducing the red channel makes the colours look more natural.
-		- I am developing this theme despite having protanopia colour-blindness. It is possible that some of the colours may look odd to those without colour-blindness. If that ends up being the case, I want to rectify that, so long as that does not sacrifice the usability of this theme for those with colour-blindness.
-		*/
 		// **Topbar**
 		// ***Background***
 		/*
@@ -14,15 +9,21 @@
 		Before creating this theme, I had the topbar blend in with the line number gutter. This is no longer appropriate, for tabs can also have that colour, so I have decided that it will instead inherit the colour of the sidebar.
 		*/
 		"titleBar.activeBackground": "#091111",
-		// ***Command Pallete***
-		// ****Background****
+		// ***Command Palette***
+		// ****Menu Background****
 		/*
 		The Command Palette is a very important part of the program, and must communicate this when open, while blending in with the rest of the theme.
-		The background of the Command Pallete can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
+		The background of the Command Palette can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
 		The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well.
 		*/
 		"quickInput.background": "#121e1e",
 		"list.activeSelectionBackground": "#263131",
+		// ****Input Backgrounds****
+		/*
+		The background colour of inputs looks good as the Command Palette background colour, for it stands out just enough in the sidebar, and fully blends in inside the Command Palette.
+		 */
+		"input.background": "#121e1e",
+		"dropdown.background": "#121e1e",
 		// ****Foreground****
 		/*
 		The picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
@@ -30,11 +31,17 @@
 		"pickerGroup.foreground": "#ff6833",
 		// ****Keybindings****
 		/*
-		Keyboard shortcuts sometimes appear in the Command Pallete. These have a brighter colour than desired. The colour must be dark enough that they stand out against the currently selected option, but not so dark that they become invisible.
+		Keyboard shortcuts sometimes appear in the Command Palette. These have a brighter colour than desired. The colour must be dark enough that they stand out against the currently selected option, but not so dark that they become invisible.
 		Starting with the background colour and moving towards white, a mix of 28:1 works well.
 		Keybindings on active items have the same background colour as the active item itself.
 		*/
 		"keybindingLabel.background": "#1a2626",
+		// ***Menus***
+		/*
+		Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Palette, they can share all of its colours.
+		*/
+		"menu.background": "#121e1e",
+		"menu.selectionBackground": "#263131",
 		// **Left Sidebars**
 		// ***Backgrounds***
 		/*
@@ -78,12 +85,24 @@
 		*/
 		"activityBarBadge.background": "#1b2727",
 		"activityBarBadge.foreground": "#dce7e7",
-		// ***Menus***
+		// ***Text***
+		// ****Titles****
 		/*
-		Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Pallete, they can share all of its colours.
+		The titles of sidebar tabs, unlike normal text, need to be brighter, as they have brighter backgrounds. The colour I am using is the active icon colour.
 		*/
-		"menu.background": "#121e1e",
-		"menu.selectionBackground": "#263131",
+		"sideBarTitle.foreground": "#dce7e7",
+		"sideBarSectionHeader.foreground": "#dce7e7",
+		// ****Normal Text****
+		/*
+		The colour of the text in the sidebar controls how visible file and folder names are, but also all other normal text in the sidebar.
+		While the editor area text colour may seem too bright for the file and folder names, it is the perfect colour for normal text, so it is being used here.
+		*/
+		"sideBar.foreground": "#acc6c6",
+		// ****Git Decorations****
+		/*
+		Ignored files and folders ought to have a much darker text colour than normal text, as a developer will be acutely aware of all of their ignored files and will most likely not need to actively look for them. I am using a 14:15 mix of the normal text colour and black.
+		*/
+		"gitDecoration.ignoredResourceForeground": "#536060",
 		// ***Tabs***
 		/*
 		It is common to see tabs in sidebar windows. In my theme, they are the same colour as the editor area, for there is enough separation between them that it is possible to use the same colour. This is done to ensure the tabs are not distracting.
@@ -110,7 +129,6 @@
 		The focus border is the line that appears around the active element, which is often the sidebar when one of its icons is clicked.
 		#dc3b02 is too dark, yet #ff4200 is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 		*/
-		// TODO: Change the background colours of input boxes to make the focus border more visible on them (input.background)
 		"focusBorder": "#e33c02",
 		// ***Extensions***
 		/*
@@ -157,11 +175,11 @@
 		// ***Text Selection***
 		/*
 		Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
-		Before creating this theme, I used an alpha of #20, but this is a bit too bright. Any darker than #1b is too dark. The selection background can be the same when the window is inactive, for the rest of the window communicates this to the user.
+		Before creating this theme, I used an alpha of #20, but this is a bit too bright. When focused, the selection background should be no darker than #1b, and when unfocused, #0f. The selection background can be the same when the window is inactive, for the rest of the window communicates this to the user.
 		*/
 		"editor.selectionBackground": "#ffffff1b",
-		// TODO: Make the inactive selection colour dimmer
-		"editor.inactiveSelectionBackground": "#ffffff1b",
+		"selection.background": "#ffffff1b",
+		"editor.inactiveSelectionBackground": "#ffffff0f",
 		// **Status Bar**
 		// ***Background***
 		/*
@@ -186,5 +204,140 @@
 		*/
 		"editor.foreground": "#acc6c6"
 	},
-	"tokenColors": []
+	// TODO: Adjust the below in accordance with this theme. All token colours are placeholders from before this theme's creation.
+	/*
+	Semantic token colours are an abstraction of token colours, which may or may not be used by Visual Studio Code extensions. Non-existant semantic tokens are also defined here, so they may be replicated in `tokenColors`.
+	*/
+	"semanticTokenColors": {
+		"function": "#5ad4e6",
+		"variable": "#ffff90",
+		"string": "#acc6c6",
+		"number": "#00ff00",
+		"class": "#ff6060",
+		"keyword": "#ff6090",
+		"type": "#ff9900",
+		// "punctuation": "#acc6c6",
+		"comment": "#536060"
+	},
+	"tokenColors": [
+		{
+			"scope": [
+				// Python
+				"entity.name.function",
+				"support.function",
+				"meta.member.access",
+				"punctuation.definition.arguments",
+				"punctuation.definition.decorator",
+				// Markdown
+				"markup.underline.link",
+				"punctuation.definition.link",
+				"punctuation.definition.metadata"
+			],
+			"settings": { "foreground": "#5ad4e6" }
+		},
+		{
+			"scope": "entity.name.function.python",
+			"settings": { "fontStyle": "bold" }
+		},
+		{
+			"scope": [
+				// Python
+				"source",
+				"variable",
+				"meta.item-access.arguments",
+				"meta.indexed-name",
+				// Markdown
+				"markup.inline.raw",
+				// YAML
+				"entity.name.tag"
+			],
+			"settings": { "foreground": "#ffff90" }
+		},
+		{
+			"scope": "markup.italic",
+			"settings": { "fontStyle": "italic" }
+		},
+		{
+			"scope": "string",
+			"settings": { "foreground": "#acc6c6" }
+		},
+		{
+			"scope": [
+				// Python
+				"constant.numeric",
+				"constant.language",
+				"constant.other.ellipsis",
+				// Markdown
+				"markup.italic",
+				"punctuation.definition.italic"
+			],
+			"settings": { "foreground": "#00ff00" }
+		},
+		{
+			"scope": [
+				// Python
+				"entity.name.type.class",
+				"meta.function",
+				"support.type.exception",
+				// Markdown
+				"markup.bold",
+				"punctuation.definition.bold"
+			],
+			"settings": { "foreground": "#ff6060" }
+		},
+		{
+			"scope": [
+				// Python
+				"entity.name.type.class",
+				// Markdown
+				"markup.bold",
+				"heading.1"
+			],
+			"settings": { "fontStyle": "bold" }
+		},
+		{
+			"scope": [
+				// Python
+				"keyword",
+				"meta.lambda-function",
+				"storage.type.class",
+				"meta.fstring",
+				"punctuation.separator.annotation",
+				// Markdown
+				"markup.heading",
+				"punctuation.definition.heading",
+				"punctuation.definition.list",
+				"punctuation.definition.quote",
+				"punctuation.definition.raw",
+				"punctuation.definition.markdown",
+				"fenced_code.block.language",
+				// YAML
+				"punctuation.definition.block",
+				"punctuation.separator.map"
+			],
+			"settings": { "foreground": "#ff6090" }
+		},
+		{
+			"scope": ["support.type", "meta.item-access"],
+			"settings": { "foreground": "#ff9900" }
+		},
+		{
+			"scope": "punctuation",
+			"settings": { "foreground": "#acc6c6" }
+		},
+		{
+			"scope": [
+				"comment",
+				"punctuation.definition.comment",
+				"string.quoted.docstring"
+			],
+			"settings": { "foreground": "#536060" }
+		},
+		{
+			"scope": ["comment", "punctuation.definition.comment"],
+			"settings": {
+				"fontStyle": "italic"
+			}
+		}
+	]
 }
