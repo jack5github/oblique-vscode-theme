@@ -5,6 +5,7 @@
 	"author": {
 		"name": "Jack Stringer"
 	},
+	"icon": "docs/logo.png",
 	"version": "0.0.1",
 	"repository": {
 		"url": "https://github.com/jack5github/oblique-vscode-theme"
