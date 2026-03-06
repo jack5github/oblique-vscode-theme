@@ -1,4 +1,6 @@
+.github/**
 .vscode/**
 docs/**
 .gitignore
+CHANGELOG.md
 rnd-colours.json

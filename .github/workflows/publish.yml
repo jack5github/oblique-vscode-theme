@@ -1,0 +1,14 @@
+- if: github.ref == 'refs/heads/main'
+  name: Publish to Visual Studio Marketplace
+  uses: HaaLeo/publish-vscode-extension@v2
+  with:
+    pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+    registryUrl: https://marketplace.visualstudio.com
+  id: vsmPublish
+# TODO: Publish to Open VSX Registry
+# - if: github.ref == 'refs/heads/main'
+#   name: Publish to Open VSX Registry
+#   uses: HaaLeo/publish-vscode-extension@v2
+#   with:
+#     pat: ${{ secrets.OPEN_VSX_REGISTRY_TOKEN }}
+#     extensionFile: ${{ steps.vsmPublish.outputs.vsixPath }}
