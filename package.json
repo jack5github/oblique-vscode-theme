@@ -5,12 +5,12 @@
 	"author": {
 		"name": "Jack Stringer"
 	},
-	"publisher": "Jack Stringer",
 	"icon": "icon.png",
 	"version": "0.0.1",
 	"repository": {
 		"url": "https://github.com/jack5github/oblique-vscode-theme"
 	},
+	"publisher": "jack-stringer",
 	"keywords": [
 		"color-blindness",
 		"dark-mode",
