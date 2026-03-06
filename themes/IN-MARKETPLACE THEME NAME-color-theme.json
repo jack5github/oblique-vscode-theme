@@ -204,16 +204,16 @@
 		*/
 		"editor.foreground": "#acc6c6"
 	},
-	// TODO: Adjust the below in accordance with this theme. All token colours are placeholders from before this theme's creation.
+	// TODO: Adjust the below in accordance with this theme. Non-commented token colours are placeholders from before this theme's creation.
 	/*
 	Semantic token colours are an abstraction of token colours, which may or may not be used by Visual Studio Code extensions. Non-existant semantic tokens are also defined here, so they may be replicated in `tokenColors`.
 	*/
 	"semanticTokenColors": {
-		"function": "#5ad4e6",
-		"variable": "#ffff90",
+		"function": "#a4aded", // 1:3 mix of #0000ff and #dae7e7
+		"variable": "#62ff9d", // 25:40 mix of #ffff00 and #00ffff
 		"string": "#acc6c6",
 		"number": "#00ff00",
-		"class": "#ff6060",
+		"class": "#ed5858", // 5:1 mix of #ff3d3d and #90e0e0
 		"keyword": "#ff6090",
 		"type": "#ff9900",
 		// "punctuation": "#acc6c6",
@@ -233,7 +233,7 @@
 				"punctuation.definition.link",
 				"punctuation.definition.metadata"
 			],
-			"settings": { "foreground": "#5ad4e6" }
+			"settings": { "foreground": "#a4aded" }
 		},
 		{
 			"scope": "entity.name.function.python",
@@ -251,7 +251,7 @@
 				// YAML
 				"entity.name.tag"
 			],
-			"settings": { "foreground": "#ffff90" }
+			"settings": { "foreground": "#62ff9d" }
 		},
 		{
 			"scope": "markup.italic",
@@ -279,11 +279,12 @@
 				"entity.name.type.class",
 				"meta.function",
 				"support.type.exception",
+				"variable.parameter.function.language.special.self",
 				// Markdown
 				"markup.bold",
 				"punctuation.definition.bold"
 			],
-			"settings": { "foreground": "#ff6060" }
+			"settings": { "foreground": "#ed5858" }
 		},
 		{
 			"scope": [
@@ -301,6 +302,7 @@
 				"keyword",
 				"meta.lambda-function",
 				"storage.type.class",
+				"storage.type.function",
 				"meta.fstring",
 				"punctuation.separator.annotation",
 				// Markdown
