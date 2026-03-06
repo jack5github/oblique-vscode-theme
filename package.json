@@ -1,11 +1,11 @@
 {
 	"name": "oblique-vscode-theme",
 	"displayName": "Oblique Theme",
-	"description": "Purposeful theme for Visual Studio Code (colour-blind friendly)",
+	"description": "Purposeful theme for Visual Studio Code (color-blind friendly)",
 	"author": {
 		"name": "Jack Stringer"
 	},
-	"icon": "docs/logo.png",
+	"icon": "icon.png",
 	"version": "0.0.1",
 	"repository": {
 		"url": "https://github.com/jack5github/oblique-vscode-theme"

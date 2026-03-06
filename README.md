@@ -1,4 +1,4 @@
-<img src="docs/logo.png" width="256px"/>
+<img src="logo.png" width="256px"/>
 
 # Oblique Theme
 
