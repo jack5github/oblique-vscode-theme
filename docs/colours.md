@@ -336,10 +336,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Strings
 
-> - **Python**
->   - `string.quoted`
-> - **YAML**
->   - `string.unquoted.plain.out`
+> - `string`
 
 ## Constant Values
 
@@ -394,6 +391,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.tag`
 > - **YAML**
 >   - `punctuation.definition.block`
+>   - `storage.modifier`
 
 ## Types
 
