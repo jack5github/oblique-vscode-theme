@@ -97,7 +97,10 @@
 		},
 		{ "scope": "markup.italic", "settings": { "fontStyle": "italic" } },
 		{ "scope": "constant.other.caps", "settings": { "foreground": "#99e868" } },
-		{ "scope": "string.quoted", "settings": { "foreground": "#acc6c6" } },
+		{
+			"scope": ["string.quoted", "string.unquoted.plain.out"],
+			"settings": { "foreground": "#acc6c6" }
+		},
 		{
 			"scope": [
 				"constant.numeric",

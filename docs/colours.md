@@ -336,7 +336,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Strings
 
-> - `string.quoted`
+> - **Python**
+>   - `string.quoted`
+> - **YAML**
+>   - `string.unquoted.plain.out`
 
 ## Constant Values
 
