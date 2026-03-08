@@ -82,7 +82,14 @@
 			],
 			"settings": { "foreground": "#adb6e4" }
 		},
-		{ "scope": "entity.name.function.python", "settings": { "fontStyle": "bold" } },
+		{
+			"scope": [
+				"entity.name.function.python",
+				"meta.definition.function",
+				"meta.definition.method"
+			],
+			"settings": { "fontStyle": "bold" }
+		},
 		{
 			"scope": [
 				"source",
@@ -150,7 +157,9 @@
 				"storage.type",
 				"meta.array",
 				"punctuation.definition.block",
-				"storage.modifier"
+				"storage.modifier",
+				"meta.flow-mapping",
+				"meta.flow-sequence"
 			],
 			"settings": { "foreground": "#de82ad" }
 		},

@@ -310,7 +310,11 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **JavaScript**
 >   - `meta.brace.round`
 > - Bold
->   - `entity.name.function.python`
+>   - **Python**
+>     - `entity.name.function.python`
+>   - **JavaScript**
+>     - `meta.definition.function`
+>     - `meta.definition.method`
 
 ## Variables
 
@@ -373,7 +377,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >     - `markup.bold`
 >     - `heading.1`
 
-## Keywords
+## Keywords and Control Flow
 
 > - **Python**
 >   - `keyword`
@@ -403,6 +407,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `storage.modifier`
+>   - `meta.flow-mapping`
+>   - `meta.flow-sequence`
 
 ## Types
 
