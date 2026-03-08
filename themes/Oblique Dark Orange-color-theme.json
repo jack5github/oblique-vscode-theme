@@ -77,7 +77,8 @@
 				"punctuation.definition.parameters",
 				"markup.underline.link",
 				"punctuation.definition.link",
-				"punctuation.definition.metadata"
+				"punctuation.definition.metadata",
+				"meta.brace.round"
 			],
 			"settings": { "foreground": "#adb6e4" }
 		},
@@ -90,6 +91,7 @@
 				"meta.indexed-name",
 				"markup.inline.raw",
 				"entity.other.attribute-name",
+				"meta.object-literal.key",
 				"support.type.property-name",
 				"entity.name.tag"
 			],
@@ -104,7 +106,8 @@
 				"constant.language",
 				"constant.other.ellipsis",
 				"markup.italic",
-				"punctuation.definition.italic"
+				"punctuation.definition.italic",
+				"constant.character.escape"
 			],
 			"settings": { "foreground": "#10de18" }
 		},
@@ -115,7 +118,8 @@
 				"support.type.exception",
 				"variable.parameter.function.language.special.self",
 				"markup.bold",
-				"punctuation.definition.bold"
+				"punctuation.definition.bold",
+				"variable.language.this"
 			],
 			"settings": { "foreground": "#ed5858" }
 		},
@@ -143,6 +147,8 @@
 				"punctuation.definition.markdown",
 				"fenced_code.block.language",
 				"punctuation.definition.tag",
+				"storage.type",
+				"meta.array",
 				"punctuation.definition.block",
 				"storage.modifier"
 			],

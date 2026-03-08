@@ -307,6 +307,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `markup.underline.link`
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
+> - **JavaScript**
+>   - `meta.brace.round`
 > - Bold
 >   - `entity.name.function.python`
 
@@ -321,6 +323,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `markup.inline.raw`
 > - **HTML**
 >   - `entity.other.attribute-name`
+> - **JavaScript**
+>   - `meta.object-literal.key`
 > - **TOML**
 >   - `support.type.property-name`
 > - **YAML**
@@ -347,6 +351,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
+> - **JavaScript**
+>   - `constant.character.escape`
 
 ## Classes
 
@@ -358,6 +364,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
+> - **JavaScript**
+>   - `variable.language.this`
 > - Bold
 >   - **Python**
 >     - `entity.name.type.class`
@@ -389,6 +397,9 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `fenced_code.block.language`
 > - **HTML**
 >   - `punctuation.definition.tag`
+> - **JavaScript**
+>   - `storage.type`
+>   - `meta.array`
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `storage.modifier`
