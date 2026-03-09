@@ -46,12 +46,17 @@ Keybindings on active items have the same background colour as the active item i
 
 > - `keybindingLabel.background`
 
-### Menus
+### Menus & Widgets
 
 Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Palette, they can share all of its colours.
 
 > - `menu.background`
 > - `menu.selectionBackground`
+
+This also includes widgets, which appear in a similar fashion to menus, as boxes of text with a background colour.
+
+> - `editorWidget.background`
+> - `editorSuggestWidget.selectedBackground`
 
 ## Sidebars
 

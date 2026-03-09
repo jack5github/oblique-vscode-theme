@@ -11,6 +11,8 @@
 		"keybindingLabel.background": "#1a2626",
 		"menu.background": "#121e1e",
 		"menu.selectionBackground": "#263131",
+		"editorWidget.background": "#121e1e",
+		"editorSuggestWidget.selectedBackground": "#263131",
 		"activityBar.background": "#050a0a",
 		"sideBar.background": "#091111",
 		"panel.background": "#091111",
