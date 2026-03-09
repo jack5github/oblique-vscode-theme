@@ -13,6 +13,7 @@
 		"menu.selectionBackground": "#263131",
 		"activityBar.background": "#050a0a",
 		"sideBar.background": "#091111",
+		"panel.background": "#091111",
 		"editorGutter.background": "#0a1515",
 		"activityBar.inactiveForeground": "#537171",
 		"activityBar.foreground": "#dce7e7",

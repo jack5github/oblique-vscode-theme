@@ -53,11 +53,11 @@ Menus are found in various places within Visual Studio Code, and are also access
 > - `menu.background`
 > - `menu.selectionBackground`
 
-## Left Sidebars
+## Sidebars
 
 ### Backgrounds
 
-The backgrounds of the left sidebars look their best when they naturally blend from the background of the editor area towards black, but don't quite reach it. The line number gutter of the editor area is also included here, as it is essentially a left sidebar.
+The backgrounds of the sidebars look their best when they naturally blend from the background of the editor area towards black, but don't quite reach it. The line number gutter of the editor area is also included here, as it is essentially a left sidebar.
 
 Before creating this theme, I used the following colours:
 
@@ -70,11 +70,13 @@ With the change of the editor area's colour, there is the opportunity to revisit
 
 - *Activity Bar*: `#050a0a` (3:5 with black, any darker and it is too black, any brighter and it does not stand out from sidebar)
 - *Sidebar*: `#091111` (2:1 with black, any lighter and it does not stand out from editor area)
+- *Panel* (bottom bar): Same as sidebar
 - *Editor Gutter*: `#0a1515` (4:1 with black, any lighter and it does not stand out from editor area)
 - *Editor*: `#0d1a1a`
 
 > - `activityBar.background`
 > - `sideBar.background`
+> - `panel.background`
 > - `editorGutter.background`
 
 ### Icons
