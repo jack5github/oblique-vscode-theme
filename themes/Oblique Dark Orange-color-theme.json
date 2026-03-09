@@ -55,14 +55,14 @@
 		"editorBracketHighlight.foreground3": "#10de18",
 		"editorBracketHighlight.foreground4": "#eeee99",
 		"editorBracketHighlight.foreground5": "#cc9731",
-		"editorBracketHighlight.foreground6": "#ed5858"
+		"editorBracketHighlight.foreground6": "#ff6b6b"
 	},
 	"semanticTokenColors": {
 		"function": "#adb6e4",
 		"variable": "#eeee99",
 		"string": "#acc6c6",
 		"number": "#10de18",
-		"class": "#ed5858",
+		"class": "#ff6b6b",
 		"keyword": "#de82ad",
 		"type": "#cc9731",
 		"comment": "#536060"
@@ -129,7 +129,7 @@
 				"punctuation.definition.bold",
 				"variable.language.this"
 			],
-			"settings": { "foreground": "#ed5858" }
+			"settings": { "foreground": "#ff6b6b" }
 		},
 		{
 			"scope": ["entity.name.type.class", "markup.bold", "heading.1"],

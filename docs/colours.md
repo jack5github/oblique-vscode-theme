@@ -288,7 +288,7 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - `variable` - 1:2 mix of `#ffff00` and `#e5e5e5`
 > - `string` - Same as `editor.foreground`
 > - `number` - 7:2 mix of `#00ff00` and `#486a6a`
-> - `class` - 5:1 mix of `#ff3d3d` and `#90e0e0`
+> - `class` - 11:8 mix of `#ff0000` and `#ffffff`
 > - `keyword` - 11:16 mix of `#ff006a` and `#c7dbdb`
 > - `type` - 4:1 mix of `#ff8000` and `#00f5f5`
 > - `comment` - Same as `gitDecoration.ignoredResourceForeground`
