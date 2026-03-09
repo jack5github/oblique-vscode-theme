@@ -159,7 +159,8 @@
 				"punctuation.definition.block",
 				"storage.modifier",
 				"meta.flow-mapping",
-				"meta.flow-sequence"
+				"meta.flow-sequence",
+				"meta.embedded.block"
 			],
 			"settings": { "foreground": "#de82ad" }
 		},

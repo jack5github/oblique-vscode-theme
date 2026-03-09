@@ -7,7 +7,7 @@
 - Dark IDE theme
 - Purposefully-chosen colours and shades
 - Colour-blind friendly (protanopia)
-- Supports JSON, [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode), [TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml), YAML and more
+- Supports JavaScript, JSON, Markdown, Python, Robot Framework, YAML [and more](docs/languages.md)
 
 ## Installation
 

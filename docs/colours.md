@@ -409,6 +409,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `storage.modifier`
 >   - `meta.flow-mapping`
 >   - `meta.flow-sequence`
+>   - **GitHub Actions**
+>     - `meta.embedded.block`
 
 ## Types
 
