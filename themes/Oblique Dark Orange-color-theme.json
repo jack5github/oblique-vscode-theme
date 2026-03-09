@@ -29,6 +29,7 @@
 		"button.background": "#dc3b02",
 		"button.hoverBackground": "#ff490a",
 		"textLink.foreground": "#ff6833",
+		"textLink.activeForeground": "#ffe0d5",
 		"focusBorder": "#e33c02",
 		"extensionIcon.verifiedForeground": "#1b8fd6",
 		"editor.background": "#0d1a1a",

@@ -156,9 +156,10 @@ Based on this change, it is possible to make the best orange the hover colour, t
 
 Links appear underneath buttons, and are also used to show off the accent colours. Unlike buttons, links can be a slightly brighter orange, as being purely text, they are less visible because of their shape.
 
-Returning to the concept of mixing the best orange with white, a mix of 4:1 works best for links. Any lighter and the text takes on a washed-out quality.
+Returning to the concept of mixing the best orange with pure white, a mix of 4:1 works best for links. Any lighter and the text takes on a washed-out quality. This washed-out look is more acceptable for when the link is being hovered over, using a 1:5 mix instead.
 
 > - `textLink.foreground`
+> - `textLink.activeForeground`
 
 ### Focus Border
 
