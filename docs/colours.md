@@ -241,6 +241,21 @@ Before creating this theme, I used an alpha of `#20`, but this is a bit too brig
 > - `selection.background`
 > - `editor.inactiveSelectionBackground`
 
+### Difference Indicators
+
+Text difference indicators should not change from their well-known colours, red and green, but they must be set to the correct lightnesses and transparencies so that they do not obscure any text, especially comments.
+
+<!-- TODO: Revisit these colours when making light theme -->
+From testing with the editor area background colour as it is, it is not possible to display a red and green of an equal brightness and maintain legibility. Instead, a dark red and bright green will be used, specifically `#0d351a` (the darkest yet most legible red) and `#0c2f18` (a 10:1 mix of the editor area colour and pure green). An alpha of `#fe` is used, as `#ff` produces warnings about content being obscured.
+
+> - `diffEditor.removedLineBackground`
+> - `diffEditor.insertedLineBackground`
+
+As for the highlights for changed text, they use the class and value colours mixed with the background colours. Red uses a mix of 1:2, and green uses a mix of 5:16.
+
+> - `diffEditor.removedTextBackground`
+> - `diffEditor.insertedTextBackground`
+
 ## Status Bar
 
 ### Background
