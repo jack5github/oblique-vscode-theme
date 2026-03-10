@@ -14,6 +14,7 @@
 		"editorWidget.background": "#121e1e",
 		"editorSuggestWidget.selectedBackground": "#263131",
 		"activityBar.background": "#050a0a",
+		"terminal.background": "#050a0a",
 		"sideBar.background": "#091111",
 		"panel.background": "#091111",
 		"editorGutter.background": "#0a1515",

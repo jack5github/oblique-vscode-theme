@@ -74,12 +74,15 @@ Before creating this theme, I used the following colours:
 With the change of the editor area's colour, there is the opportunity to revisit the sidebar black ratios. Based on testing, I feel that the best ratios are as follows:
 
 - *Activity Bar*: `#050a0a` (3:5 with black, any darker and it is too black, any brighter and it does not stand out from sidebar)
+<!-- TODO: Revisit terminal colours -->
+- *Terminal*: Same as activity bar
 - *Sidebar*: `#091111` (2:1 with black, any lighter and it does not stand out from editor area)
 - *Panel* (bottom bar): Same as sidebar
 - *Editor Gutter*: `#0a1515` (4:1 with black, any lighter and it does not stand out from editor area)
 - *Editor*: `#0d1a1a`
 
 > - `activityBar.background`
+> - `terminal.background`
 > - `sideBar.background`
 > - `panel.background`
 > - `editorGutter.background`
