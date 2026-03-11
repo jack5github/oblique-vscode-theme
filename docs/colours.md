@@ -348,7 +348,10 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 The constant variable name colour is a 29:18 mix between variable and constant value colours.
 
-> - `constant.other.caps`
+> - **Python**
+>   - `constant.other.caps`
+> - **JavaScript**
+>   - `variable.other.constant`
 
 ## Strings
 
@@ -369,7 +372,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 ## Classes
 
 > - **Python**
->   - `entity.name.type.class`
+>   - `entity.name.type`
 >   - `meta.function`
 >   - `support.type.exception`
 >   - `variable.parameter.function.language.special.self`
@@ -412,6 +415,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **JavaScript**
 >   - `storage.type`
 >   - `meta.array`
+>   - `punctuation.definition.template-expression`
+>   - `punctuation.terminator`
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `storage.modifier`

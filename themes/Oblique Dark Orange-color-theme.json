@@ -109,7 +109,10 @@
 			"settings": { "foreground": "#eeee99" }
 		},
 		{ "scope": "markup.italic", "settings": { "fontStyle": "italic" } },
-		{ "scope": "constant.other.caps", "settings": { "foreground": "#99e868" } },
+		{
+			"scope": ["constant.other.caps", "variable.other.constant"],
+			"settings": { "foreground": "#99e868" }
+		},
 		{ "scope": "string", "settings": { "foreground": "#acc6c6" } },
 		{
 			"scope": [
@@ -124,7 +127,7 @@
 		},
 		{
 			"scope": [
-				"entity.name.type.class",
+				"entity.name.type",
 				"meta.function",
 				"support.type.exception",
 				"variable.parameter.function.language.special.self",
@@ -160,6 +163,8 @@
 				"punctuation.definition.tag",
 				"storage.type",
 				"meta.array",
+				"punctuation.definition.template-expression",
+				"punctuation.terminator",
 				"punctuation.definition.block",
 				"storage.modifier",
 				"meta.flow-mapping",
