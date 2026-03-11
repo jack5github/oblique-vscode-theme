@@ -4,13 +4,14 @@
 
 ### Added
 
-- Added C#, JavaScript and GitHub Actions (YAML) support
+- Added C#, GitHub Actions (YAML), JavaScript and Properties support
 - Added colour for active links
 - Added colours for editor widgets
 - Added colours for panels and terminals
 - Added `docs/languages.md` to track supported languages and extensions
 - Added GitHub workflow for publishing extension to Open VSX Registry
 - Added missing `punctuation.definition.mapping` colour for YAML
+- Added `punctuation.definition.table` and `punctuation.eq` colours for TOML
 - `.vscode/settings.json` added to `.gitignore`
 
 ### Changed

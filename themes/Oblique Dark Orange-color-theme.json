@@ -104,6 +104,8 @@
 				"markup.inline.raw",
 				"entity.other.attribute-name",
 				"meta.object-literal.key",
+				"entity.name.section",
+				"keyword.other.definition",
 				"support.type.property-name",
 				"entity.name.tag"
 			],
@@ -114,7 +116,7 @@
 			"scope": ["constant.other.caps", "variable.other.constant"],
 			"settings": { "foreground": "#99e868" }
 		},
-		{ "scope": "string", "settings": { "foreground": "#acc6c6" } },
+		{ "scope": ["string", "source.ini"], "settings": { "foreground": "#acc6c6" } },
 		{
 			"scope": [
 				"constant.numeric",
@@ -170,6 +172,9 @@
 				"punctuation.definition.binding-pattern",
 				"punctuation.definition.template-expression",
 				"punctuation.terminator",
+				"punctuation.definition.entity",
+				"punctuation.definition.table",
+				"punctuation.eq",
 				"punctuation.definition.block",
 				"punctuation.definition.mapping",
 				"storage.modifier",

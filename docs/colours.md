@@ -339,6 +339,9 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `entity.other.attribute-name`
 > - **JavaScript**
 >   - `meta.object-literal.key`
+> - **Properties**
+>   - `entity.name.section`
+>   - `keyword.other.definition`
 > - **TOML**
 >   - `support.type.property-name`
 > - **YAML**
@@ -357,7 +360,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Strings
 
-> - `string`
+> - **Python**
+>   - `string`
+> - **Properties**
+>   - `source.ini`
 
 ## Constant Values
 
@@ -424,6 +430,11 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.binding-pattern`
 >   - `punctuation.definition.template-expression`
 >   - `punctuation.terminator`
+> - **Properties**
+>   - `punctuation.definition.entity`
+> - **TOML**
+>   - `punctuation.definition.table`
+>   - `punctuation.eq`
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `punctuation.definition.mapping`
