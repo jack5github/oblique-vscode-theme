@@ -17,6 +17,7 @@
 		"sideBar.background": "#091111",
 		"panel.background": "#091111",
 		"editorGutter.background": "#0a1515",
+		"terminal.background": "#030606",
 		"activityBar.inactiveForeground": "#537171",
 		"activityBar.foreground": "#dce7e7",
 		"activityBar.activeBorder": "#00000000",
@@ -104,14 +105,22 @@
 				"markup.inline.raw",
 				"entity.other.attribute-name",
 				"meta.object-literal.key",
+				"entity.name.section",
+				"keyword.other.definition",
 				"support.type.property-name",
 				"entity.name.tag"
 			],
 			"settings": { "foreground": "#eeee99" }
 		},
 		{ "scope": "markup.italic", "settings": { "fontStyle": "italic" } },
-		{ "scope": "constant.other.caps", "settings": { "foreground": "#99e868" } },
-		{ "scope": "string", "settings": { "foreground": "#acc6c6" } },
+		{
+			"scope": ["constant.other.caps", "variable.other.constant"],
+			"settings": { "foreground": "#99e868" }
+		},
+		{
+			"scope": ["string", "source.ignore", "source.ini"],
+			"settings": { "foreground": "#acc6c6" }
+		},
 		{
 			"scope": [
 				"constant.numeric",
@@ -125,12 +134,13 @@
 		},
 		{
 			"scope": [
-				"entity.name.type.class",
+				"entity.name.type",
 				"meta.function",
 				"support.type.exception",
 				"variable.parameter.function.language.special.self",
 				"markup.bold",
 				"punctuation.definition.bold",
+				"meta.class",
 				"variable.language.this"
 			],
 			"settings": { "foreground": "#ff6b6b" }
@@ -152,6 +162,7 @@
 				"meta.structure.array",
 				"meta.structure.dictionary",
 				"markup.heading",
+				"entity.name.section.markdown",
 				"punctuation.definition.heading",
 				"punctuation.definition.list",
 				"punctuation.definition.quote",
@@ -159,9 +170,19 @@
 				"punctuation.definition.markdown",
 				"fenced_code.block.language",
 				"punctuation.definition.tag",
+				"punctuation.curlybrace",
+				"punctuation.squarebracket",
 				"storage.type",
 				"meta.array",
+				"punctuation.definition.binding-pattern",
+				"punctuation.definition.template-expression",
+				"punctuation.terminator",
+				"punctuation.definition.entity",
+				"punctuation.definition.table",
+				"punctuation.eq",
 				"punctuation.definition.block",
+				"punctuation.definition.mapping",
+				"punctuation.definition.sequence",
 				"storage.modifier",
 				"meta.flow-mapping",
 				"meta.flow-sequence",
@@ -170,7 +191,7 @@
 			"settings": { "foreground": "#de82ad" }
 		},
 		{
-			"scope": ["support.type", "meta.item-access"],
+			"scope": ["support.type", "meta.item-access", "keyword.type"],
 			"settings": { "foreground": "#cc9731" }
 		},
 		{

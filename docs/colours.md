@@ -78,11 +78,13 @@ With the change of the editor area's colour, there is the opportunity to revisit
 - *Panel* (bottom bar): Same as sidebar
 - *Editor Gutter*: `#0a1515` (4:1 with black, any lighter and it does not stand out from editor area)
 - *Editor*: `#0d1a1a`
+- *Terminal*: `#030606` (2:7 with black, any darker and it is too black, any brighter and it does not stand out from activity bar; the terminal is a special case as all sorts of colours can be displayed on it)
 
 > - `activityBar.background`
 > - `sideBar.background`
 > - `panel.background`
 > - `editorGutter.background`
+> - `terminal.background`
 
 ### Icons
 
@@ -344,6 +346,9 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `entity.other.attribute-name`
 > - **JavaScript**
 >   - `meta.object-literal.key`
+> - **Properties**
+>   - `entity.name.section`
+>   - `keyword.other.definition`
 > - **TOML**
 >   - `support.type.property-name`
 > - **YAML**
@@ -355,11 +360,19 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 The constant variable name colour is a 29:18 mix between variable and constant value colours.
 
-> - `constant.other.caps`
+> - **Python**
+>   - `constant.other.caps`
+> - **JavaScript**
+>   - `variable.other.constant`
 
 ## Strings
 
-> - `string`
+> - **Python**
+>   - `string`
+> - **Ignore**
+>   - `source.ignore`
+> - **Properties**
+>   - `source.ini`
 
 ## Constant Values
 
@@ -376,7 +389,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 ## Classes
 
 > - **Python**
->   - `entity.name.type.class`
+>   - `entity.name.type`
 >   - `meta.function`
 >   - `support.type.exception`
 >   - `variable.parameter.function.language.special.self`
@@ -384,6 +397,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
 > - **JavaScript**
+>   - `meta.class`
 >   - `variable.language.this`
 > - Bold
 >   - **Python**
@@ -408,6 +422,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.structure.dictionary`
 > - **Markdown**
 >   - `markup.heading`
+>   - `entity.name.section.markdown`
 >   - `punctuation.definition.heading`
 >   - `punctuation.definition.list`
 >   - `punctuation.definition.quote`
@@ -416,11 +431,24 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `fenced_code.block.language`
 > - **HTML**
 >   - `punctuation.definition.tag`
+> - **C#**
+>   - `punctuation.curlybrace`
+>   - `punctuation.squarebracket`
 > - **JavaScript**
 >   - `storage.type`
 >   - `meta.array`
+>   - `punctuation.definition.binding-pattern`
+>   - `punctuation.definition.template-expression`
+>   - `punctuation.terminator`
+> - **Properties**
+>   - `punctuation.definition.entity`
+> - **TOML**
+>   - `punctuation.definition.table`
+>   - `punctuation.eq`
 > - **YAML**
 >   - `punctuation.definition.block`
+>   - `punctuation.definition.mapping`
+>   - `punctuation.definition.sequence`
 >   - `storage.modifier`
 >   - `meta.flow-mapping`
 >   - `meta.flow-sequence`
@@ -429,8 +457,11 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Types
 
-> - `support.type`
-> - `meta.item-access`
+> - **Python**
+>   - `support.type`
+>   - `meta.item-access`
+> - **C#**
+>   - `keyword.type`
 
 ## Comments
 
