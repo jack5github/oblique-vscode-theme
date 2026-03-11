@@ -440,6 +440,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `punctuation.definition.mapping`
+>   - `punctuation.definition.sequence`
 >   - `storage.modifier`
 >   - `meta.flow-mapping`
 >   - `meta.flow-sequence`
