@@ -176,6 +176,13 @@ The focus border is the line that appears around the active element, which is of
 
 > - `focusBorder`
 
+### Input Buttons
+
+<!-- TODO: Determine justification for input buttons using same colour -->
+The sidebar can contain inputs with square buttons in them, which are surrounded by a border while selected. These borders can be the same colour as the focus border.
+
+> - `inputOption.activeBorder`
+
 ### Extensions
 
 It is possible for extensions to have verified publishers, which gives them a checkmark before their name. The colour "button blue" is synonymous with such checkmarks thanks to Twitter (though both it and X suck though), so I will continue to use it here.
