@@ -380,6 +380,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
 > - **JavaScript**
+>   - `meta.class`
 >   - `variable.language.this`
 > - Bold
 >   - **Python**
