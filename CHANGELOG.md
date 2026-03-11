@@ -4,7 +4,7 @@
 
 ### Added
 
-- Added C#, GitHub Actions (YAML), JavaScript and Properties support
+- Added C#, GitHub Actions (YAML), Ignore, JavaScript and Properties support
 - Added colour for active links
 - Added colours for editor widgets
 - Added colours for panels and terminals

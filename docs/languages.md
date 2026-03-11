@@ -1,6 +1,7 @@
 # Tested Languages
 
 - **[C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)**
+- **Ignore**
 - **JavaScript**
 - **JSON**
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**

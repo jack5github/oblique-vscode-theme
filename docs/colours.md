@@ -362,6 +362,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 > - **Python**
 >   - `string`
+> - **Ignore**
+>   - `source.ignore`
 > - **Properties**
 >   - `source.ini`
 

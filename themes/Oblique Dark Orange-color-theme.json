@@ -116,7 +116,10 @@
 			"scope": ["constant.other.caps", "variable.other.constant"],
 			"settings": { "foreground": "#99e868" }
 		},
-		{ "scope": ["string", "source.ini"], "settings": { "foreground": "#acc6c6" } },
+		{
+			"scope": ["string", "source.ignore", "source.ini"],
+			"settings": { "foreground": "#acc6c6" }
+		},
 		{
 			"scope": [
 				"constant.numeric",
