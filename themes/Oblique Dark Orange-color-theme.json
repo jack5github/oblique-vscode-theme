@@ -161,6 +161,7 @@
 				"meta.structure.array",
 				"meta.structure.dictionary",
 				"markup.heading",
+				"entity.name.section.markdown",
 				"punctuation.definition.heading",
 				"punctuation.definition.list",
 				"punctuation.definition.quote",
