@@ -78,11 +78,13 @@ With the change of the editor area's colour, there is the opportunity to revisit
 - *Panel* (bottom bar): Same as sidebar
 - *Editor Gutter*: `#0a1515` (4:1 with black, any lighter and it does not stand out from editor area)
 - *Editor*: `#0d1a1a`
+- *Terminal*: `#030606` (2:7 with black, any darker and it is too black, any brighter and it does not stand out from activity bar; the terminal is a special case as all sorts of colours can be displayed on it)
 
 > - `activityBar.background`
 > - `sideBar.background`
 > - `panel.background`
 > - `editorGutter.background`
+> - `terminal.background`
 
 ### Icons
 
