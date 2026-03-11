@@ -415,6 +415,9 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `fenced_code.block.language`
 > - **HTML**
 >   - `punctuation.definition.tag`
+> - **C#**
+>   - `punctuation.curlybrace`
+>   - `punctuation.squarebracket`
 > - **JavaScript**
 >   - `storage.type`
 >   - `meta.array`
@@ -431,8 +434,11 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Types
 
-> - `support.type`
-> - `meta.item-access`
+> - **Python**
+>   - `support.type`
+>   - `meta.item-access`
+> - **C#**
+>   - `keyword.type`
 
 ## Comments
 

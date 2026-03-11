@@ -163,6 +163,8 @@
 				"punctuation.definition.markdown",
 				"fenced_code.block.language",
 				"punctuation.definition.tag",
+				"punctuation.curlybrace",
+				"punctuation.squarebracket",
 				"storage.type",
 				"meta.array",
 				"punctuation.definition.binding-pattern",
@@ -177,7 +179,7 @@
 			"settings": { "foreground": "#de82ad" }
 		},
 		{
-			"scope": ["support.type", "meta.item-access"],
+			"scope": ["support.type", "meta.item-access", "keyword.type"],
 			"settings": { "foreground": "#cc9731" }
 		},
 		{
