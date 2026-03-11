@@ -10,6 +10,7 @@
 - Added colours for panels and terminals
 - Added `docs/languages.md` to track supported languages and extensions
 - Added GitHub workflow for publishing extension to Open VSX Registry
+- Added missing `punctuation.definition.mapping` colour for YAML
 - `.vscode/settings.json` added to `.gitignore`
 
 ### Changed

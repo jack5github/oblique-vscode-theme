@@ -171,6 +171,7 @@
 				"punctuation.definition.template-expression",
 				"punctuation.terminator",
 				"punctuation.definition.block",
+				"punctuation.definition.mapping",
 				"storage.modifier",
 				"meta.flow-mapping",
 				"meta.flow-sequence",
