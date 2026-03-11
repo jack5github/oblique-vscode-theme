@@ -163,6 +163,7 @@
 				"punctuation.definition.tag",
 				"storage.type",
 				"meta.array",
+				"punctuation.definition.binding-pattern",
 				"punctuation.definition.template-expression",
 				"punctuation.terminator",
 				"punctuation.definition.block",

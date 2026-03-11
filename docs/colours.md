@@ -415,6 +415,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **JavaScript**
 >   - `storage.type`
 >   - `meta.array`
+>   - `punctuation.definition.binding-pattern`
 >   - `punctuation.definition.template-expression`
 >   - `punctuation.terminator`
 > - **YAML**
