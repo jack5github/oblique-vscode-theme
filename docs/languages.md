@@ -1,6 +1,9 @@
 # Tested Languages
 
 - **[C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)**
+- **CSS**
+- **[GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)**
+- **HTML**
 - **Ignore**
 - **JavaScript**
 - **JSON**
@@ -9,5 +12,5 @@
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
 - **[Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode)**
 - **[TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)**
+- **XML**
 - **YAML**
-  - **[GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)**

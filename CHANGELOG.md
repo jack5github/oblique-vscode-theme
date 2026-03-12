@@ -4,7 +4,7 @@
 
 ### Added
 
-- Added C#, GitHub Actions (YAML), Ignore, JavaScript and Properties support
+- Added C#, CSS, GitHub Actions (YAML), HTML, Ignore, JavaScript, Properties and XML support
 - Added colour for active links
 - Added colour for extension star counts
 - Added colours for editor widgets
@@ -22,9 +22,11 @@
 
 - Changes to documentation in `docs/colours.md`
 - Class semantic token colour changed to `#ed5858`
-- Python `entity.name.type.class` colour now applies to `entity.name.type`
 - Icon updated to use new class semantic token colour
+- Markdown `fenced_code.block.language` colour now uses type semantic token colour
+- Python `entity.name.type.class` colour now applies to `entity.name.type`
 - `string.quoted` colour now applies to `string`
+- YAML `entity.name.tag` colour now applies to `entity.name.tag.yaml`
 
 ## 0.0.1 - 2026-03-07
 

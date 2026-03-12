@@ -108,22 +108,30 @@
 				"meta.item-access.arguments",
 				"meta.indexed-name",
 				"markup.inline.raw",
+				"meta.tag.structure",
+				"meta.tag.metadata",
 				"entity.other.attribute-name",
+				"entity.name.tag.css",
 				"meta.object-literal.key",
 				"entity.name.section",
 				"keyword.other.definition",
 				"support.type.property-name",
-				"entity.name.tag"
+				"entity.name.tag.localname",
+				"entity.name.tag.yaml"
 			],
 			"settings": { "foreground": "#eeee99" }
 		},
 		{ "scope": "markup.italic", "settings": { "fontStyle": "italic" } },
 		{
-			"scope": ["constant.other.caps", "variable.other.constant"],
+			"scope": [
+				"constant.other.caps",
+				"variable.other.constant",
+				"support.constant"
+			],
 			"settings": { "foreground": "#99e868" }
 		},
 		{
-			"scope": ["string", "source.ignore", "source.ini"],
+			"scope": ["string", "source.css", "source.ignore", "source.ini"],
 			"settings": { "foreground": "#acc6c6" }
 		},
 		{
@@ -173,8 +181,9 @@
 				"punctuation.definition.quote",
 				"punctuation.definition.raw",
 				"punctuation.definition.markdown",
-				"fenced_code.block.language",
+				"meta.tag.metadata.doctype",
 				"punctuation.definition.tag",
+				"punctuation.section",
 				"punctuation.curlybrace",
 				"punctuation.squarebracket",
 				"storage.type",
@@ -185,6 +194,7 @@
 				"punctuation.definition.entity",
 				"punctuation.definition.table",
 				"punctuation.eq",
+				"meta.tag.xml",
 				"punctuation.definition.block",
 				"punctuation.definition.mapping",
 				"punctuation.definition.sequence",
@@ -196,7 +206,12 @@
 			"settings": { "foreground": "#de82ad" }
 		},
 		{
-			"scope": ["support.type", "meta.item-access", "keyword.type"],
+			"scope": [
+				"support.type",
+				"meta.item-access",
+				"keyword.type",
+				"fenced_code.block.language"
+			],
 			"settings": { "foreground": "#cc9731" }
 		},
 		{

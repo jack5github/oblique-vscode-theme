@@ -373,7 +373,11 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Markdown**
 >   - `markup.inline.raw`
 > - **HTML**
+>   - `meta.tag.structure`
+>   - `meta.tag.metadata`
 >   - `entity.other.attribute-name`
+> - **CSS**
+>   - `entity.name.tag.css`
 > - **JavaScript**
 >   - `meta.object-literal.key`
 > - **Properties**
@@ -381,8 +385,10 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `keyword.other.definition`
 > - **TOML**
 >   - `support.type.property-name`
+> - **XML**
+>   - `entity.name.tag.localname`
 > - **YAML**
->   - `entity.name.tag`
+>   - `entity.name.tag.yaml`
 > - Italic
 >   - `markup.italic`
 
@@ -394,11 +400,15 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `constant.other.caps`
 > - **JavaScript**
 >   - `variable.other.constant`
+> - **CSS**
+>   - `support.constant`
 
 ## Strings
 
 > - **Python**
 >   - `string`
+> - **HTML**
+>   - `source.css`
 > - **Ignore**
 >   - `source.ignore`
 > - **Properties**
@@ -458,9 +468,11 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.quote`
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
->   - `fenced_code.block.language`
 > - **HTML**
+>   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
+> - **CSS**
+>   - `punctuation.section`
 > - **C#**
 >   - `punctuation.curlybrace`
 >   - `punctuation.squarebracket`
@@ -475,6 +487,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **TOML**
 >   - `punctuation.definition.table`
 >   - `punctuation.eq`
+> - **XML**
+>   - `meta.tag.xml`
 > - **YAML**
 >   - `punctuation.definition.block`
 >   - `punctuation.definition.mapping`
@@ -492,6 +506,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.item-access`
 > - **C#**
 >   - `keyword.type`
+> - **Markdown**
+>   - `fenced_code.block.language`
 
 ## Comments
 

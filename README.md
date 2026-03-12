@@ -7,7 +7,7 @@
 - Dark IDE theme
 - Purposefully-chosen colours and shades
 - Colour-blind friendly (protanopia)
-- Supports C#, JavaScript, JSON, Markdown, Python, Robot Framework, YAML [and more](docs/languages.md)
+- Supports C#, HTML, JavaScript, JSON, Markdown, Python, Robot Framework, YAML [and more](docs/languages.md)
 
 ## Installation
 
