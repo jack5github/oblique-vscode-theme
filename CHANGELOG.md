@@ -9,6 +9,7 @@
 - Added colours for editor widgets
 - Added colours for input options
 - Added colours for panels and terminals
+- Added colours for search results and word matches
 - Added `docs/languages.md` to track supported languages and extensions
 - Added GitHub workflow for publishing extension to Open VSX Registry
 - Added `entity.name.section.markdown` colour for Markdown

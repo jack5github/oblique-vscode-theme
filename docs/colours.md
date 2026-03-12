@@ -180,7 +180,6 @@ The focus border is the line that appears around the active element, which is of
 
 ### Input Buttons
 
-<!-- TODO: Determine justification for input buttons using same colour -->
 The sidebar can contain inputs with square buttons in them, which are surrounded by a border while selected. These have to blend in with both the focus border colour and the input background colour, as interaction with them is similar in nature.
 
 Starting with the background colour, I settled on a 21:8 mix, `#a9340a`. Any darker or lighter and it looks too faded or distracting.
@@ -189,6 +188,22 @@ For the border, I found that the input options look better when they have no bor
 
 > - `inputOption.activeBackground`
 > - `inputOption.activeBorder`
+
+### Search & Word Matches
+
+Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area. It is intended to be a transparent colour.
+
+Search is often used as a means of finding and replacing text, which is an operation that requires extra scrutiny, so I have chosen white with the lowest alpha that is still legible on the sidebar, namely `#11`.
+
+> - `editor.findMatchHighlightBackground`
+
+The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
+
+> - `editor.findMatchBackground`
+
+Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely.
+
+> - `editor.wordHighlightBackground`
 
 ### Extensions
 
