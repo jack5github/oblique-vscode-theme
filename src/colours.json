@@ -1,0 +1,394 @@
+{
+	"//": "TODO: Add more variants",
+	"variants": {
+		"mode": ["Dark"],
+		"accent": ["Orange"]
+	},
+	"colours": {
+		"//": "Base colour definitions",
+		"black": { "hex": "#000000" },
+		"white": { "hex": "#ffffff" },
+		"cyan": { "hex": "#00ffff" },
+		"invisible": {
+			"//": "TODO: Handle 3-character-long hex codes for transparencies",
+			"hex": "#00000000",
+			"elements": [
+				"// Activity bar active icon border is distracting",
+				"activityBar.activeBorder",
+				"// Tab vertical borders are distracting",
+				"tab.border"
+			]
+		},
+		"//": "Brightness colour definitions, 'safe' colours are safe on eyes and should be used for large or prevalent elements",
+		"darkest": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"id": "black",
+					"//": "TODO: Add darkest for light mode"
+				}
+			]
+		},
+		"brightest": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"id": "white",
+					"//": "TODO: Add brightest for light mode"
+				}
+			]
+		},
+		"brightestSafe": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"id": "cyan",
+					"//": "TODO: Add brightest safe for light mode"
+				}
+			]
+		},
+		"//": "Accent colour definition",
+		"accent": {
+			"//": "Oblique Theme uses a single accent colour for simplicity and customisability. It is directly controlled by a variant's `accent` value.",
+			"eval": [
+				{
+					"if": "kwargs.accent === \"Orange\"",
+					"hex": "#ff4200",
+					"//": "TODO: Add other accent colours"
+				}
+			]
+		},
+		"//": "Background colour definitions, starting with the editor area, getting progressively lower and further out",
+		"background": {
+			"eval": [
+				{
+					"mix": [
+						{ "id": "darkest", "weight": 18 },
+						{ "id": "brightest", "weight": 1 },
+						{ "id": "brightestSafe", "weight": 1 }
+					]
+				}
+			],
+			"elements": ["editor.background"]
+		},
+		"gutterBackground": {
+			"eval": [
+				{
+					"mix": [
+						{ "id": "background", "weight": 4 },
+						{ "id": "darkest", "weight": 1 }
+					]
+				}
+			],
+			"elements": ["editorGutter.background"]
+		},
+		"sidebarsBackground": {
+			"eval": [
+				{
+					"mix": [
+						{ "id": "background", "weight": 2 },
+						{ "id": "darkest", "weight": 1 }
+					]
+				}
+			],
+			"elements": [
+				"sideBar.background",
+				"panel.background",
+				"// The top bar and status bar should blend in to not be a distraction, sidebar colour chosen as it is darker than tabs",
+				"titleBar.activeBackground",
+				"statusBar.background",
+				"statusBar.noFolderBackground",
+				"// TODO: Add status bar debugging colours"
+			]
+		},
+		"activityBarBackground": {
+			"eval": [
+				{
+					"mix": [
+						{ "id": "background", "weight": 3 },
+						{ "id": "darkest", "weight": 5 }
+					]
+				}
+			],
+			"elements": ["activityBar.background"]
+		},
+		"terminalBackground": {
+			"eval": [
+				{
+					"mix": [
+						{ "id": "background", "weight": 2 },
+						{ "id": "darkest", "weight": 7 }
+					]
+				}
+			],
+			"elements": ["terminal.background"]
+		},
+		"//": "Text colour definitions",
+		"text": {
+			"mix": [
+				{ "id": "darkest", "weight": 2 },
+				{ "id": "brightest", "weight": 6 },
+				{ "id": "brightestSafe", "weight": 1 }
+			],
+			"elements": ["editor.foreground"]
+		},
+		"//": "Icon colour definitions",
+		"activityBarIcon": {
+			"//": "TODO: Convert to mix",
+			"hex": "#007a7a",
+			"elements": ["activityBar.inactiveForeground"]
+		},
+		"activityBarIconActive": {
+			"//": "TODO: Convert to mix",
+			"hex": "#acc6c6",
+			"elements": ["activityBar.foreground"]
+		},
+		"//": "Button colour definitions",
+		"buttonBackground": {
+			"mix": [
+				{ "id": "accent", "weight": 6 },
+				{ "id": "sidebarsBackground", "weight": 1 }
+			],
+			"elements": ["button.background"]
+		},
+		"buttonBackgroundHover": {
+			"mix": [
+				{ "id": "accent", "weight": 25 },
+				{ "id": "brightest", "weight": 1 }
+			],
+			"elements": ["button.hoverBackground"]
+		},
+		"//": "Link colour definitions",
+		"link": {
+			"mix": [
+				{ "id": "accent", "weight": 4 },
+				{ "id": "brightest", "weight": 1 }
+			],
+			"elements": ["textLink.foreground"]
+		},
+		"linkHover": {
+			"mix": [
+				{ "id": "accent", "weight": 1 },
+				{ "id": "brightest", "weight": 5 }
+			],
+			"elements": ["textLink.activeForeground"]
+		},
+		"//": "Extension colour definitions",
+		"verified": {
+			"mix": [
+				{ "hex": "#1da1f2", "weight": 7 },
+				{ "id": "sidebarsBackground", "weight": 1 }
+			],
+			"elements": ["extensionIcon.verifiedForeground"]
+		},
+		"//": "Tab colour definitions",
+		"tabBackground": {
+			"id": "gutterBackground",
+			"elements": [
+				"tab.inactiveBackground",
+				"// The below colour for the tab bar creates the illusion that tabs are part of the editor area",
+				"editorGroupHeader.tabsBackground"
+			]
+		},
+		"tabBackgroundActive": {
+			"mix": [
+				{ "id": "tabBackground", "weight": 15 },
+				{ "id": "brightest", "weight": 1 }
+			],
+			"elements": ["tab.activeBackground"]
+		},
+		"tabBackgroundHover": {
+			"mix": [
+				{ "id": "background", "weight": 3 },
+				{ "id": "tabBackgroundActive", "weight": 2 }
+			],
+			"elements": [
+				"tab.hoverBackground",
+				"tab.unfocusedHoverBackground",
+				"// If a tab is not focused, it should be as dim as the hover colour",
+				"tab.unfocusedActiveBackground"
+			]
+		},
+		"//": "Settings colour definitions",
+		"modifiedSettingBorder": {
+			"mix": [
+				{ "id": "accent", "weight": 9 },
+				{ "id": "brightest", "weight": 2 }
+			],
+			"elements": ["settings.modifiedItemIndicator"]
+		},
+		"//": "Semantic token colour definitions, the main 6 create bracket rainbow",
+		"//": "TODO: Convert to mixes",
+		"keywords": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#de82ad"
+				}
+			],
+			"semantics": ["keyword"],
+			"elements": ["editorBracketHighlight.foreground1"]
+		},
+		"functions": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#adb6e4"
+				}
+			],
+			"semantics": ["function"],
+			"elements": ["editorBracketHighlight.foreground2"],
+			"tokens": [
+				"// Javascript",
+				"meta.brace.round",
+				"// Markdown",
+				"markup.underline.link",
+				"punctuation.definition.link",
+				"punctuation.definition.metadata",
+				"// Python",
+				"entity.name.function",
+				"support.function",
+				"meta.member.access",
+				"punctuation.definition.arguments",
+				"punctuation.definition.decorator",
+				"punctuation.definition.parameters"
+			]
+		},
+		"values": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#10de18"
+				}
+			],
+			"semantics": ["number"],
+			"elements": ["editorBracketHighlight.foreground3"]
+		},
+		"variables": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#eeee99"
+				}
+			],
+			"semantics": ["variable"],
+			"elements": ["editorBracketHighlight.foreground4"],
+			"tokens": [
+				"// CSS",
+				"entity.name.tag.css",
+				"// HTML",
+				"meta.tag.structure",
+				"meta.tag.metadata",
+				"entity.other.attribute-name",
+				"// Javascript",
+				"meta.object-literal.key",
+				"// Markdown",
+				"markup.inline.raw",
+				"// Properties",
+				"entity.name.section",
+				"keyword.other.definition",
+				"// Python",
+				"source",
+				"variable",
+				"meta.item-access.arguments",
+				"meta.indexed-name",
+				"// TOML",
+				"support.type.property-name",
+				"// XML",
+				"entity.name.tag.localname",
+				"// YAML",
+				"entity.name.tag.yaml"
+			]
+		},
+		"constantVariables": {
+			"mix": [
+				{ "id": "variables", "weight": 29 },
+				{ "id": "values", "weight": 18 }
+			],
+			"tokens": [
+				"// CSS",
+				"support.constant",
+				"// JavaScript",
+				"variable.other.constant",
+				"// Python",
+				"constant.other.caps"
+			]
+		},
+		"types": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#cc9731"
+				}
+			],
+			"semantics": ["type"],
+			"elements": ["editorBracketHighlight.foreground5"],
+			"tokens": [
+				"// C#",
+				"keyword.type",
+				"// Markdown",
+				"fenced_code.block.language",
+				"// Python",
+				"support.type",
+				"meta.item-access",
+				"// YAML",
+				"storage.type.tag"
+			]
+		},
+		"classes": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#ff6b6b"
+				}
+			],
+			"semantics": ["class"],
+			"elements": ["editorBracketHighlight.foreground6"],
+			"tokens": ["// TODO: Add tokens"]
+		},
+		"strings": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#acc6c6"
+				}
+			],
+			"semantics": ["string"],
+			"tokens": [
+				"// HTML",
+				"source.css",
+				"// Ignore",
+				"source.ignore",
+				"// Properties",
+				"source.ini",
+				"// Python",
+				"string"
+			]
+		},
+		"comments": {
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"hex": "#536060"
+				}
+			],
+			"semantics": ["comment"],
+			"tokens": [
+				"// Python",
+				"comment",
+				"punctuation.definition.comment",
+				"string.quoted.docstring",
+				"// Robot Framework",
+				"meta.setting.documentation.robotframework",
+				"meta.testcase_setting.documentation.robotframework"
+			]
+		}
+	},
+	"//": "TODO: Add support for font styles",
+	"fonts": [
+		{
+			"settings": { "fontStyle": "bold" },
+			"tokens": ["// TODO: Add tokens"]
+		}
+	]
+}
