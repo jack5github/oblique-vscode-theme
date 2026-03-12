@@ -14,7 +14,7 @@
 - Added `docs/languages.md` to track supported languages and extensions
 - Added GitHub workflow for publishing extension to Open VSX Registry
 - Added `entity.name.section.markdown` colour for Markdown
-- Added missing `punctuation.definition.mapping` and `punctuation.definition.sequence` colours for YAML
+- Added missing `punctuation.definition.mapping`, `punctuation.definition.sequence` and `storage.type.tag` colours for YAML
 - Added `punctuation.definition.table` and `punctuation.eq` colours for TOML
 - `.vscode/settings.json` added to `.gitignore`
 

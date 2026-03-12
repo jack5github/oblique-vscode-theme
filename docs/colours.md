@@ -508,6 +508,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `keyword.type`
 > - **Markdown**
 >   - `fenced_code.block.language`
+> - **YAML**
+>   - `storage.type.tag`
 
 ## Comments
 

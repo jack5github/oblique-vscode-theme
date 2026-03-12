@@ -210,7 +210,8 @@
 				"support.type",
 				"meta.item-access",
 				"keyword.type",
-				"fenced_code.block.language"
+				"fenced_code.block.language",
+				"storage.type.tag"
 			],
 			"settings": { "foreground": "#cc9731" }
 		},
