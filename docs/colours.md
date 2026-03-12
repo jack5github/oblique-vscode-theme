@@ -46,18 +46,23 @@ Keybindings on active items have the same background colour as the active item i
 
 > - `keybindingLabel.background`
 
-### Menus
+### Menus & Widgets
 
 Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Palette, they can share all of its colours.
 
 > - `menu.background`
 > - `menu.selectionBackground`
 
-## Left Sidebars
+This also includes widgets, which appear in a similar fashion to menus, as boxes of text with a background colour.
+
+> - `editorWidget.background`
+> - `editorSuggestWidget.selectedBackground`
+
+## Sidebars
 
 ### Backgrounds
 
-The backgrounds of the left sidebars look their best when they naturally blend from the background of the editor area towards black, but don't quite reach it. The line number gutter of the editor area is also included here, as it is essentially a left sidebar.
+The backgrounds of the sidebars look their best when they naturally blend from the background of the editor area towards black, but don't quite reach it. The line number gutter of the editor area is also included here, as it is essentially a left sidebar.
 
 Before creating this theme, I used the following colours:
 
@@ -70,12 +75,16 @@ With the change of the editor area's colour, there is the opportunity to revisit
 
 - *Activity Bar*: `#050a0a` (3:5 with black, any darker and it is too black, any brighter and it does not stand out from sidebar)
 - *Sidebar*: `#091111` (2:1 with black, any lighter and it does not stand out from editor area)
+- *Panel* (bottom bar): Same as sidebar
 - *Editor Gutter*: `#0a1515` (4:1 with black, any lighter and it does not stand out from editor area)
 - *Editor*: `#0d1a1a`
+- *Terminal*: `#030606` (2:7 with black, any darker and it is too black, any brighter and it does not stand out from activity bar; the terminal is a special case as all sorts of colours can be displayed on it)
 
 > - `activityBar.background`
 > - `sideBar.background`
+> - `panel.background`
 > - `editorGutter.background`
+> - `terminal.background`
 
 ### Icons
 
@@ -156,9 +165,10 @@ Based on this change, it is possible to make the best orange the hover colour, t
 
 Links appear underneath buttons, and are also used to show off the accent colours. Unlike buttons, links can be a slightly brighter orange, as being purely text, they are less visible because of their shape.
 
-Returning to the concept of mixing the best orange with white, a mix of 4:1 works best for links. Any lighter and the text takes on a washed-out quality.
+Returning to the concept of mixing the best orange with pure white, a mix of 4:1 works best for links. Any lighter and the text takes on a washed-out quality. This washed-out look is more acceptable for when the link is being hovered over, using a 1:5 mix instead.
 
 > - `textLink.foreground`
+> - `textLink.activeForeground`
 
 ### Focus Border
 
@@ -168,7 +178,44 @@ The focus border is the line that appears around the active element, which is of
 
 > - `focusBorder`
 
+### Input Buttons
+
+The sidebar can contain inputs with square buttons in them, which are surrounded by a border while selected. These have to blend in with both the focus border colour and the input background colour, as interaction with them is similar in nature.
+
+Starting with the background colour, I settled on a 21:8 mix, `#a9340a`. Any darker or lighter and it looks too faded or distracting.
+
+For the border, I found that the input options look better when they have no border. Instead, I had to choose between fully transparent, which reveals the full size of options, or the same colour as the input background, which causes options to shrink a little. I settled on full transparency, as it allows the selected options to retain the modern look of the rest of the theme, rather than appearing boxy and too spread apart.
+
+> - `inputOption.activeBackground`
+> - `inputOption.activeBorder`
+
+### Search & Word Matches
+
+Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area. It is intended to be a transparent colour.
+
+Search is often used as a means of finding and replacing text, which is an operation that requires extra scrutiny, so I have chosen white with the lowest alpha that is still legible on the sidebar, namely `#11`.
+
+> - `editor.findMatchHighlightBackground`
+
+The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
+
+> - `editor.findMatchBackground`
+
+Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely.
+
+> - `editor.wordHighlightBackground`
+
 ### Extensions
+
+#### Star Count
+
+The star count icon that appears on extensions is not yellow enough in the base dark theme, however in my testing, I was unable to create a more saturated yellow that wasn't brighter than the original, which would create a distraction.
+
+Because of this, I have instead chosen to go with a minimal design, where the star count icon has the same colour as the sidebar text, much like the download count icon, though as a 9:2 mix with the sidebar background, so the icon is as dark as possible without appearing disabled.
+
+> - `extensionIcon.starForeground`
+
+#### Verified Checkmark
 
 It is possible for extensions to have verified publishers, which gives them a checkmark before their name. The colour "button blue" is synonymous with such checkmarks thanks to Twitter (though both it and X suck though), so I will continue to use it here.
 
@@ -222,6 +269,12 @@ The active tab border should be the same as the focus colour. Unfocused active t
 The tab bar background colours should be the same as the inactive tab colours, to further the illusion that the tabs are part of the editor area.
 
 > - `editorGroupHeader.tabsBackground`
+
+### Modified Settings
+
+Modified settings show a vertical bar on their left side. While this can be similar to the accent colour, its proximity to links (which are also the accent colour mixed with white) makes it blend in too much. A mix of 9:2 is used, as it is not too dark to blend in, but not too bright to look washed out.
+
+> - `settings.modifiedItemIndicator`
 
 ### Text Selection
 
@@ -287,7 +340,7 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - `variable` - 1:2 mix of `#ffff00` and `#e5e5e5`
 > - `string` - Same as `editor.foreground`
 > - `number` - 7:2 mix of `#00ff00` and `#486a6a`
-> - `class` - 5:1 mix of `#ff3d3d` and `#90e0e0`
+> - `class` - 11:8 mix of `#ff0000` and `#ffffff`
 > - `keyword` - 11:16 mix of `#ff006a` and `#c7dbdb`
 > - `type` - 4:1 mix of `#ff8000` and `#00f5f5`
 > - `comment` - Same as `gitDecoration.ignoredResourceForeground`
@@ -307,8 +360,14 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `markup.underline.link`
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
+> - **JavaScript**
+>   - `meta.brace.round`
 > - Bold
->   - `entity.name.function.python`
+>   - **Python**
+>     - `entity.name.function.python`
+>   - **JavaScript**
+>     - `meta.definition.function`
+>     - `meta.definition.method`
 
 ## Variables
 
@@ -320,11 +379,22 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Markdown**
 >   - `markup.inline.raw`
 > - **HTML**
+>   - `meta.tag.structure`
+>   - `meta.tag.metadata`
 >   - `entity.other.attribute-name`
+> - **CSS**
+>   - `entity.name.tag.css`
+> - **JavaScript**
+>   - `meta.object-literal.key`
+> - **Properties**
+>   - `entity.name.section`
+>   - `keyword.other.definition`
 > - **TOML**
 >   - `support.type.property-name`
+> - **XML**
+>   - `entity.name.tag.localname`
 > - **YAML**
->   - `entity.name.tag`
+>   - `entity.name.tag.yaml`
 > - Italic
 >   - `markup.italic`
 
@@ -332,11 +402,23 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 The constant variable name colour is a 29:18 mix between variable and constant value colours.
 
-> - `constant.other.caps`
+> - **Python**
+>   - `constant.other.caps`
+> - **JavaScript**
+>   - `variable.other.constant`
+> - **CSS**
+>   - `support.constant`
 
 ## Strings
 
-> - `string.quoted`
+> - **Python**
+>   - `string`
+> - **HTML**
+>   - `source.css`
+> - **Ignore**
+>   - `source.ignore`
+> - **Properties**
+>   - `source.ini`
 
 ## Constant Values
 
@@ -347,17 +429,22 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
+> - **JavaScript**
+>   - `constant.character.escape`
 
 ## Classes
 
 > - **Python**
->   - `entity.name.type.class`
+>   - `entity.name.type`
 >   - `meta.function`
 >   - `support.type.exception`
 >   - `variable.parameter.function.language.special.self`
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
+> - **JavaScript**
+>   - `meta.class`
+>   - `variable.language.this`
 > - Bold
 >   - **Python**
 >     - `entity.name.type.class`
@@ -365,7 +452,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >     - `markup.bold`
 >     - `heading.1`
 
-## Keywords
+## Keywords and Control Flow
 
 > - **Python**
 >   - `keyword`
@@ -381,21 +468,54 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.structure.dictionary`
 > - **Markdown**
 >   - `markup.heading`
+>   - `entity.name.section.markdown`
 >   - `punctuation.definition.heading`
 >   - `punctuation.definition.list`
 >   - `punctuation.definition.quote`
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
->   - `fenced_code.block.language`
 > - **HTML**
+>   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
+> - **CSS**
+>   - `punctuation.section`
+> - **C#**
+>   - `punctuation.curlybrace`
+>   - `punctuation.squarebracket`
+> - **JavaScript**
+>   - `storage.type`
+>   - `meta.array`
+>   - `punctuation.definition.binding-pattern`
+>   - `punctuation.definition.template-expression`
+>   - `punctuation.terminator`
+> - **Properties**
+>   - `punctuation.definition.entity`
+> - **TOML**
+>   - `punctuation.definition.table`
+>   - `punctuation.eq`
+> - **XML**
+>   - `meta.tag.xml`
 > - **YAML**
 >   - `punctuation.definition.block`
+>   - `punctuation.definition.mapping`
+>   - `punctuation.definition.sequence`
+>   - `storage.modifier`
+>   - `meta.flow-mapping`
+>   - `meta.flow-sequence`
+>   - **GitHub Actions**
+>     - `meta.embedded.block`
 
 ## Types
 
-> - `support.type`
-> - `meta.item-access`
+> - **Python**
+>   - `support.type`
+>   - `meta.item-access`
+> - **C#**
+>   - `keyword.type`
+> - **Markdown**
+>   - `fenced_code.block.language`
+> - **YAML**
+>   - `storage.type.tag`
 
 ## Comments
 
