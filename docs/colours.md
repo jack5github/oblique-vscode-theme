@@ -352,8 +352,7 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Python**
 >   - `entity.name.function`
 >   - `support.function`
->   - `meta.member.access`
->   - `punctuation.definition.arguments`
+>   - `meta.function-call.generic`
 >   - `punctuation.definition.decorator`
 >   - `punctuation.definition.parameters`
 > - **Markdown**
@@ -368,6 +367,10 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - **JavaScript**
 >     - `meta.definition.function`
 >     - `meta.definition.method`
+>   - **Lua**
+>     - `entity.name.function.lua`
+> - *Removed*
+>   - `meta.member.access`
 
 ## Variables
 
@@ -386,6 +389,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `entity.name.tag.css`
 > - **JavaScript**
 >   - `meta.object-literal.key`
+> - **Lua**
+>   - `entity.other.attribute`
 > - **Properties**
 >   - `entity.name.section`
 >   - `keyword.other.definition`
@@ -404,6 +409,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 > - **Python**
 >   - `constant.other.caps`
+>   - `support.variable.magic`
 > - **JavaScript**
 >   - `variable.other.constant`
 > - **CSS**
@@ -439,6 +445,9 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.function`
 >   - `support.type.exception`
 >   - `variable.parameter.function.language.special.self`
+>   - `variable.language.special.self`
+>   - `variable.parameter.function.language.special.cls`
+>   - `variable.language.special.cls`
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
@@ -460,7 +469,9 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `storage.type.class`
 >   - `storage.type.function`
 >   - `storage.type.string`
->   - `support.variable.magic`
+>   - `constant.character.format.placeholder`
+>   - `punctuation.definition.arguments`
+>   - `punctuation.definition.dict`
 >   - `punctuation.separator`
 >   - `punctuation.parenthesis`
 > - **JSON**
@@ -488,6 +499,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.binding-pattern`
 >   - `punctuation.definition.template-expression`
 >   - `punctuation.terminator`
+> - **Lua**
+>   - `source.lua`
 > - **Properties**
 >   - `punctuation.definition.entity`
 > - **TOML**

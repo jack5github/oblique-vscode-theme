@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.0.3 - Unreleased
+
+### Added
+
+- Added Lua support
+- Added Python class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
+- Added Python function semantic colour `meta.function-call.generic`
+- Added Python keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
+
+### Changed
+
+- Python `support.variable.magic` changed from keyword to constant variable semantic colour
+- Python `punctuation.definition.arguments` changed from function to keyword semantic colour
+
+### Removed
+
+- Removed `meta.member.access` colour
+
 ## 0.0.2 - 2026-03-12
 
 ### Added

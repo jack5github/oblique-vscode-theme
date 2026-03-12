@@ -83,8 +83,7 @@
 			"scope": [
 				"entity.name.function",
 				"support.function",
-				"meta.member.access",
-				"punctuation.definition.arguments",
+				"meta.function-call.generic",
 				"punctuation.definition.decorator",
 				"punctuation.definition.parameters",
 				"markup.underline.link",
@@ -98,7 +97,8 @@
 			"scope": [
 				"entity.name.function.python",
 				"meta.definition.function",
-				"meta.definition.method"
+				"meta.definition.method",
+				"entity.name.function.lua"
 			],
 			"settings": { "fontStyle": "bold" }
 		},
@@ -114,6 +114,7 @@
 				"entity.other.attribute-name",
 				"entity.name.tag.css",
 				"meta.object-literal.key",
+				"entity.other.attribute",
 				"entity.name.section",
 				"keyword.other.definition",
 				"support.type.property-name",
@@ -126,6 +127,7 @@
 		{
 			"scope": [
 				"constant.other.caps",
+				"support.variable.magic",
 				"variable.other.constant",
 				"support.constant"
 			],
@@ -152,6 +154,9 @@
 				"meta.function",
 				"support.type.exception",
 				"variable.parameter.function.language.special.self",
+				"variable.language.special.self",
+				"variable.parameter.function.language.special.cls",
+				"variable.language.special.cls",
 				"markup.bold",
 				"punctuation.definition.bold",
 				"meta.class",
@@ -170,7 +175,9 @@
 				"storage.type.class",
 				"storage.type.function",
 				"storage.type.string",
-				"support.variable.magic",
+				"constant.character.format.placeholder",
+				"punctuation.definition.arguments",
+				"punctuation.definition.dict",
 				"punctuation.separator",
 				"punctuation.parenthesis",
 				"meta.structure.array",
@@ -192,6 +199,7 @@
 				"punctuation.definition.binding-pattern",
 				"punctuation.definition.template-expression",
 				"punctuation.terminator",
+				"source.lua",
 				"punctuation.definition.entity",
 				"punctuation.definition.table",
 				"punctuation.eq",
