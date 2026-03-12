@@ -52,6 +52,7 @@
 		"tab.activeBorder": "#e33c02",
 		"tab.unfocusedActiveBorder": "#e33c02",
 		"editorGroupHeader.tabsBackground": "#0a1515",
+		"settings.modifiedItemIndicator": "#ff642e",
 		"editor.selectionBackground": "#ffffff1b",
 		"selection.background": "#ffffff1b",
 		"editor.inactiveSelectionBackground": "#ffffff0f",

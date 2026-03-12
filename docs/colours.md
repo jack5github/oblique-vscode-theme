@@ -270,6 +270,12 @@ The tab bar background colours should be the same as the inactive tab colours, t
 
 > - `editorGroupHeader.tabsBackground`
 
+### Modified Settings
+
+Modified settings show a vertical bar on their left side. While this can be similar to the accent colour, its proximity to links (which are also the accent colour mixed with white) makes it blend in too much. A mix of 9:2 is used, as it is not too dark to blend in, but not too bright to look washed out.
+
+> - `settings.modifiedItemIndicator`
+
 ### Text Selection
 
 Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
