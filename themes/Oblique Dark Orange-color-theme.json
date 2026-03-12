@@ -40,6 +40,7 @@
 		"editor.findMatchHighlightBackground": "#ffffff11",
 		"editor.findMatchBackground": "#ffffff11",
 		"editor.wordHighlightBackground": "#ffffff09",
+		"extensionIcon.starForeground": "#8ea5a5",
 		"extensionIcon.verifiedForeground": "#1b8fd6",
 		"editor.background": "#0d1a1a",
 		"tab.inactiveBackground": "#0a1515",

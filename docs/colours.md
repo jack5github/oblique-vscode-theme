@@ -207,6 +207,16 @@ Word matches are much less important than search terms, but still need to be leg
 
 ### Extensions
 
+#### Star Count
+
+The star count icon that appears on extensions is not yellow enough in the base dark theme, however in my testing, I was unable to create a more saturated yellow that wasn't brighter than the original, which would create a distraction.
+
+Because of this, I have instead chosen to go with a minimal design, where the star count icon has the same colour as the sidebar text, much like the download count icon, though as a 9:2 mix with the sidebar background, so the icon is as dark as possible without appearing disabled.
+
+> - `extensionIcon.starForeground`
+
+#### Verified Checkmark
+
 It is possible for extensions to have verified publishers, which gives them a checkmark before their name. The colour "button blue" is synonymous with such checkmarks thanks to Twitter (though both it and X suck though), so I will continue to use it here.
 
 Before creating this theme, I used `#1da1f2fe`. The alpha of #fe was likely a remnant of a visual bug with an old version of Visual Studio Code, so it has been discarded. As for the colour itself, it is too bright, so I have settled on a 7:1 mix with the sidebar background colour. Any darker and it looks too faded.

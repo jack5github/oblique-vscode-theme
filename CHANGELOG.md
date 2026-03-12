@@ -6,6 +6,7 @@
 
 - Added C#, GitHub Actions (YAML), Ignore, JavaScript and Properties support
 - Added colour for active links
+- Added colour for extension star counts
 - Added colours for editor widgets
 - Added colours for input options
 - Added colours for panels and terminals
