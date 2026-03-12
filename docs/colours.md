@@ -181,8 +181,13 @@ The focus border is the line that appears around the active element, which is of
 ### Input Buttons
 
 <!-- TODO: Determine justification for input buttons using same colour -->
-The sidebar can contain inputs with square buttons in them, which are surrounded by a border while selected. These borders can be the same colour as the focus border.
+The sidebar can contain inputs with square buttons in them, which are surrounded by a border while selected. These have to blend in with both the focus border colour and the input background colour, as interaction with them is similar in nature.
 
+Starting with the background colour, I settled on a 21:8 mix, `#a9340a`. Any darker or lighter and it looks too faded or distracting.
+
+For the border, I found that the input options look better when they have no border. Instead, I had to choose between fully transparent, which reveals the full size of options, or the same colour as the input background, which causes options to shrink a little. I settled on full transparency, as it allows the selected options to retain the modern look of the rest of the theme, rather than appearing boxy and too spread apart.
+
+> - `inputOption.activeBackground`
 > - `inputOption.activeBorder`
 
 ### Extensions
