@@ -4,7 +4,6 @@
 		"mode": ["Dark"],
 		"accent": ["Orange"]
 	},
-	"//": "TODO: Finish writing colour definitions, up to `editor.findMatchHighlightBackground`",
 	"colours": {
 		"//": "Base colour definitions, these are mixed with each-other",
 		"black": { "hex": "#000000" },
@@ -13,33 +12,8 @@
 		"yellow": { "hex": "#ffff00" },
 		"green": { "hex": "#00ff00" },
 		"cyan": { "hex": "#00ffff" },
-		"//": "TODO: Add brightness colour definitions for light mode",
-		"//": "Brightness colour definitions, 'safe' colours are safe on eyes and should be used for large or prevalent elements",
-		"darkest": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"id": "black"
-				}
-			]
-		},
-		"brightest": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"id": "white"
-				}
-			]
-		},
-		"brightestSafe": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"id": "cyan"
-				}
-			]
-		},
-		"//": "Accent colour definition",
+		"blue": { "hex": "#0000ff" },
+		"pink": { "hex": "#ff00ff" },
 		"accent": {
 			"//": "Oblique Theme uses a single accent colour for simplicity and customisability. It is directly controlled by a variant's `accent` value.",
 			"eval": [
@@ -52,7 +26,6 @@
 		},
 		"//": "Fully transparent elements",
 		"hidden": {
-			"//": "TODO: Handle 3-character-long hex codes for transparencies",
 			"hex": "#00000000",
 			"elements": [
 				"// Activity bar active icon border is distracting",
@@ -67,71 +40,72 @@
 		"background": {
 			"//": "The editor area background is the most important background colour, as it takes up the most space",
 			"mix": [
-				{ "id": "darkest", "weight": 18 },
-				{ "id": "brightest", "weight": 1 },
-				{ "id": "brightestSafe", "weight": 1 }
+				{ "ref": "black", "weight": 18 },
+				{ "ref": "cyan", "weight": 1 },
+				{ "ref": "white", "weight": 1 }
 			],
-			"elements": ["editor.background"]
+			"elements": "editor.background"
 		},
 		"gutterBackground": {
 			"mix": [
-				{ "id": "background", "weight": 4 },
-				{ "id": "darkest", "weight": 1 }
+				{ "ref": "black", "weight": 1 },
+				{ "ref": "background", "weight": 4 }
 			],
-			"elements": ["editorGutter.background"]
+			"elements": "editorGutter.background"
 		},
 		"sidebarsBackground": {
 			"mix": [
-				{ "id": "background", "weight": 2 },
-				{ "id": "darkest", "weight": 1 }
+				{ "ref": "black", "weight": 1 },
+				{ "ref": "background", "weight": 2 }
 			],
 			"elements": ["sideBar.background", "panel.background"]
 		},
 		"//": "The top bar and status bar should blend in to not be a distraction, sidebar colour chosen as it is darker than tabs",
 		"titleBarBackground": {
-			"id": "sidebarsBackground",
-			"elements": ["titleBar.background"]
+			"ref": "sidebarsBackground",
+			"elements": "titleBar.activeBackground"
 		},
 		"statusBarBackground": {
-			"id": "sidebarsBackground",
-			"elements": ["statusBar.background", "statusBar.noFolderBackground"],
-			"//": "TODO: Add status bar debugging colours"
+			"ref": "sidebarsBackground",
+			"elements": ["statusBar.background", "statusBar.noFolderBackground"]
 		},
+		"//": "TODO: Add status bar debugging colours",
 		"activityBarBackground": {
 			"mix": [
-				{ "id": "background", "weight": 3 },
-				{ "id": "darkest", "weight": 5 }
+				{ "ref": "black", "weight": 5 },
+				{ "ref": "background", "weight": 3 }
 			],
-			"elements": ["activityBar.background"]
+			"elements": "activityBar.background"
 		},
 		"terminalBackground": {
 			"mix": [
-				{ "id": "background", "weight": 2 },
-				{ "id": "darkest", "weight": 7 }
+				{ "ref": "background", "weight": 2 },
+				{ "ref": "black", "weight": 7 }
 			],
-			"elements": ["terminal.background"]
+			"elements": "terminal.background"
 		},
 		"//": "Text colour definition",
 		"text": {
 			"mix": [
-				{ "id": "darkest", "weight": 2 },
-				{ "id": "brightest", "weight": 6 },
-				{ "id": "brightestSafe", "weight": 1 }
+				{ "ref": "white", "weight": 6 },
+				{ "ref": "cyan", "weight": 1 },
+				{ "ref": "black", "weight": 2 }
 			],
-			"elements": ["editor.foreground"]
+			"elements": "editor.foreground"
 		},
 		"//": "Activity bar icon colour definitions",
 		"activityBarIconInactive": {
+			"//": "TODO: Change mix to refer to `activityBarBackground`",
 			"mix": [
-				{ "id": "brightestSafe", "weight": 11 },
-				{ "id": "darkest", "weight": 12 }
+				{ "ref": "cyan", "weight": 11 },
+				{ "ref": "black", "weight": 12 }
 			],
-			"elements": ["activityBar.inactiveForeground"]
+			"elements": "activityBar.inactiveForeground"
 		},
 		"activityBarIconActive": {
 			"mix": [
-				{ "id": "brightest", "weight": 7 },
-				{ "id": "text", "weight": 5 }
+				{ "ref": "white", "weight": 7 },
+				{ "ref": "text", "weight": 5 }
 			],
 			"elements": [
 				"activityBar.foreground",
@@ -141,30 +115,46 @@
 		},
 		"activityBarBadgeBackground": {
 			"mix": [
-				{ "id": "activityBarIconInactive", "weight": 2 },
-				{ "id": "activityBarBackground", "weight": 5 }
+				{ "ref": "activityBarIconInactive", "weight": 2 },
+				{ "ref": "activityBarBackground", "weight": 5 }
 			],
-			"elements": ["activityBarBadge.background"]
+			"elements": "activityBarBadge.background"
 		},
 		"//": "Other text colour definitions",
 		"sidebarsText": {
-			"id": "text",
-			"elements": ["sideBar.foreground"]
+			"ref": "text",
+			"elements": "sideBar.foreground"
 		},
 		"ignoredText": {
+			"//": "TODO: Change mix to refer to `background`",
 			"mix": [
-				{ "id": "text", "weight": 14 },
-				{ "id": "darkest", "weight": 15 }
+				{ "ref": "text", "weight": 14 },
+				{ "ref": "black", "weight": 15 }
 			],
-			"elements": ["gitDecoration.ignoredResourceForeground"]
+			"elements": "gitDecoration.ignoredResourceForeground"
 		},
 		"sidebarTitles": {
-			"id": "activityBarIconActive",
+			"ref": "activityBarIconActive",
 			"elements": ["sideBarTitle.foreground", "sideBarSectionHeader.foreground"]
+		},
+		"//": "Button colour definitions",
+		"buttonBackground": {
+			"mix": [
+				{ "ref": "accent", "weight": 6 },
+				{ "ref": "sidebarsBackground", "weight": 1 }
+			],
+			"elements": "button.background"
+		},
+		"buttonBackgroundHover": {
+			"mix": [
+				{ "ref": "accent", "weight": 25 },
+				{ "ref": "white", "weight": 1 }
+			],
+			"elements": "button.hoverBackground"
 		},
 		"//": "Editor tabs colour definitions",
 		"tabsBackground": {
-			"id": "gutterBackground",
+			"ref": "gutterBackground",
 			"elements": [
 				"tab.inactiveBackground",
 				"// The below colour for the tab bar creates the illusion that tabs are part of the editor area",
@@ -173,15 +163,16 @@
 		},
 		"tabsBackgroundActive": {
 			"mix": [
-				{ "id": "tabsBackground", "weight": 15 },
-				{ "id": "brightest", "weight": 1 }
+				{ "ref": "tabsBackground", "weight": 15 },
+				{ "ref": "white", "weight": 1 }
 			],
-			"elements": ["tab.activeBackground"]
+			"elements": "tab.activeBackground"
 		},
 		"tabsBackgroundHover": {
+			"//": "TODO: Change mix to refer to `tabsBackground`",
 			"mix": [
-				{ "id": "background", "weight": 3 },
-				{ "id": "tabsBackgroundActive", "weight": 2 }
+				{ "ref": "background", "weight": 3 },
+				{ "ref": "tabsBackgroundActive", "weight": 2 }
 			],
 			"elements": [
 				"tab.hoverBackground",
@@ -190,68 +181,73 @@
 				"tab.unfocusedActiveBackground"
 			]
 		},
+		"focusAccent": {
+			"//": "Applies to current focused element, e.g. sidebar areas and inputs",
+			"mix": [
+				{ "ref": "buttonBackground", "weight": 4 },
+				{ "ref": "accent", "weight": 1 }
+			],
+			"elements": "focusBorder"
+		},
+		"tabsActiveBorder": {
+			"ref": "focusAccent",
+			"elements": [
+				"tab.activeBorder",
+				"// Unfocused active tab uses the same colour due to thinner border",
+				"tab.unfocusedActiveBorder"
+			]
+		},
 		"//": "Activity bar active icon background",
 		"activityBarBackgroundActive": {
-			"id": "tabsBackgroundActive",
-			"elements": ["activityBar.activeBackground"]
-		},
-		"//": "Button colour definitions",
-		"buttonBackground": {
-			"mix": [
-				{ "id": "accent", "weight": 6 },
-				{ "id": "sidebarsBackground", "weight": 1 }
-			],
-			"elements": ["button.background"]
-		},
-		"buttonBackgroundHover": {
-			"mix": [
-				{ "id": "accent", "weight": 25 },
-				{ "id": "brightest", "weight": 1 }
-			],
-			"elements": ["button.hoverBackground"]
+			"ref": "tabsBackgroundActive",
+			"elements": "activityBar.activeBackground"
 		},
 		"//": "Link colour definitions",
 		"link": {
 			"mix": [
-				{ "id": "accent", "weight": 4 },
-				{ "id": "brightest", "weight": 1 }
+				{ "ref": "accent", "weight": 4 },
+				{ "ref": "white", "weight": 1 }
 			],
-			"elements": ["textLink.foreground"]
+			"elements": "textLink.foreground"
 		},
 		"linkHover": {
 			"mix": [
-				{ "id": "accent", "weight": 1 },
-				{ "id": "brightest", "weight": 5 }
+				{ "ref": "accent", "weight": 1 },
+				{ "ref": "white", "weight": 5 }
 			],
-			"elements": ["textLink.activeForeground"]
+			"elements": "textLink.activeForeground"
 		},
 		"//": "Extension colour definitions",
 		"extensionStars": {
 			"mix": [
-				{ "id": "sidebarsText", "weight": 9 },
-				{ "id": "sidebarsBackground", "weight": 2 }
+				{ "ref": "sidebarsText", "weight": 9 },
+				{ "ref": "sidebarsBackground", "weight": 2 }
 			],
-			"elements": ["extensionIcon.starForeground"]
+			"elements": "extensionIcon.starForeground"
 		},
 		"extensionVerified": {
 			"mix": [
 				{ "hex": "#1da1f2", "weight": 7 },
-				{ "id": "sidebarsBackground", "weight": 1 }
+				{ "ref": "sidebarsBackground", "weight": 1 }
 			],
-			"elements": ["extensionIcon.verifiedForeground"]
+			"elements": "extensionIcon.verifiedForeground"
 		},
 		"//": "Sidebars tab colour definitions",
-		"sidebarstabsBackground": {
-			"id": "background",
-			"elements": ["sideBarSectionHeader.background"]
+		"sidebarsTabsBackground": {
+			"ref": "background",
+			"elements": "sideBarSectionHeader.background"
 		},
-		"sidebarsTabBorder": {
-			"id": "tabsBackgroundActive",
-			"elements": ["sideBarSectionHeader.border"]
+		"sidebarsTabsBorder": {
+			"ref": "tabsBackgroundActive",
+			"elements": "sideBarSectionHeader.border"
+		},
+		"statusBarBorder": {
+			"ref": "tabsBackgroundActive",
+			"elements": ["statusBar.border", "statusBar.noFolderBorder"]
 		},
 		"//": "Command Palette colour definitions",
 		"commandBackground": {
-			"id": "tabsBackgroundHover",
+			"ref": "tabsBackgroundHover",
 			"elements": [
 				"// Command Palette",
 				"quickInput.background",
@@ -266,8 +262,8 @@
 		},
 		"commandHover": {
 			"mix": [
-				{ "id": "commandBackground", "weight": 11 },
-				{ "id": "brightest", "weight": 1 }
+				{ "ref": "commandBackground", "weight": 11 },
+				{ "ref": "white", "weight": 1 }
 			],
 			"elements": [
 				"// Command Palette",
@@ -279,58 +275,90 @@
 			]
 		},
 		"commandGroupText": {
-			"id": "link",
+			"ref": "link",
 			"elements": "pickerGroup.foreground"
 		},
 		"commandShortcutBackground": {
 			"mix": [
-				{ "id": "commandBackground", "weight": 28 },
-				{ "id": "brightest", "weight": 1 }
+				{ "ref": "commandBackground", "weight": 28 },
+				{ "ref": "white", "weight": 1 }
 			],
-			"elements": ["keybindingLabel.background"],
+			"elements": "keybindingLabel.background",
 			"//": "Keybindings on active items have the same background colour as the active item itself"
 		},
 		"//": "Input colour definitions",
-		"inputBorderActive": {
-			"//": "Also applies to current focused element",
-			"mix": [
-				{ "id": "buttonBackground", "weight": 4 },
-				{ "id": "accent", "weight": 1 }
-			],
-			"elements": ["focusBorder"]
-		},
 		"inputButtonBackgroundActive": {
 			"mix": [
-				{ "id": "inputBorderActive", "weight": 21 },
-				{ "id": "commandBackground", "weight": 8 }
+				{ "ref": "focusAccent", "weight": 21 },
+				{ "ref": "commandBackground", "weight": 8 }
 			],
-			"elements": ["inputOption.activeBackground"]
+			"elements": "inputOption.activeBackground"
 		},
 		"//": "Settings colour definitions",
 		"modifiedSettingBorder": {
 			"mix": [
-				{ "id": "accent", "weight": 9 },
-				{ "id": "brightest", "weight": 2 }
+				{ "ref": "accent", "weight": 9 },
+				{ "ref": "white", "weight": 2 }
 			],
-			"elements": ["settings.modifiedItemIndicator"]
+			"elements": "settings.modifiedItemIndicator"
+		},
+		"//": "Search colour definitions",
+		"textSearchHighlightBackground": {
+			"hex": "#ffffff11",
+			"elements": [
+				"editor.findMatchHighlightBackground",
+				"// Currently selected match, uses same alpha",
+				"editor.findMatchBackground"
+			]
+		},
+		"textWordHighlightBackground": {
+			"hex": "#ffffff09",
+			"elements": "editor.wordHighlightBackground"
+		},
+		"//": "Selection colour definitions",
+		"textSelectedBackground": {
+			"hex": "#ffffff1b",
+			"elements": ["editor.selectionBackground", "selection.background"]
+		},
+		"textSelectedBackgroundInactive": {
+			"hex": "#ffffff0f",
+			"elements": "editor.inactiveSelectionBackground"
 		},
 		"//": "Semantic token colour definitions, the main 6 create bracket rainbow",
-		"//": "TODO: Convert to mixes",
+		"//": "TODO: Reduce complexity of below semantic colour",
+		"keywordsMixPink": {
+			"mix": [
+				{ "ref": "red", "weight": 7 },
+				{ "ref": "pink", "weight": 5 }
+			]
+		},
+		"keywordsMixBrightest": {
+			"mix": [
+				{ "ref": "white", "weight": 11 },
+				{ "ref": "cyan", "weight": 1 },
+				{ "ref": "black", "weight": 2 }
+			]
+		},
 		"keywordsControlFlow": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#de82ad"
-				}
+			"mix": [
+				{ "ref": "keywordsMixPink", "weight": 11 },
+				{ "ref": "keywordsMixBrightest", "weight": 16 }
 			],
-			"semantics": ["keyword"],
-			"elements": ["editorBracketHighlight.foreground1"],
+			"semantics": "keyword",
+			"elements": "editorBracketHighlight.foreground1",
 			"tokens": [
 				"// C#",
 				"punctuation.curlybrace",
 				"punctuation.squarebracket",
 				"// CSS",
 				"punctuation.section",
+				"// Elm",
+				"keyword.type.elm",
+				"punctuation.bracket",
+				"punctuation.parens",
+				"meta.function.type-declaration",
+				"meta.function.type-record",
+				"constant.unit.elm",
 				"// GitHub Actions",
 				"meta.embedded.block",
 				"// HTML",
@@ -368,6 +396,8 @@
 				"punctuation.definition.dict",
 				"punctuation.separator",
 				"punctuation.parenthesis",
+				"// SourcePawn",
+				"source.sourcepawn",
 				"// TOML",
 				"punctuation.definition.table",
 				"punctuation.eq",
@@ -382,15 +412,28 @@
 				"meta.flow-sequence"
 			]
 		},
+		"//": "TODO: Reduce complexity of below semantic colour",
+		"functionsMixBlue": {
+			"mix": [
+				{ "ref": "blue", "weight": 5 },
+				{ "ref": "white", "weight": 1 },
+				{ "ref": "black", "weight": 1 }
+			]
+		},
+		"functionsMixBrightest": {
+			"mix": [
+				{ "ref": "white", "weight": 18 },
+				{ "ref": "cyan", "weight": 1 },
+				{ "ref": "black", "weight": 2 }
+			]
+		},
 		"functions": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#adb6e4"
-				}
+			"mix": [
+				{ "ref": "functionsMixBlue", "weight": 1 },
+				{ "ref": "functionsMixBrightest", "weight": 3 }
 			],
-			"semantics": ["function"],
-			"elements": ["editorBracketHighlight.foreground2"],
+			"semantics": "function",
+			"elements": "editorBracketHighlight.foreground2",
 			"tokens": [
 				"// JavaScript",
 				"meta.brace.round",
@@ -407,15 +450,18 @@
 			]
 		},
 		"constantValues": {
+			"//": "TODO: Change mix to refer to `background` and `text`",
 			"mix": [
-				{ "id": "green", "weight": 24 },
-				{ "id": "brightest", "weight": 2 },
-				{ "id": "brightestSafe", "weight": 1 },
-				{ "id": "darkest", "weight": 4 }
+				{ "ref": "green", "weight": 24 },
+				{ "ref": "white", "weight": 2 },
+				{ "ref": "cyan", "weight": 1 },
+				{ "ref": "black", "weight": 4 }
 			],
-			"semantics": ["number"],
-			"elements": ["editorBracketHighlight.foreground3"],
+			"semantics": "number",
+			"elements": "editorBracketHighlight.foreground3",
 			"tokens": [
+				"// CSS",
+				"constant.other.colour",
 				"// JavaScript",
 				"constant.character.escape",
 				"// Markdown",
@@ -428,16 +474,19 @@
 			]
 		},
 		"variables": {
+			"//": "TODO: Change mix to refer to `background` and `text`",
 			"mix": [
-				{ "id": "yellow", "weight": 10 },
-				{ "id": "brightest", "weight": 18 },
-				{ "id": "darkest", "weight": 2 }
+				{ "ref": "yellow", "weight": 10 },
+				{ "ref": "white", "weight": 18 },
+				{ "ref": "black", "weight": 2 }
 			],
-			"semantics": ["variable"],
-			"elements": ["editorBracketHighlight.foreground4"],
+			"semantics": "variable",
+			"elements": "editorBracketHighlight.foreground4",
 			"tokens": [
 				"// CSS",
 				"entity.name.tag.css",
+				"// Elm",
+				"meta.record.field",
 				"// HTML",
 				"meta.tag.structure",
 				"meta.tag.metadata",
@@ -456,6 +505,8 @@
 				"variable",
 				"meta.item-access.arguments",
 				"meta.indexed-name",
+				"// SourcePawn",
+				"support.variable.single-line.spdoc",
 				"// TOML",
 				"support.type.property-name",
 				"// XML",
@@ -466,8 +517,8 @@
 		},
 		"constantVariables": {
 			"mix": [
-				{ "id": "variables", "weight": 29 },
-				{ "id": "constantValues", "weight": 18 }
+				{ "ref": "variables", "weight": 29 },
+				{ "ref": "constantValues", "weight": 18 }
 			],
 			"tokens": [
 				"// CSS",
@@ -479,40 +530,49 @@
 				"support.variable.magic"
 			]
 		},
+		"//": "TODO: Reduce complexity of below semantic colour",
 		"typesMixOrange": {
 			"mix": [
-				{ "id": "red", "weight": 12 },
-				{ "id": "yellow", "weight": 23 }
+				{ "ref": "red", "weight": 12 },
+				{ "ref": "yellow", "weight": 23 }
 			]
 		},
 		"types": {
 			"mix": [
-				{ "id": "typesMixOrange", "weight": 3 },
-				{ "id": "brightest", "weight": 1 },
-				{ "id": "darkest", "weight": 1 }
+				{ "ref": "typesMixOrange", "weight": 3 },
+				{ "ref": "white", "weight": 1 },
+				{ "ref": "black", "weight": 1 }
 			],
-			"semantics": ["type"],
-			"elements": ["editorBracketHighlight.foreground5"],
+			"semantics": "type",
+			"elements": "editorBracketHighlight.foreground5",
 			"tokens": [
 				"// C#",
 				"keyword.type",
+				"// Elm",
+				"storage.type.elm",
+				"constant.type-constructor",
 				"// Markdown",
 				"fenced_code.block.language",
 				"// Python",
 				"support.type",
 				"meta.item-access",
+				"// SourcePawn",
+				"storage.type.built-in",
 				"// YAML",
 				"storage.type.tag"
 			]
 		},
 		"classes": {
+			"//": "TODO: Change mix to refer to `background` and `text`",
 			"mix": [
-				{ "id": "red", "weight": 11 },
-				{ "id": "brightest", "weight": 8 }
+				{ "ref": "red", "weight": 11 },
+				{ "ref": "white", "weight": 8 }
 			],
-			"semantics": ["class"],
-			"elements": ["editorBracketHighlight.foreground6"],
+			"semantics": "class",
+			"elements": "editorBracketHighlight.foreground6",
 			"tokens": [
+				"// Elm",
+				"meta.module.name",
 				"// JavaScript",
 				"meta.class",
 				"variable.language.this",
@@ -530,8 +590,8 @@
 			]
 		},
 		"strings": {
-			"id": "text",
-			"semantics": ["string"],
+			"ref": "text",
+			"semantics": "string",
 			"tokens": [
 				"// HTML",
 				"source.css",
@@ -544,13 +604,8 @@
 			]
 		},
 		"comments": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#536060"
-				}
-			],
-			"semantics": ["comment"],
+			"ref": "ignoredText",
+			"semantics": "comment",
 			"tokens": [
 				"// Python",
 				"comment",

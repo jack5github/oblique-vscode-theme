@@ -66,12 +66,12 @@ function evalColour(colourDef, colours, kwargs) {
 				continue;
 			}
 		}
-		if (colourDef[i].id !== undefined) {
-			if (colours[colourDef[i].id] !== undefined) {
-				return colours[colourDef[i].id];
+		if (colourDef[i].ref !== undefined) {
+			if (colours[colourDef[i].ref] !== undefined) {
+				return colours[colourDef[i].ref];
 			}
 			throw new Error(
-				`Invalid colour at index ${i} in ${JSON.stringify(colourDef)} for ${JSON.stringify(kwargs)}, ${colourDef[i].id} not found`
+				`Invalid colour at index ${i} in ${JSON.stringify(colourDef)} for ${JSON.stringify(kwargs)}, ${colourDef[i].ref} not found`
 			);
 		}
 		if (colourDef[i].mix !== undefined) {
@@ -146,7 +146,6 @@ for (let i = 0; i < iters.length; i++) {
 			iters[i]
 		);
 	}
-	console.dir(colours, { depth: null });
 	let themeName = 'Oblique';
 	for (let varId in iters[i]) {
 		if (varId === '') {
@@ -158,8 +157,12 @@ for (let i = 0; i < iters.length; i++) {
 	themeJson.name = themeName;
 	for (let colourId in colours) {
 		let hex = rgbaToHex(colours[colourId]);
+		console.log(`${colourId}: ${hex} ${JSON.stringify(colours[colourId])}`);
 		let elements = coloursJson.colours[colourId].elements;
 		if (elements !== undefined) {
+			if (typeof elements === 'string') {
+				elements = [elements];
+			}
 			for (let i = 0; i < elements.length; i++) {
 				if (elements[i].startsWith('//')) {
 					continue;
@@ -169,6 +172,9 @@ for (let i = 0; i < iters.length; i++) {
 		}
 		let semantics = coloursJson.colours[colourId].semantics;
 		if (semantics !== undefined) {
+			if (typeof semantics === 'string') {
+				semantics = [semantics];
+			}
 			for (let i = 0; i < semantics.length; i++) {
 				if (semantics[i].startsWith('//')) {
 					continue;
@@ -178,6 +184,9 @@ for (let i = 0; i < iters.length; i++) {
 		}
 		let tokens = coloursJson.colours[colourId].tokens;
 		if (tokens !== undefined) {
+			if (typeof tokens === 'string') {
+				tokens = [tokens];
+			}
 			for (let i = tokens.length - 1; i >= 0; i--) {
 				if (tokens[i].startsWith('//')) {
 					tokens.splice(i, 1);
