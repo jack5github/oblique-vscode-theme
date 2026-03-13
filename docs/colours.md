@@ -1,14 +1,16 @@
 # Colours
 
-## Topbar
+## Title Bar
 
 ### Background
 
-The topbar of Visual Studio Code must do its best to blend in with the rest of the program, for otherwise it can be a major distraction.
+The title bar of Visual Studio Code must do its best to blend in with the rest of the program, for otherwise it can be a major distraction.
 
-Before creating this theme, I had the topbar blend in with the line number gutter. This is no longer appropriate, for tabs can also have that colour, so I have decided that it will instead inherit the colour of the sidebar.
+Before creating this theme, I had the title bar blend in with the line number gutter. This is no longer appropriate, for tabs can also have that colour, so I have decided that it will instead inherit the colour of the sidebar.
 
 > - `titleBar.activeBackground`
+
+<!-- TODO: When defocusing Visual Studio Code, the title bar becomes too washed out. Reduce the impact of this colour change, and compare it to another identically-debugged window. -->
 
 ### Command Palette
 
@@ -95,7 +97,9 @@ With the change of the editor area's colour, there is the opportunity to revisit
 > - `editorGutter.background`
 > - `terminal.background`
 
-### Icons
+### Activity Bar
+
+#### Icons
 
 The icons that appear in the activity bar need to be dark enough to not be distracting, but light enough that they can still be discerned. I am making this theme based on my favourite icon theme, Carbon Product Icons by Anthony Fu.
 
@@ -118,7 +122,7 @@ The active icon border should be disabled, as it is distracting. Instead, a back
 > - `activityBar.activeBorder` (invisible)
 > - `activityBar.activeBackground`
 
-### Icon Badges
+#### Icon Badges
 
 Icon badges in Visual Studio Code are meant to represent notifications, however they are used for a large variey of purposes, so many that their presence becomes somewhat of an annoyance. In my theme their background should be toned down, though still be visible. Their foreground can be the same as the active icon colour for simplicity.
 
@@ -126,6 +130,8 @@ Before creating this theme, I used #404040, which is surprisingly too bright of 
 
 > - `activityBarBadge.background`
 > - `activityBarBadge.foreground`
+
+<!-- TODO: Set colour of title bar and other sidebar icons to blend in with background -->
 
 ### Text
 
@@ -335,6 +341,8 @@ When debugging, the border uses a 10:1 mix of the background colour and pure whi
 
 > - `statusBar.debuggingBorder`
 
+<!-- TODO: Set status bar foreground colour to blend in with background -->
+
 ## Debugging
 
 ### Toolbar
@@ -435,6 +443,7 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 ## Functions
 
+<!-- TODO: Consider using a deeper, darker blue for Markdown links, as they blend in too much with normal text -->
 > - **Python**
 >   - `entity.name.function`
 >   - `support.function`
