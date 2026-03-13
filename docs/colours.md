@@ -355,6 +355,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `meta.function-call.generic`
 >   - `punctuation.definition.decorator`
 >   - `punctuation.definition.parameters`
+> - **Elm**
+>   - `constant.type-constructor`
 > - **Markdown**
 >   - `markup.underline.link`
 >   - `punctuation.definition.link`
@@ -387,6 +389,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `entity.other.attribute-name`
 > - **CSS**
 >   - `entity.name.tag.css`
+> - **Elm**
+>   - `meta.record.field`
 > - **JavaScript**
 >   - `meta.object-literal.key`
 > - **Lua**
@@ -394,6 +398,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Properties**
 >   - `entity.name.section`
 >   - `keyword.other.definition`
+> - **SourcePawn**
+>   - `support.variable.single-line.spdoc`
 > - **TOML**
 >   - `support.type.property-name`
 > - **XML**
@@ -432,6 +438,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `constant.numeric`
 >   - `constant.language`
 >   - `constant.other.ellipsis`
+> - **CSS**
+>   - `constant.other.color`
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
@@ -448,6 +456,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `variable.language.special.self`
 >   - `variable.parameter.function.language.special.cls`
 >   - `variable.language.special.cls`
+> - **Elm**
+>   - `meta.module.name`
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
@@ -493,6 +503,13 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **C#**
 >   - `punctuation.curlybrace`
 >   - `punctuation.squarebracket`
+> - **Elm**
+>   - `keyword.type.elm`
+>   - `punctuation.bracket`
+>   - `punctuation.parens`
+>   - `meta.function.type-declaration`
+>   - `meta.function.type-record`
+>   - `constant.unit.elm`
 > - **JavaScript**
 >   - `storage.type`
 >   - `meta.array`
@@ -503,6 +520,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `source.lua`
 > - **Properties**
 >   - `punctuation.definition.entity`
+> - **SourcePawn**
+>   - `source.sourcepawn`
 > - **TOML**
 >   - `punctuation.definition.table`
 >   - `punctuation.eq`
@@ -525,8 +544,13 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.item-access`
 > - **C#**
 >   - `keyword.type`
+> - **Elm**
+>   - `storage.type.elm`
+>   - `constant.type-constructor`
 > - **Markdown**
 >   - `fenced_code.block.language`
+> - **SourcePawn**
+>   - `storage.type.built-in`
 > - **YAML**
 >   - `storage.type.tag`
 
