@@ -4,28 +4,22 @@
 		"mode": ["Dark"],
 		"accent": ["Orange"]
 	},
+	"//": "TODO: Finish writing colour definitions, up to `editor.findMatchHighlightBackground`",
 	"colours": {
-		"//": "Base colour definitions",
+		"//": "Base colour definitions, these are mixed with each-other",
 		"black": { "hex": "#000000" },
 		"white": { "hex": "#ffffff" },
+		"red": { "hex": "#ff0000" },
+		"yellow": { "hex": "#ffff00" },
+		"green": { "hex": "#00ff00" },
 		"cyan": { "hex": "#00ffff" },
-		"invisible": {
-			"//": "TODO: Handle 3-character-long hex codes for transparencies",
-			"hex": "#00000000",
-			"elements": [
-				"// Activity bar active icon border is distracting",
-				"activityBar.activeBorder",
-				"// Tab vertical borders are distracting",
-				"tab.border"
-			]
-		},
+		"//": "TODO: Add brightness colour definitions for light mode",
 		"//": "Brightness colour definitions, 'safe' colours are safe on eyes and should be used for large or prevalent elements",
 		"darkest": {
 			"eval": [
 				{
 					"if": "kwargs.mode === \"Dark\"",
-					"id": "black",
-					"//": "TODO: Add darkest for light mode"
+					"id": "black"
 				}
 			]
 		},
@@ -33,8 +27,7 @@
 			"eval": [
 				{
 					"if": "kwargs.mode === \"Dark\"",
-					"id": "white",
-					"//": "TODO: Add brightest for light mode"
+					"id": "white"
 				}
 			]
 		},
@@ -42,8 +35,7 @@
 			"eval": [
 				{
 					"if": "kwargs.mode === \"Dark\"",
-					"id": "cyan",
-					"//": "TODO: Add brightest safe for light mode"
+					"id": "cyan"
 				}
 			]
 		},
@@ -58,72 +50,68 @@
 				}
 			]
 		},
+		"//": "Fully transparent elements",
+		"hidden": {
+			"//": "TODO: Handle 3-character-long hex codes for transparencies",
+			"hex": "#00000000",
+			"elements": [
+				"// Activity bar active icon border is distracting",
+				"activityBar.activeBorder",
+				"// Tab vertical borders are distracting",
+				"tab.border",
+				"// Fully transparent input option borders allows selected options to retain the modern look of the rest of the theme, rather than appearing boxy and too spread apart",
+				"inputOption.activeBorder"
+			]
+		},
 		"//": "Background colour definitions, starting with the editor area, getting progressively lower and further out",
 		"background": {
-			"eval": [
-				{
-					"mix": [
-						{ "id": "darkest", "weight": 18 },
-						{ "id": "brightest", "weight": 1 },
-						{ "id": "brightestSafe", "weight": 1 }
-					]
-				}
+			"//": "The editor area background is the most important background colour, as it takes up the most space",
+			"mix": [
+				{ "id": "darkest", "weight": 18 },
+				{ "id": "brightest", "weight": 1 },
+				{ "id": "brightestSafe", "weight": 1 }
 			],
 			"elements": ["editor.background"]
 		},
 		"gutterBackground": {
-			"eval": [
-				{
-					"mix": [
-						{ "id": "background", "weight": 4 },
-						{ "id": "darkest", "weight": 1 }
-					]
-				}
+			"mix": [
+				{ "id": "background", "weight": 4 },
+				{ "id": "darkest", "weight": 1 }
 			],
 			"elements": ["editorGutter.background"]
 		},
 		"sidebarsBackground": {
-			"eval": [
-				{
-					"mix": [
-						{ "id": "background", "weight": 2 },
-						{ "id": "darkest", "weight": 1 }
-					]
-				}
+			"mix": [
+				{ "id": "background", "weight": 2 },
+				{ "id": "darkest", "weight": 1 }
 			],
-			"elements": [
-				"sideBar.background",
-				"panel.background",
-				"// The top bar and status bar should blend in to not be a distraction, sidebar colour chosen as it is darker than tabs",
-				"titleBar.activeBackground",
-				"statusBar.background",
-				"statusBar.noFolderBackground",
-				"// TODO: Add status bar debugging colours"
-			]
+			"elements": ["sideBar.background", "panel.background"]
+		},
+		"//": "The top bar and status bar should blend in to not be a distraction, sidebar colour chosen as it is darker than tabs",
+		"titleBarBackground": {
+			"id": "sidebarsBackground",
+			"elements": ["titleBar.background"]
+		},
+		"statusBarBackground": {
+			"id": "sidebarsBackground",
+			"elements": ["statusBar.background", "statusBar.noFolderBackground"],
+			"//": "TODO: Add status bar debugging colours"
 		},
 		"activityBarBackground": {
-			"eval": [
-				{
-					"mix": [
-						{ "id": "background", "weight": 3 },
-						{ "id": "darkest", "weight": 5 }
-					]
-				}
+			"mix": [
+				{ "id": "background", "weight": 3 },
+				{ "id": "darkest", "weight": 5 }
 			],
 			"elements": ["activityBar.background"]
 		},
 		"terminalBackground": {
-			"eval": [
-				{
-					"mix": [
-						{ "id": "background", "weight": 2 },
-						{ "id": "darkest", "weight": 7 }
-					]
-				}
+			"mix": [
+				{ "id": "background", "weight": 2 },
+				{ "id": "darkest", "weight": 7 }
 			],
 			"elements": ["terminal.background"]
 		},
-		"//": "Text colour definitions",
+		"//": "Text colour definition",
 		"text": {
 			"mix": [
 				{ "id": "darkest", "weight": 2 },
@@ -132,16 +120,80 @@
 			],
 			"elements": ["editor.foreground"]
 		},
-		"//": "Icon colour definitions",
-		"activityBarIcon": {
-			"//": "TODO: Convert to mix",
-			"hex": "#007a7a",
+		"//": "Activity bar icon colour definitions",
+		"activityBarIconInactive": {
+			"mix": [
+				{ "id": "brightestSafe", "weight": 11 },
+				{ "id": "darkest", "weight": 12 }
+			],
 			"elements": ["activityBar.inactiveForeground"]
 		},
 		"activityBarIconActive": {
-			"//": "TODO: Convert to mix",
-			"hex": "#acc6c6",
-			"elements": ["activityBar.foreground"]
+			"mix": [
+				{ "id": "brightest", "weight": 7 },
+				{ "id": "text", "weight": 5 }
+			],
+			"elements": [
+				"activityBar.foreground",
+				"// Also used by badge text",
+				"activityBarBadge.foreground"
+			]
+		},
+		"activityBarBadgeBackground": {
+			"mix": [
+				{ "id": "activityBarIconInactive", "weight": 2 },
+				{ "id": "activityBarBackground", "weight": 5 }
+			],
+			"elements": ["activityBarBadge.background"]
+		},
+		"//": "Other text colour definitions",
+		"sidebarsText": {
+			"id": "text",
+			"elements": ["sideBar.foreground"]
+		},
+		"ignoredText": {
+			"mix": [
+				{ "id": "text", "weight": 14 },
+				{ "id": "darkest", "weight": 15 }
+			],
+			"elements": ["gitDecoration.ignoredResourceForeground"]
+		},
+		"sidebarTitles": {
+			"id": "activityBarIconActive",
+			"elements": ["sideBarTitle.foreground", "sideBarSectionHeader.foreground"]
+		},
+		"//": "Editor tabs colour definitions",
+		"tabsBackground": {
+			"id": "gutterBackground",
+			"elements": [
+				"tab.inactiveBackground",
+				"// The below colour for the tab bar creates the illusion that tabs are part of the editor area",
+				"editorGroupHeader.tabsBackground"
+			]
+		},
+		"tabsBackgroundActive": {
+			"mix": [
+				{ "id": "tabsBackground", "weight": 15 },
+				{ "id": "brightest", "weight": 1 }
+			],
+			"elements": ["tab.activeBackground"]
+		},
+		"tabsBackgroundHover": {
+			"mix": [
+				{ "id": "background", "weight": 3 },
+				{ "id": "tabsBackgroundActive", "weight": 2 }
+			],
+			"elements": [
+				"tab.hoverBackground",
+				"tab.unfocusedHoverBackground",
+				"// If a tab is not focused, it should be as dim as the hover colour",
+				"tab.unfocusedActiveBackground"
+			]
+		},
+		"//": "Activity bar active icon background",
+		"activityBarBackgroundActive": {
+			"id": "tabsBackgroundActive",
+			"elements": ["activityBar.activeBackground"]
 		},
 		"//": "Button colour definitions",
 		"buttonBackground": {
@@ -174,40 +226,85 @@
 			"elements": ["textLink.activeForeground"]
 		},
 		"//": "Extension colour definitions",
-		"verified": {
+		"extensionStars": {
+			"mix": [
+				{ "id": "sidebarsText", "weight": 9 },
+				{ "id": "sidebarsBackground", "weight": 2 }
+			],
+			"elements": ["extensionIcon.starForeground"]
+		},
+		"extensionVerified": {
 			"mix": [
 				{ "hex": "#1da1f2", "weight": 7 },
 				{ "id": "sidebarsBackground", "weight": 1 }
 			],
 			"elements": ["extensionIcon.verifiedForeground"]
 		},
-		"//": "Tab colour definitions",
-		"tabBackground": {
-			"id": "gutterBackground",
+		"//": "Sidebars tab colour definitions",
+		"sidebarstabsBackground": {
+			"id": "background",
+			"elements": ["sideBarSectionHeader.background"]
+		},
+		"sidebarsTabBorder": {
+			"id": "tabsBackgroundActive",
+			"elements": ["sideBarSectionHeader.border"]
+		},
+		"//": "Command Palette colour definitions",
+		"commandBackground": {
+			"id": "tabsBackgroundHover",
 			"elements": [
-				"tab.inactiveBackground",
-				"// The below colour for the tab bar creates the illusion that tabs are part of the editor area",
-				"editorGroupHeader.tabsBackground"
+				"// Command Palette",
+				"quickInput.background",
+				"// Inputs",
+				"input.background",
+				"dropdown.background",
+				"// Menus",
+				"menu.background",
+				"// Widgets (appear over top of editor)",
+				"editorWidget.background"
 			]
 		},
-		"tabBackgroundActive": {
+		"commandHover": {
 			"mix": [
-				{ "id": "tabBackground", "weight": 15 },
+				{ "id": "commandBackground", "weight": 11 },
 				{ "id": "brightest", "weight": 1 }
 			],
-			"elements": ["tab.activeBackground"]
-		},
-		"tabBackgroundHover": {
-			"mix": [
-				{ "id": "background", "weight": 3 },
-				{ "id": "tabBackgroundActive", "weight": 2 }
-			],
 			"elements": [
-				"tab.hoverBackground",
-				"tab.unfocusedHoverBackground",
-				"// If a tab is not focused, it should be as dim as the hover colour",
-				"tab.unfocusedActiveBackground"
+				"// Command Palette",
+				"list.activeSelectionBackground",
+				"// Menus",
+				"menu.selectionBackground",
+				"// Widgets (appear over top of editor)",
+				"editorSuggestWidget.selectedBackground"
 			]
+		},
+		"commandGroupText": {
+			"id": "link",
+			"elements": "pickerGroup.foreground"
+		},
+		"commandShortcutBackground": {
+			"mix": [
+				{ "id": "commandBackground", "weight": 28 },
+				{ "id": "brightest", "weight": 1 }
+			],
+			"elements": ["keybindingLabel.background"],
+			"//": "Keybindings on active items have the same background colour as the active item itself"
+		},
+		"//": "Input colour definitions",
+		"inputBorderActive": {
+			"//": "Also applies to current focused element",
+			"mix": [
+				{ "id": "buttonBackground", "weight": 4 },
+				{ "id": "accent", "weight": 1 }
+			],
+			"elements": ["focusBorder"]
+		},
+		"inputButtonBackgroundActive": {
+			"mix": [
+				{ "id": "inputBorderActive", "weight": 21 },
+				{ "id": "commandBackground", "weight": 8 }
+			],
+			"elements": ["inputOption.activeBackground"]
 		},
 		"//": "Settings colour definitions",
 		"modifiedSettingBorder": {
@@ -219,7 +316,7 @@
 		},
 		"//": "Semantic token colour definitions, the main 6 create bracket rainbow",
 		"//": "TODO: Convert to mixes",
-		"keywords": {
+		"keywordsControlFlow": {
 			"eval": [
 				{
 					"if": "kwargs.mode === \"Dark\"",
@@ -227,7 +324,63 @@
 				}
 			],
 			"semantics": ["keyword"],
-			"elements": ["editorBracketHighlight.foreground1"]
+			"elements": ["editorBracketHighlight.foreground1"],
+			"tokens": [
+				"// C#",
+				"punctuation.curlybrace",
+				"punctuation.squarebracket",
+				"// CSS",
+				"punctuation.section",
+				"// GitHub Actions",
+				"meta.embedded.block",
+				"// HTML",
+				"meta.tag.metadata.doctype",
+				"punctuation.definition.tag",
+				"// JavaScript",
+				"storage.type",
+				"meta.array",
+				"punctuation.definition.binding-pattern",
+				"punctuation.definition.template-expression",
+				"punctuation.terminator",
+				"// JSON",
+				"meta.structure.array",
+				"meta.structure.dictionary",
+				"// Lua",
+				"source.lua",
+				"// Markdown",
+				"markup.heading",
+				"entity.name.section.markdown",
+				"punctuation.definition.heading",
+				"punctuation.definition.list",
+				"punctuation.definition.quote",
+				"punctuation.definition.raw",
+				"punctuation.definition.markdown",
+				"// Properties",
+				"punctuation.definition.entity",
+				"// Python",
+				"keyword",
+				"meta.lambda-function",
+				"storage.type.class",
+				"storage.type.function",
+				"storage.type.string",
+				"constant.character.format.placeholder",
+				"punctuation.definition.arguments",
+				"punctuation.definition.dict",
+				"punctuation.separator",
+				"punctuation.parenthesis",
+				"// TOML",
+				"punctuation.definition.table",
+				"punctuation.eq",
+				"// XML",
+				"meta.tag.xml",
+				"// YAML",
+				"punctuation.definition.block",
+				"punctuation.definition.mapping",
+				"punctuation.definition.sequence",
+				"storage.modifier",
+				"meta.flow-mapping",
+				"meta.flow-sequence"
+			]
 		},
 		"functions": {
 			"eval": [
@@ -239,7 +392,7 @@
 			"semantics": ["function"],
 			"elements": ["editorBracketHighlight.foreground2"],
 			"tokens": [
-				"// Javascript",
+				"// JavaScript",
 				"meta.brace.round",
 				"// Markdown",
 				"markup.underline.link",
@@ -248,28 +401,37 @@
 				"// Python",
 				"entity.name.function",
 				"support.function",
-				"meta.member.access",
-				"punctuation.definition.arguments",
+				"meta.function-call.generic",
 				"punctuation.definition.decorator",
 				"punctuation.definition.parameters"
 			]
 		},
-		"values": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#10de18"
-				}
+		"constantValues": {
+			"mix": [
+				{ "id": "green", "weight": 24 },
+				{ "id": "brightest", "weight": 2 },
+				{ "id": "brightestSafe", "weight": 1 },
+				{ "id": "darkest", "weight": 4 }
 			],
 			"semantics": ["number"],
-			"elements": ["editorBracketHighlight.foreground3"]
+			"elements": ["editorBracketHighlight.foreground3"],
+			"tokens": [
+				"// JavaScript",
+				"constant.character.escape",
+				"// Markdown",
+				"markup.italic",
+				"punctuation.definition.italic",
+				"// Python",
+				"constant.numeric",
+				"constant.language",
+				"constant.other.ellipsis"
+			]
 		},
 		"variables": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#eeee99"
-				}
+			"mix": [
+				{ "id": "yellow", "weight": 10 },
+				{ "id": "brightest", "weight": 18 },
+				{ "id": "darkest", "weight": 2 }
 			],
 			"semantics": ["variable"],
 			"elements": ["editorBracketHighlight.foreground4"],
@@ -282,6 +444,8 @@
 				"entity.other.attribute-name",
 				"// Javascript",
 				"meta.object-literal.key",
+				"// Lua",
+				"entity.other.attribute",
 				"// Markdown",
 				"markup.inline.raw",
 				"// Properties",
@@ -303,7 +467,7 @@
 		"constantVariables": {
 			"mix": [
 				{ "id": "variables", "weight": 29 },
-				{ "id": "values", "weight": 18 }
+				{ "id": "constantValues", "weight": 18 }
 			],
 			"tokens": [
 				"// CSS",
@@ -311,15 +475,21 @@
 				"// JavaScript",
 				"variable.other.constant",
 				"// Python",
-				"constant.other.caps"
+				"constant.other.caps",
+				"support.variable.magic"
+			]
+		},
+		"typesMixOrange": {
+			"mix": [
+				{ "id": "red", "weight": 12 },
+				{ "id": "yellow", "weight": 23 }
 			]
 		},
 		"types": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#cc9731"
-				}
+			"mix": [
+				{ "id": "typesMixOrange", "weight": 3 },
+				{ "id": "brightest", "weight": 1 },
+				{ "id": "darkest", "weight": 1 }
 			],
 			"semantics": ["type"],
 			"elements": ["editorBracketHighlight.foreground5"],
@@ -336,23 +506,31 @@
 			]
 		},
 		"classes": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#ff6b6b"
-				}
+			"mix": [
+				{ "id": "red", "weight": 11 },
+				{ "id": "brightest", "weight": 8 }
 			],
 			"semantics": ["class"],
 			"elements": ["editorBracketHighlight.foreground6"],
-			"tokens": ["// TODO: Add tokens"]
+			"tokens": [
+				"// JavaScript",
+				"meta.class",
+				"variable.language.this",
+				"// Markdown",
+				"markup.bold",
+				"punctuation.definition.bold",
+				"// Python",
+				"entity.name.type",
+				"meta.function",
+				"support.type.exception",
+				"variable.parameter.function.language.special.self",
+				"variable.language.special.self",
+				"variable.parameter.function.language.special.cls",
+				"variable.language.special.cls"
+			]
 		},
 		"strings": {
-			"eval": [
-				{
-					"if": "kwargs.mode === \"Dark\"",
-					"hex": "#acc6c6"
-				}
-			],
+			"id": "text",
 			"semantics": ["string"],
 			"tokens": [
 				"// HTML",
@@ -384,11 +562,37 @@
 			]
 		}
 	},
-	"//": "TODO: Add support for font styles",
-	"fonts": [
+	"fontStyles": [
 		{
+			"//": "Bold for class and function definitions and Markdown",
 			"settings": { "fontStyle": "bold" },
-			"tokens": ["// TODO: Add tokens"]
+			"tokens": [
+				"// **Classes**",
+				"// Python",
+				"entity.name.type.class",
+				"// **Functions**",
+				"// JavaScript",
+				"meta.definition.function",
+				"meta.definition.method",
+				"// Lua",
+				"entity.name.function.lua",
+				"// Python",
+				"entity.name.function.python",
+				"// **Markdown**",
+				"heading.1",
+				"markup.bold"
+			]
+		},
+		{
+			"//": "Italic for comments and Markdown",
+			"settings": { "fontStyle": "italic" },
+			"tokens": [
+				"// **Comments**",
+				"comment",
+				"punctuation.definition.comment",
+				"// **Markdown**",
+				"markup.italic"
+			]
 		}
 	]
 }
