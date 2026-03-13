@@ -48,6 +48,8 @@ Keybindings on active items have the same background colour as the active item i
 
 ### Menus & Widgets
 
+#### Backgrounds
+
 Menus are found in various places within Visual Studio Code, and are also accessible via right-clicking. As they are very similar in function to the Command Palette, they can share all of its colours.
 
 > - `menu.background`
@@ -57,6 +59,12 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 
 > - `editorWidget.background`
 > - `editorSuggestWidget.selectedBackground`
+
+#### Shadows
+
+For widgets with shadows (e.g. Find and Replace), a very specific black alpha was chosen, `#6d`. This is just dark enough to make the widget distinguishable from the editor area and all text found within it, but not so dark that it becomes distracting.
+
+> - `widget.shadow`
 
 ## Sidebars
 
@@ -140,6 +148,13 @@ While the editor area text colour may seem too bright for the file and folder na
 Ignored files and folders ought to have a much darker text colour than normal text, as a developer will be acutely aware of all of their ignored files and will most likely not need to actively look for them. I am using a 14:15 mix of the normal text colour and black.
 
 > - `gitDecoration.ignoredResourceForeground`
+
+#### Preformatted (Code)
+
+As in Markdown files, the text in code blocks is given the colour of variables. This appears most often in Visual Studio Code's settings when describing a setting.
+
+> - `textPreformat.foreground`
+<!-- TODO: Find colour key that affects code blocks in IntelliSense -->
 
 ### Tabs
 
