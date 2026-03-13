@@ -111,6 +111,8 @@
 				"markup.underline.link",
 				"punctuation.definition.link",
 				"punctuation.definition.metadata",
+				"meta.declaration.annotation",
+				"storage.type.annotation",
 				"meta.brace.round"
 			],
 			"settings": { "foreground": "#adb6e4" }
@@ -136,6 +138,9 @@
 				"entity.other.attribute-name",
 				"entity.name.tag.css",
 				"meta.record.field",
+				"storage.modifier.package",
+				"storage.modifier.import",
+				"meta.class.body.java",
 				"meta.object-literal.key",
 				"entity.other.attribute",
 				"entity.name.section",
@@ -185,6 +190,9 @@
 				"meta.module.name",
 				"markup.bold",
 				"punctuation.definition.bold",
+				"storage.type.java",
+				"storage.type.object.array.java",
+				"storage.type.generic.java",
 				"meta.class",
 				"variable.language.this"
 			],
@@ -236,6 +244,7 @@
 				"source.sourcepawn",
 				"punctuation.definition.table",
 				"punctuation.eq",
+				"meta.tag.preprocessor",
 				"meta.tag.xml",
 				"punctuation.definition.block",
 				"punctuation.definition.mapping",
@@ -254,6 +263,7 @@
 				"keyword.type",
 				"storage.type.elm",
 				"constant.type-constructor",
+				"storage.type.primitive",
 				"fenced_code.block.language",
 				"storage.type.built-in",
 				"storage.type.tag"

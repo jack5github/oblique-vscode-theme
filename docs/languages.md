@@ -6,6 +6,7 @@
 - **[GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)**
 - **HTML**
 - **Ignore**
+- **Java**
 - **JavaScript**
 - **JSON**
 - **Lua**

@@ -410,6 +410,8 @@ As this theme has defined several semantic token colours, I am using those to de
 > - `editorBracketHighlight.foreground5`
 > - `editorBracketHighlight.foreground6`
 
+<!-- TODO: Add colours for info, warning and error inline notices; info is very distracting -->
+
 # Semantic Token Colours
 
 Semantic token colours are an abstraction of token colours, which may or may not be used by Visual Studio Code extensions. Non-existant semantic tokens are also defined here, so they may be replicated in `tokenColors`.
@@ -437,6 +439,9 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `markup.underline.link`
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
+> - **Java**
+>   - `meta.declaration.annotation`
+>   - `storage.type.annotation`
 > - **JavaScript**
 >   - `meta.brace.round`
 > - Bold
@@ -467,6 +472,10 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `entity.name.tag.css`
 > - **Elm**
 >   - `meta.record.field`
+> - **Java**
+>   - `storage.modifier.package`
+>   - `storage.modifier.import`
+>   - `meta.class.body.java`
 > - **JavaScript**
 >   - `meta.object-literal.key`
 > - **Lua**
@@ -537,6 +546,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
+> - **Java**
+>   - `storage.type.java`
+>   - `storage.type.object.array.java`
+>   - `storage.type.generic.java`
 > - **JavaScript**
 >   - `meta.class`
 >   - `variable.language.this`
@@ -602,6 +615,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.table`
 >   - `punctuation.eq`
 > - **XML**
+>   - `meta.tag.preprocessor`
 >   - `meta.tag.xml`
 > - **YAML**
 >   - `punctuation.definition.block`
@@ -615,6 +629,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 
 ## Types
 
+The types semantic colour only applies to built-in types, differentiating them from user-defined types.
+
+One downside of this approach is that for old languages (such as Java) that have very few built-in types, the class semantic colour will appear more frequently than expected.
+
 > - **Python**
 >   - `support.type`
 >   - `meta.item-access`
@@ -623,6 +641,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Elm**
 >   - `storage.type.elm`
 >   - `constant.type-constructor`
+> - **Java**
+>   - `storage.type.primitive`
 > - **Markdown**
 >   - `fenced_code.block.language`
 > - **SourcePawn**
