@@ -1,7 +1,7 @@
 {
 	"//": "TODO: Add more variants",
 	"variants": {
-		"mode": ["Dark"],
+		"mode": ["Dark", "Light"],
 		"accent": ["Orange"]
 	},
 	"colours": {
@@ -39,24 +39,62 @@
 		"//": "Background colour definitions, starting with the editor area, getting progressively lower and further out",
 		"background": {
 			"//": "The editor area background is the most important background colour, as it takes up the most space",
-			"mix": [
-				{ "ref": "black", "weight": 18 },
-				{ "ref": "cyan", "weight": 1 },
-				{ "ref": "white", "weight": 1 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "black", "weight": 18 },
+						{ "ref": "cyan", "weight": 1 },
+						{ "ref": "white", "weight": 1 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"//": "Non-blue-tinged white chosen first, then mixed with black to make it darker",
+					"mix": [
+						{ "ref": "white", "weight": 18 },
+						{ "ref": "cyan", "weight": 2 },
+						{ "ref": "black", "weight": 3 }
+					]
+				}
 			],
 			"elements": "editor.background"
 		},
 		"gutterBackground": {
-			"mix": [
-				{ "ref": "black", "weight": 1 },
-				{ "ref": "background", "weight": 4 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "black", "weight": 1 },
+						{ "ref": "background", "weight": 4 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"mix": [
+						{ "ref": "black", "weight": 1 },
+						{ "ref": "background", "weight": 14 }
+					]
+				}
 			],
 			"elements": "editorGutter.background"
 		},
 		"sidebarsBackground": {
-			"mix": [
-				{ "ref": "black", "weight": 1 },
-				{ "ref": "background", "weight": 2 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "black", "weight": 1 },
+						{ "ref": "background", "weight": 2 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"mix": [
+						{ "ref": "black", "weight": 1 },
+						{ "ref": "background", "weight": 6 }
+					]
+				}
 			],
 			"elements": ["sideBar.background", "panel.background"]
 		},
@@ -71,25 +109,61 @@
 		},
 		"//": "TODO: Add status bar debugging colours",
 		"activityBarBackground": {
-			"mix": [
-				{ "ref": "black", "weight": 5 },
-				{ "ref": "background", "weight": 3 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "black", "weight": 5 },
+						{ "ref": "background", "weight": 3 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"mix": [
+						{ "ref": "black", "weight": 2 },
+						{ "ref": "background", "weight": 5 }
+					]
+				}
 			],
 			"elements": "activityBar.background"
 		},
 		"terminalBackground": {
-			"mix": [
-				{ "ref": "background", "weight": 2 },
-				{ "ref": "black", "weight": 7 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "black", "weight": 7 },
+						{ "ref": "background", "weight": 2 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"mix": [
+						{ "ref": "black", "weight": 4 },
+						{ "ref": "background", "weight": 7 }
+					]
+				}
 			],
 			"elements": "terminal.background"
 		},
 		"//": "Text colour definition",
 		"text": {
-			"mix": [
-				{ "ref": "white", "weight": 6 },
-				{ "ref": "cyan", "weight": 1 },
-				{ "ref": "black", "weight": 2 }
+			"eval": [
+				{
+					"if": "kwargs.mode === \"Dark\"",
+					"mix": [
+						{ "ref": "white", "weight": 8 },
+						{ "ref": "cyan", "weight": 1 },
+						{ "ref": "background", "weight": 3 }
+					]
+				},
+				{
+					"//": "TODO: Decide on light mode colour",
+					"mix": [
+						{ "ref": "black", "weight": 9 },
+						{ "ref": "background", "weight": 3 }
+					]
+				}
 			],
 			"elements": "editor.foreground"
 		},
