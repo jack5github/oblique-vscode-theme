@@ -296,7 +296,12 @@ Before creating this theme, I would use `#001818`, which is about the colour of 
 
 > - `statusBar.background`
 > - `statusBar.noFolderBackground`
-<!-- TODO: Add debugging colours -->
+
+When debugging, the status bar changes to a different colour. In the majority of themes, this colour stands out prominently, but this presents itself as a major distraction.
+
+One option is to use a mix between the function colour and the normal status bar colour, however, this would lead to limited variability between themes. Instead, I have decided to use the accent colour for the left-hand side of the status bar colour mix. A 5:6 mix (for orange) strikes the perfect balance between being subdued and noticeable.
+
+> - `statusBar.debuggingBackground`
 
 ### Border
 
@@ -304,6 +309,41 @@ The chosen background colour needs a border to distinguish it from the sidebar. 
 
 > - `statusBar.border`
 > - `statusBar.noFolderBorder`
+
+When debugging, the border uses a 10:1 mix of the background colour and pure white, similar to the 15:1 mix of the normal status bar (active tab colour), adjusted for the colour of greater brightness.
+
+> - `statusBar.debuggingBorder`
+
+## Debug Toolbar
+
+### Background
+
+The debug toolbar appears while debugging, showing icons for different debug tasks. Because it appears as a pop-up similarly to widgets, it can share with them the same background colour as the Command Palette. It blending into the editor area is intentional, as this is often what a developer wants (since dealing with its position is already a major distraction).
+
+> - `debugToolBar.background`
+
+### Icons
+
+The debug toolbar's icons are given colours similar to the sematic colours in this theme, as shown below:
+
+- *Pause*: The variable colour, for it exposes variables and is more visible than the type colour
+- *Continue*/*Start*: The value colour, for it is green
+- *Step Over*: The function colour, for it implies running a function
+- *Step Into*/*Step Back*: A 1:1 mix of the function and control flow colours, creating a linear gradient
+- *Step Out*: The control flow colour, for it implies exiting a flow
+- *Restart*: The type colour, for it is unused by the rest of the debug icons and creates a gradient between *Pause* and *Stop*
+- *Stop*/*Disconnect*: The class colour, for it is red
+
+> - `debugIcon.pauseForeground`
+> - `debugIcon.startForeground`
+> - `debugIcon.continueForeground`
+> - `debugIcon.stepOverForeground`
+> - `debugIcon.stepIntoForeground`
+> - `debugIcon.stepBackForeground`
+> - `debugIcon.stepOutForeground`
+> - `debugIcon.restartForeground`
+> - `debugIcon.stopForeground`
+> - `debugIcon.disconnectForeground`
 
 ## Editor Text
 
