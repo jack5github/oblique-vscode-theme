@@ -5,7 +5,7 @@
 ### Added
 
 - CSS: Value semantic colour `constant.other.color`
-- Debugging colours (status bar and debug toolbar)
+- Debugging colours (status bar, debug toolbar and sidebar variables)
 - Elm, Lua and SourcePawn support
 - Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
 - Python: Function semantic colour `meta.function-call.generic`

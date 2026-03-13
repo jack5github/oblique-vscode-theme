@@ -314,20 +314,23 @@ When debugging, the border uses a 10:1 mix of the background colour and pure whi
 
 > - `statusBar.debuggingBorder`
 
-## Debug Toolbar
+## Debugging
 
-### Background
+### Toolbar
+
+#### Background
 
 The debug toolbar appears while debugging, showing icons for different debug tasks. Because it appears as a pop-up similarly to widgets, it can share with them the same background colour as the Command Palette. It blending into the editor area is intentional, as this is often what a developer wants (since dealing with its position is already a major distraction).
 
 > - `debugToolBar.background`
 
-### Icons
+#### Icons
 
 The debug toolbar's icons are given colours similar to the sematic colours in this theme, as shown below:
 
+- *Start*: The same as *Continue*, but as a 3:2 mix with the dropdown background, because it is too distracting otherwise
 - *Pause*: The variable colour, for it exposes variables and is more visible than the type colour
-- *Continue*/*Start*: The value colour, for it is green
+- *Continue*: The value colour, for it is green
 - *Step Over*: The function colour, for it implies running a function
 - *Step Into*/*Step Back*: A 1:1 mix of the function and control flow colours, creating a linear gradient
 - *Step Out*: The control flow colour, for it implies exiting a flow
@@ -344,6 +347,26 @@ The debug toolbar's icons are given colours similar to the sematic colours in th
 > - `debugIcon.restartForeground`
 > - `debugIcon.stopForeground`
 > - `debugIcon.disconnectForeground`
+
+### Variables (Token Expressions)
+
+Because the debug view in the sidebar represents actual programmatic concepts, the token expression colours should be identical to the semantic colours in this theme.
+
+- *Name*: Depending on the accent colour, this may be either the function colour or the variable colour, as both are classified using this colour key.
+  - *Use the variable colour for an orange accent.*
+- *Value*: The ignored colour, for it represents an object that can be expanded and may be irrelevant to the user
+- *String*: The string colour
+- *Boolean*/*Number*: The value colour
+- *Type*: The type colour
+- *Error*: The class colour
+
+> - `debugTokenExpression.name`
+> - `debugTokenExpression.value`
+> - `debugTokenExpression.string`
+> - `debugTokenExpression.boolean`
+> - `debugTokenExpression.number`
+> - `debugTokenExpression.type`
+> - `debugTokenExpression.error`
 
 ## Editor Text
 
