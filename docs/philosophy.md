@@ -13,7 +13,7 @@
 
 - **Functions are blue.**
   - Functions represent blocks of code, executed to increase the stability or scope of a program. Blue is a colour associated with cleanliness and stability, which functions should strive for.
-  - In Markdown, [links]() are treated the same.
+  - In Markdown, [links](#) are treated the same.
 - **Variables are yellow.**
   - Variables represent pieces of data that come together to form a picture of some aspect of a program. Yellow is a colour associated with creativity, but also danger, which is true for any use of variables.
   - In Markdown, `single-line code blocks` are treated the same, as they are most commonly referring to a variable name and must be differentiated from normal text.
@@ -29,11 +29,13 @@
 - **Keywords and control flow are pink.**
   - Keywords and control flow direct the execution of a program. They lie somewhere between functions (blue) and classes (red), being rigidly-defined functions themselves.
   - In Markdown, **Headings** are treated the same.
+  - *Exception:* Function parentheses are directly tied to their associated functions. In languages that support these being targeted with separate tokens, they are given the function colour, otherwise they are the control flow colour.
 - **Types are orange.**
   - Types objectify variables, rigidly defining their scope and usage. They lie somewhere between variables (yellow) and classes (red), being rigidly-defined variables themselves.
-- **Imports are cyan.**
-  - Imports represent external code that is being brought into a program. Imports are essentially functionality (blue) and constants (yellow) being brought in from other sources, cyan being the logical mix of the two.
-  - *(This isn't possible in Python due to the Python extension's style of defining tokens. This may be implemented in other languages in the future.)*
+
+## Discarded
+
+- Imports represent external code that is being brought into a program. They are essentially functionality (blue) and constants (yellow) being brought in from other sources, cyan being the logical mix of the two. This isn't possible to implement due to many languages not having tokens for imports, so the variable colour is used instead.
 
 # Text Style Philosophy
 

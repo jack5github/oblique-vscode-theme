@@ -2,6 +2,7 @@
 
 - **[C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)**
 - **CSS**
+- **[Elm](https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode)**
 - **[GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)**
 - **HTML**
 - **Ignore**
@@ -12,6 +13,7 @@
 - **Properties**
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
 - **[Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode)**
+- **[SourcePawn](https://marketplace.visualstudio.com/items?itemName=Sarrus.sourcepawn-vscode)**
 - **[TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)**
 - **XML**
 - **YAML**

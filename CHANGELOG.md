@@ -4,15 +4,16 @@
 
 ### Added
 
-- Added Lua support
-- Added Python class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
-- Added Python function semantic colour `meta.function-call.generic`
-- Added Python keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
+- CSS: Value semantic colour `constant.other.color`
+- Elm, Lua and SourcePawn support
+- Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
+- Python: Function semantic colour `meta.function-call.generic`
+- Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
 
 ### Changed
 
-- Python `support.variable.magic` changed from keyword to constant variable semantic colour
-- Python `punctuation.definition.arguments` changed from function to keyword semantic colour
+- Python: `support.variable.magic` changed from keyword to constant variable semantic colour
+- Python: `punctuation.definition.arguments` changed from function to keyword semantic colour
 
 ### Removed
 
