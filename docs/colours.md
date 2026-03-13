@@ -355,8 +355,6 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `meta.function-call.generic`
 >   - `punctuation.definition.decorator`
 >   - `punctuation.definition.parameters`
-> - **Elm**
->   - `constant.type-constructor`
 > - **Markdown**
 >   - `markup.underline.link`
 >   - `punctuation.definition.link`
