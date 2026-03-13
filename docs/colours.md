@@ -22,6 +22,7 @@ The highlighted item, on the other hand, needs to be a bright colour, but not be
 
 > - `quickInput.background`
 > - `list.activeSelectionBackground`
+<!-- TODO: `list.activeSelectionBackground` also controls the colour of the most recently selected file. Add support for `list.hoverBackground` and `list.inactiveSelectionBackground` which control the hover colour and past-selected file colour respectively. -->
 
 #### Input Backgrounds
 
@@ -206,11 +207,13 @@ For the border, I found that the input options look better when they have no bor
 
 ### Search & Word Matches
 
-Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area. It is intended to be a transparent colour.
+Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area and the overview ruler underneath the scrollbar. It is intended to be a transparent colour.
 
 Search is often used as a means of finding and replacing text, which is an operation that requires extra scrutiny, so I have chosen white with the lowest alpha that is still legible on the sidebar, namely `#11`.
 
 > - `editor.findMatchHighlightBackground`
+<!-- TODO: Review transparencies for overview ruler markers -->
+> - `editorOverviewRuler.findMatchForeground`
 
 The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
 
@@ -219,6 +222,9 @@ The background of the currently selected match also tends to be white with a set
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely.
 
 > - `editor.wordHighlightBackground`
+> - `editorOverviewRuler.wordHighlightForeground`
+
+<!-- TODO: Make scrollbar more transparent to be able to see overview ruler markers better -->
 
 ### Extensions
 
