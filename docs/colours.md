@@ -10,7 +10,9 @@ Before creating this theme, I had the title bar blend in with the line number gu
 
 > - `titleBar.activeBackground`
 
-<!-- TODO: When defocusing Visual Studio Code, the title bar becomes too washed out. Reduce the impact of this colour change, and compare it to another identically-debugged window. -->
+By default, when defocusing Visual Studio Code, the title bar becomes too washed out. Even the colour of the editor area is too light for the title bar to use, however, it still cannot use the same colour as the line number gutter and tabs. For this reason, I have settled on a 1:1 mix of the gutter and editor area colours. Although it may blend in a little too much, any brighter and it becomes distracting.
+
+> - `titleBar.inactiveBackground`
 
 ### Command Palette
 
@@ -26,16 +28,26 @@ The highlighted item, on the other hand, needs to be a bright colour, but not be
 > - `list.activeSelectionBackground`
 <!-- TODO: `list.activeSelectionBackground` also controls the colour of the most recently selected file. Add support for `list.hoverBackground` and `list.inactiveSelectionBackground` which control the hover colour and past-selected file colour respectively. -->
 
-#### Input Backgrounds
+#### Inputs
+
+##### Backgrounds
 
 The background colour of inputs looks good as the Command Palette background colour, for it stands out just enough in the sidebar, and fully blends in inside the Command Palette.
 
-> - `input.background`
 > - `dropdown.background`
+> - `input.background`
 
-#### Foreground
+##### Foregrounds
 
-The picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
+The foreground colour of inputs can be the same as other text in the IDE, and placeholder text can be the same colour as comments and ignored text.
+
+> - `dropdown.foreground`
+> - `input.foreground`
+> - `input.placeholderForeground`
+
+#### Picker Groups
+
+Picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
 
 > - `pickerGroup.foreground`
 
@@ -63,11 +75,21 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 > - `editorWidget.background`
 > - `editorSuggestWidget.selectedBackground`
 
+The notifications center counts as such a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
+
+> - `notificationCenterHeader.background`
+
 #### Shadows
 
 For widgets with shadows (e.g. Find and Replace), a very specific black alpha was chosen, `#6d`. This is just dark enough to make the widget distinguishable from the editor area and all text found within it, but not so dark that it becomes distracting.
 
 > - `widget.shadow`
+
+#### Borders
+
+As in the standard Visual Studio Code dark theme, there is no reason for widgets to have border colours. All these serve to do is distract the user, so they have been kept as transparent.
+
+- `widget.border`
 
 ## Sidebars
 
@@ -163,6 +185,17 @@ As in Markdown files, the text in code blocks is given the colour of variables. 
 > - `textPreformat.foreground`
 <!-- TODO: Find colour key that affects code blocks in IntelliSense -->
 
+#### Blockquotes
+
+In the standard Visual Studio Code dark theme, blockquotes are given a brighter background colour than other text. This is rather distracting, as blockquotes are typically used for side notes or other tangentially related text. In this theme, it will be darker instead.
+
+Using the 'Editor Playground' page for experimentation, even the line number gutter colour is too dark, because an association may be created between blockquotes and the sidebars. Therefore, I have settled on a 2:1 mix of the gutter colour and the editor area colour.
+
+As for the border colour, it is necessary to keep in the case of nested blockquotes, but it would be distracting if it were any shade of the accent colour, so I've made it a 15:1 mix of the editor background and foreground colours, at which point it is possible to make out nested blockquotes while also not being distractingly bright.
+
+> - `textBlockQuote.background`
+> - `textBlockQuote.border`
+
 ### Tabs
 
 It is common to see tabs in sidebar windows. In my theme, they are the same colour as the editor area, for there is enough separation between them that it is possible to use the same colour. This is done to ensure the tabs are not distracting.
@@ -182,6 +215,8 @@ Based on this change, it is possible to make the best orange the hover colour, t
 
 > - `button.background`
 > - `button.hoverBackground`
+
+`button.border` is intentionally not set, as doing this slightly reduces the vertical height of buttons, which has the benefit of reducing their importance.
 
 ### Links
 

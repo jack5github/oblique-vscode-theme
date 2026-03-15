@@ -7,12 +7,15 @@
 - CSS: Value semantic colour `constant.other.color`
 - Debugging colours (status bar, debug toolbar and sidebar variables)
 - Elm, Java, Lua and SourcePawn support
-- Miscellaneous colours (`widget.shadow` and `textPreformat.foreground`)
+- Inactive title bar colour
+- Input and dropdown background, foreground and placeholder colours
+- Markdown preview colours for preformatted text and blockquotes
 - Overview ruler colours (seen under vertical scrollbar)
 - Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
 - Python: Function semantic colour `meta.function-call.generic`
 - Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
 - XML: Keyword semantic colour `meta.tag.preprocessor`
+- Widget background, shadow and border colours
 
 ### Changed
 
