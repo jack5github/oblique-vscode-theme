@@ -24,6 +24,7 @@
 
 ### Changed
 
+- `.gitignore` and `.vscodeignore` changes
 - Python: `support.variable.magic` changed from keyword to constant variable semantic colour
 - Python: `punctuation.definition.arguments` changed from function to keyword semantic colour
 
