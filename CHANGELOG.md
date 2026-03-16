@@ -5,7 +5,10 @@
 ### Added
 
 - CSS: Value semantic colour `constant.other.color`
+- Ctrl+hover colour
+- Cursor colours
 - Debugging colours (status bar, debug toolbar and sidebar variables)
+- Editor area colours (dropped editor, empty editor and editor borders)
 - Elm, Java, Lua and SourcePawn support
 - Inactive title bar colour
 - Input and dropdown background, foreground and placeholder colours
@@ -14,8 +17,10 @@
 - Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
 - Python: Function semantic colour `meta.function-call.generic`
 - Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
+- Tab bar background colour when tabs are not visible
 - XML: Keyword semantic colour `meta.tag.preprocessor`
 - Widget background, shadow and border colours
+- Whitespace colour
 
 ### Changed
 
@@ -24,7 +29,7 @@
 
 ### Removed
 
-- Removed `meta.member.access` colour
+- `meta.member.access` colour
 
 ## 0.0.2 - 2026-03-12
 

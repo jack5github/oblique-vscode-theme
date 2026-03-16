@@ -227,6 +227,10 @@ Returning to the concept of mixing the best orange with pure white, a mix of 4:1
 > - `textLink.foreground`
 > - `textLink.activeForeground`
 
+Active links can also appear in the editor when holding Ctrl and hovering over a piece of code. These can use the same active link colour as it is bright enough to stand out against all other colours.
+
+> - `editorLink.activeForeground`
+
 ### Focus Border
 
 The focus border is the line that appears around the active element, which is often the sidebar when one of its icons is clicked.
@@ -264,6 +268,7 @@ Word matches are much less important than search terms, but still need to be leg
 
 > - `editor.wordHighlightBackground`
 > - `editorOverviewRuler.wordHighlightForeground`
+<!-- TODO: Find colour key for colour that is used for variable-access symbol highlights -->
 
 <!-- TODO: Make scrollbar more transparent to be able to see overview ruler markers better -->
 
@@ -287,11 +292,30 @@ Before creating this theme, I used `#1da1f2fe`. The alpha of #fe was likely a re
 
 ## Editor Area
 
+### Background
+
 The background of the editor area needs to be a dark colour, but just light enough that it isn't difficult to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
 
 Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two.
 
 > - `editor.background`
+
+When an editor area is being dropped on another, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`.
+
+> - `editorGroup.dropBackground`
+
+In the case where an editor area is blank (starting Visual Studio Code or creating a split view with one file), the chosen background colour above was too bright. It didn't take very long to find that the inactive title bar colour is the best for this use case. Even when a blank editor area is defocused, it doesn't get as bright as the sidebar tabs.
+
+> - `editorGroup.emptyBackground`
+
+### Borders
+
+Editor area borders appear when multiple editor areas are open. The default colour for these is too bright, while something akin to the status bar border colour is too dark.
+
+I have taken a similar approach to the blockquote border colour when choosing this colour, though rather than a 15:1 mix of the editor background and foreground colours, I am using a 9:1 mix of the two. Any brighter and it becomes distracting, but any darker and it becomes too hard to tell horizontally-aligned editor areas from each-other.
+
+> - `editorGroup.border`
+<!-- TODO: Investigate `sideBySideEditor.horizontalBorder` and `sideBySideEditor.verticalBorder` -->
 
 ### Tab Bar
 
@@ -331,6 +355,7 @@ The active tab border should be the same as the focus colour. Unfocused active t
 The tab bar background colours should be the same as the inactive tab colours, to further the illusion that the tabs are part of the editor area.
 
 > - `editorGroupHeader.tabsBackground`
+> - `editorGroupHeader.noTabsBackground`
 
 ### Modified Settings
 
@@ -446,6 +471,12 @@ Next, I had to make the text partially cyan. The cyan equivalent of `#c4c4c4` is
 
 > - `editor.foreground`
 
+### Whitespace
+
+Whitespace characters must blend in thoroughly with the editor background while still being visible when reading comments, especially if `editor.renderWhitespace` is set to "all". Therefore, it is set to a 2:5 mix of the comment colour and the background colour.
+
+> - `editorWhitespace.foreground`
+
 ### Bracket Colours
 
 Visual Studio Code has support for up to 6 different bracket colours, which appear in order when nesting occurs. The first colour is the outermost bracket, the colours looping if excessive levels of nesting exist.
@@ -460,6 +491,16 @@ As this theme has defined several semantic token colours, I am using those to de
 > - `editorBracketHighlight.foreground6`
 
 <!-- TODO: Add colours for info, warning and error inline notices; info is very distracting -->
+
+## Cursors
+
+Surprisingly, despite the cursor being thinner than editor text, when using the same colour it turns out to be too bright. To resolve this, an 11:2 mix is used between the editor text colour and the background colour.
+
+> - `editorCursor.foreground`
+
+In the event that there are multiple cursors, decreasing the brightness of any of them will make it harder to discern them from the text, so instead, the primary cursor is made brighter. First a 3:1 mix between white and cyan was chosen (`#bfffff`), then that was put into a 5:3 mix with the standard cursor colour.
+
+> - `editorMultiCursor.primary.foreground`
 
 # Semantic Token Colours
 
