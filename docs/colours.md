@@ -24,9 +24,11 @@ The background of the Command Palette can be the same colour as that of a tab be
 
 The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well.
 
+<!-- TODO: `list.hoverBackground` should be a darker colour. Also revisit the other list colours. -->
 > - `quickInput.background`
+> - `list.hoverBackground`
 > - `list.activeSelectionBackground`
-<!-- TODO: `list.activeSelectionBackground` also controls the colour of the most recently selected file. Add support for `list.hoverBackground` and `list.inactiveSelectionBackground` which control the hover colour and past-selected file colour respectively. -->
+> - `list.inactiveSelectionBackground`
 
 #### Inputs
 
@@ -81,9 +83,10 @@ The notifications center counts as such a widget. Having its header be the same 
 
 #### Shadows
 
-For widgets with shadows (e.g. Find and Replace), a very specific black alpha was chosen, `#6d`. This is just dark enough to make the widget distinguishable from the editor area and all text found within it, but not so dark that it becomes distracting.
+For widgets with shadows (e.g. Find and Replace), a very specific black alpha was chosen, `#6d`. This is just dark enough to make the widget distinguishable from the editor area and all text found within it, but not so dark that it becomes distracting. The same is true for the top of the editor area when the view is scrolled.
 
 > - `widget.shadow`
+> - `scrollbar.shadow`
 
 #### Borders
 
@@ -264,13 +267,10 @@ The background of the currently selected match also tends to be white with a set
 
 > - `editor.findMatchBackground`
 
-Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely.
+Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
 > - `editor.wordHighlightBackground`
 > - `editorOverviewRuler.wordHighlightForeground`
-<!-- TODO: Find colour key for colour that is used for variable-access symbol highlights -->
-
-<!-- TODO: Make scrollbar more transparent to be able to see overview ruler markers better -->
 
 ### Extensions
 
@@ -373,6 +373,16 @@ Before creating this theme, I used an alpha of `#20`, but this is a bit too brig
 > - `selection.background`
 > - `editor.inactiveSelectionBackground`
 
+### Scroll Bar
+
+Due to the very faint colours in use by various selection components in this theme, the scrollbar needs to be able to show these while still remaining visible. The alphas for the below three states (seen in order) were chosen carefully to maintain a visual distinction between each state while remaining dark and still showing what is behind them.
+
+> - `scrollbarSlider.background`
+> - `scrollbarSlider.hoverBackground`
+> - `scrollbarSlider.activeBackground`
+
+`scrollbar.background` is intentionally not set, as if it is, it only appears when the editor area is focused, and it hides Find and Replace highlights. (If I could set it, it would be the empty editor colour.)
+
 ## Status Bar
 
 ### Background
@@ -447,6 +457,7 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 - *String*: The string colour
 - *Boolean*/*Number*: The value colour
 - *Type*: The type colour
+<!-- TODO: Inspect whether the below should be the error colour -->
 - *Error*: The class colour
 
 > - `debugTokenExpression.name`
@@ -490,7 +501,24 @@ As this theme has defined several semantic token colours, I am using those to de
 > - `editorBracketHighlight.foreground5`
 > - `editorBracketHighlight.foreground6`
 
-<!-- TODO: Add colours for info, warning and error inline notices; info is very distracting -->
+### Problems
+
+Errors must be red, though the class semantic colour is not red enough. Using the same process, a 5:2 mix of `#ff0000` and `#ffffff` produces a more attention-grabbing red that is still legible on both the editor background and the current file selection.
+
+> - `list.errorForeground`
+> - `editorError.foreground`
+> - `errorLens.errorForeground`
+
+Similarly, warnings are somewhat orange, so the same approach is taken but for the type semantic colour, using a 6:1 mix of its components.
+
+> - `list.warningForeground`
+> - `editorWarning.foreground`
+> - `errorLens.warningForeground`
+
+As for the info colour, info messages tend to be very annoying, so rather than giving them their default hue of blue, they use a colour even darker than comments, a 5:2 mix of said colour and the editor background colour.
+
+> - `editorInfo.foreground`
+> - `errorLens.infoForeground`
 
 ## Cursors
 
@@ -519,7 +547,6 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 ## Functions
 
-<!-- TODO: Consider using a deeper, darker blue for Markdown links, as they blend in too much with normal text -->
 > - **Python**
 >   - `entity.name.function`
 >   - `support.function`
@@ -527,7 +554,6 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `punctuation.definition.decorator`
 >   - `punctuation.definition.parameters`
 > - **Markdown**
->   - `markup.underline.link`
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
 > - **Java**
@@ -545,6 +571,12 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >     - `entity.name.function.lua`
 > - *Removed*
 >   - `meta.member.access`
+
+### URLs
+
+While grouped under functions, URLs should use the accent-defined link colour, as that is how they are defined in other parts of the theme. However, said colour does not look good when paired with editor text, so a 6:1 mix between the link colour and pure white is used.
+
+> - `markup.underline.link`
 
 ## Variables
 

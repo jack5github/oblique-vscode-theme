@@ -10,13 +10,15 @@
 - Debugging colours (status bar, debug toolbar and sidebar variables)
 - Editor area colours (dropped editor, empty editor and editor borders)
 - Elm, Java, Lua and SourcePawn support
+- Error Lens extension support, adding error, warning and info colours
 - Inactive title bar colour
-- Input and dropdown background, foreground and placeholder colours
+- List, input and dropdown background, foreground and placeholder colours
 - Markdown preview colours for preformatted text and blockquotes
 - Overview ruler colours (seen under vertical scrollbar)
 - Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
 - Python: Function semantic colour `meta.function-call.generic`
 - Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
+- Scroll bar colours
 - Tab bar background colour when tabs are not visible
 - XML: Keyword semantic colour `meta.tag.preprocessor`
 - Widget background, shadow and border colours
@@ -25,6 +27,7 @@
 ### Changed
 
 - `.gitignore` and `.vscodeignore` changes
+- Markdown: `markup.underline.link` changed from function semantic colour to one adjacent to other link colours
 - Python: `support.variable.magic` changed from keyword to constant variable semantic colour
 - Python: `punctuation.definition.arguments` changed from function to keyword semantic colour
 

@@ -5,7 +5,9 @@
 		"titleBar.activeBackground": "#091111",
 		"titleBar.inactiveBackground": "#0c1818",
 		"quickInput.background": "#121e1e",
+		"list.hoverBackground": "#263131",
 		"list.activeSelectionBackground": "#263131",
+		"list.inactiveSelectionBackground": "#263131",
 		"dropdown.background": "#121e1e",
 		"input.background": "#121e1e",
 		"dropdown.foreground": "#acc6c6",
@@ -19,6 +21,7 @@
 		"editorSuggestWidget.selectedBackground": "#263131",
 		"notificationCenterHeader.background": "#121e1e",
 		"widget.shadow": "#0000006d",
+		"scrollbar.shadow": "#0000006d",
 		"widget.border": "#00000000",
 		"activityBar.background": "#050a0a",
 		"sideBar.background": "#091111",
@@ -73,6 +76,9 @@
 		"editor.selectionBackground": "#ffffff1b",
 		"selection.background": "#ffffff1b",
 		"editor.inactiveSelectionBackground": "#ffffff0f",
+		"scrollbarSlider.background": "#ffffff14",
+		"scrollbarSlider.hoverBackground": "#ffffff2e",
+		"scrollbarSlider.activeBackground": "#ffffff21",
 		"statusBar.background": "#091111",
 		"statusBar.noFolderBackground": "#091111",
 		"statusBar.debuggingBackground": "#792709",
@@ -105,6 +111,14 @@
 		"editorBracketHighlight.foreground4": "#eeee99",
 		"editorBracketHighlight.foreground5": "#cc9731",
 		"editorBracketHighlight.foreground6": "#ff6b6b",
+		"list.errorForeground": "#ff4949",
+		"editorError.foreground": "#ff4949",
+		"errorLens.errorForeground": "#ff4949",
+		"list.warningForeground": "#db9123",
+		"editorWarning.foreground": "#db9123",
+		"errorLens.warningForeground": "#db9123",
+		"editorInfo.foreground": "#3f4c4c",
+		"errorLens.infoForeground": "#3f4c4c",
 		"editorCursor.foreground": "#94acac",
 		"editorMultiCursor.primary.foreground": "#afe0e0"
 	},
@@ -126,7 +140,6 @@
 				"meta.function-call.generic",
 				"punctuation.definition.decorator",
 				"punctuation.definition.parameters",
-				"markup.underline.link",
 				"punctuation.definition.link",
 				"punctuation.definition.metadata",
 				"meta.declaration.annotation",
@@ -143,6 +156,10 @@
 				"entity.name.function.lua"
 			],
 			"settings": { "fontStyle": "bold" }
+		},
+		{
+			"scope": "markup.underline.link",
+			"settings": { "foreground": "#ff7e50" }
 		},
 		{
 			"scope": [
