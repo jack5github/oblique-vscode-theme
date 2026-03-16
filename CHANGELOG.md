@@ -20,6 +20,7 @@
 - Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
 - Scroll bar colours
 - Tab bar background colour when tabs are not visible
+- Title bar and icon colours
 - XML: Keyword semantic colour `meta.tag.preprocessor`
 - Widget background, shadow and border colours
 - Whitespace colour

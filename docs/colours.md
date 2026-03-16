@@ -14,6 +14,16 @@ By default, when defocusing Visual Studio Code, the title bar becomes too washed
 
 > - `titleBar.inactiveBackground`
 
+### Foreground & Icons
+
+The title bar foreground controls not only the text in the Command Palette while it's closed, but also the layout icons and Windows buttons. In order for it to blend in and not distract from development, it is being set to the same foreground colour as the status bar.
+
+> - `titleBar.activeForeground`
+
+The same will be true for generic icons used throughout Visual Studio Code, such as those present at the sides of the file selection list, in the top-right of the editor area and in the top-right of various sidebars. These should also blend in, as their presence can be distracting.
+
+> - `icon.foreground`
+
 ### Command Palette
 
 #### Menu Background
@@ -22,9 +32,9 @@ The Command Palette is a very important part of the program, and must communicat
 
 The background of the Command Palette can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
 
-The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well.
+The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead.
 
-<!-- TODO: `list.hoverBackground` should be a darker colour. Also revisit the other list colours. -->
+<!-- TODO: List colours are used in multiple places, not just the Command Palette. Change them to use white with different alphas. -->
 > - `quickInput.background`
 > - `list.hoverBackground`
 > - `list.activeSelectionBackground`
@@ -156,8 +166,6 @@ Before creating this theme, I used #404040, which is surprisingly too bright of 
 > - `activityBarBadge.background`
 > - `activityBarBadge.foreground`
 
-<!-- TODO: Set colour of title bar and other sidebar icons to blend in with background -->
-
 ### Text
 
 #### Titles
@@ -186,7 +194,11 @@ Ignored files and folders ought to have a much darker text colour than normal te
 As in Markdown files, the text in code blocks is given the colour of variables. This appears most often in Visual Studio Code's settings when describing a setting.
 
 > - `textPreformat.foreground`
-<!-- TODO: Find colour key that affects code blocks in IntelliSense -->
+
+The background colour of code blocks cannot be inherited from blockquotes, as there may be code in blockquotes, nor can it be the sidebar background colour, as that is too dark and distracting. Instead a 1:2 mix of the editor area and the sidebar is used.
+
+> - `textPreformat.background`
+> - `textCodeBlock.background`
 
 #### Blockquotes
 
@@ -312,10 +324,9 @@ In the case where an editor area is blank (starting Visual Studio Code or creati
 
 Editor area borders appear when multiple editor areas are open. The default colour for these is too bright, while something akin to the status bar border colour is too dark.
 
-I have taken a similar approach to the blockquote border colour when choosing this colour, though rather than a 15:1 mix of the editor background and foreground colours, I am using a 9:1 mix of the two. Any brighter and it becomes distracting, but any darker and it becomes too hard to tell horizontally-aligned editor areas from each-other.
+I have taken a similar approach to the blockquote border colour when choosing this colour, though rather than a 15:1 mix of the editor background and foreground colours, I am using a 9:1 mix of the two. Any brighter and it becomes distracting, but any darker and it becomes too hard to tell horizontally-aligned editor areas from each-other. (*Note: `sideBySideEditor.horizontalBorder` and `sideBySideEditor.verticalBorder` seem to have no effect.*)
 
 > - `editorGroup.border`
-<!-- TODO: Investigate `sideBySideEditor.horizontalBorder` and `sideBySideEditor.verticalBorder` -->
 
 ### Tab Bar
 
@@ -411,7 +422,16 @@ When debugging, the border uses a 10:1 mix of the background colour and pure whi
 
 > - `statusBar.debuggingBorder`
 
-<!-- TODO: Set status bar foreground colour to blend in with background -->
+### Foreground
+
+The status bar foreground is a 5:1 mix of the editor text and the background colour, the darkest it can get before it looks disabled.
+
+> - `statusBar.foreground`
+> - `statusBar.noFolderForeground`
+
+For debugging, this dark colour is no longer appropriate, and so the editor text colour is used as-is.
+
+> - `statusBar.debuggingForeground`
 
 ## Debugging
 
@@ -457,8 +477,7 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 - *String*: The string colour
 - *Boolean*/*Number*: The value colour
 - *Type*: The type colour
-<!-- TODO: Inspect whether the below should be the error colour -->
-- *Error*: The class colour
+- *Error*: The error colour
 
 > - `debugTokenExpression.name`
 > - `debugTokenExpression.value`
