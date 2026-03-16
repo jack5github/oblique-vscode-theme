@@ -22,6 +22,7 @@
 		"editorWidget.background": "#121e1e",
 		"editorSuggestWidget.selectedBackground": "#263131",
 		"notificationCenterHeader.background": "#121e1e",
+		"checkbox.background": "#1a2525",
 		"widget.shadow": "#0000006d",
 		"scrollbar.shadow": "#0000006d",
 		"widget.border": "#00000000",

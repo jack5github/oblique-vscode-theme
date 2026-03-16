@@ -91,6 +91,13 @@ The notifications center counts as such a widget. Having its header be the same 
 
 > - `notificationCenterHeader.background`
 
+#### Checkboxes
+
+Checkboxes appear when using GitHub Copilot and selecting what tools should be available to the AI model. They do not look good when dark, because they clash too much with the highlight colour in the Command Palette, nor should they be too bright, otherwise they would simply be distracting. Instead, they need to be a mixture of the Command Palette background colour and the highlight colour, so they look good when alternating between the two states. A mix of 5:3 works well.
+
+<!-- TODO: Add dark border colour for maximum visibility -->
+> - `checkbox.background`
+
 #### Shadows
 
 For widgets with shadows (e.g. Find and Replace), a very specific black alpha was chosen, `#6d`. This is just dark enough to make the widget distinguishable from the editor area and all text found within it, but not so dark that it becomes distracting. The same is true for the top of the editor area when the view is scrolled.
@@ -199,6 +206,7 @@ The background colour of code blocks cannot be inherited from blockquotes, as th
 
 > - `textPreformat.background`
 > - `textCodeBlock.background`
+> - `checkBox.background`
 
 #### Blockquotes
 

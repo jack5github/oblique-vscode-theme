@@ -12,7 +12,7 @@
 - Elm, Java, Lua and SourcePawn support
 - Error Lens extension support, adding error, warning and info colours
 - Inactive title bar colour
-- List, input and dropdown background, foreground and placeholder colours
+- List, input, checkbox and dropdown background, foreground and placeholder colours
 - Markdown preview colours for preformatted text and blockquotes
 - Overview ruler colours (seen under vertical scrollbar)
 - Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
