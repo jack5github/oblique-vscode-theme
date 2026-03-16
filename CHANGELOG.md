@@ -7,7 +7,7 @@
 - CSS: Value semantic colour `constant.other.color`
 - Ctrl+hover colour
 - Cursor colours
-- Debugging colours (status bar, debug toolbar and sidebar variables)
+- Debugging and Outline colours (status bar, debug toolbar and sidebar variables)
 - Editor area colours (dropped editor, empty editor and editor borders)
 - Elm, Java, Lua and SourcePawn support
 - Error Lens extension support, adding error, warning and info colours

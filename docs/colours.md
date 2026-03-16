@@ -487,6 +487,35 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 > - `debugTokenExpression.type`
 > - `debugTokenExpression.error`
 
+### Outline Symbols
+
+As with the debug view, the icons in the Outline also make use of the semantic colours in this theme.
+
+<!-- TODO: Add remaining Outline symbols, determine if use of constant variable colour is correct -->
+- *Boolean*/*Null*/*Number*: The value colour
+- *Class*: The class colour
+- *Constant*: The constant variable colour (for variety)
+- *Constructor*/*Function*/*Method*: The function colour
+- *Field*/*Property*/*Variable*: The variable colour
+- *Module*: The control flow colour
+- *String*: The string colour
+- *Type Parameter*: The type colour
+
+> - `symbolIcon.booleanForeground`
+> - `symbolIcon.constantForeground`
+> - `symbolIcon.classForeground`
+> - `symbolIcon.constructorForeground`
+> - `symbolIcon.fieldForeground`
+> - `symbolIcon.functionForeground`
+> - `symbolIcon.methodForeground`
+> - `symbolIcon.moduleForeground`
+> - `symbolIcon.nullForeground`
+> - `symbolIcon.numberForeground`
+> - `symbolIcon.propertyForeground`
+> - `symbolIcon.stringForeground`
+> - `symbolIcon.typeParameterForeground`
+> - `symbolIcon.variableForeground`
+
 ## Editor Text
 
 ### Text Colour
