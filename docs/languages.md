@@ -2,15 +2,21 @@
 
 - **[C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)**
 - **CSS**
+- **[Elm](https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode)**
 - **[GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)**
 - **HTML**
 - **Ignore**
+- **Java**
 - **JavaScript**
 - **JSON**
+- **Lua**
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**
 - **Properties**
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
+- **Regular expressions**
 - **[Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode)**
+- **[SourcePawn](https://marketplace.visualstudio.com/items?itemName=Sarrus.sourcepawn-vscode)**
 - **[TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)**
+- **TypeScript**
 - **XML**
 - **YAML**

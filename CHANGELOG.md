@@ -1,5 +1,41 @@
 # Changelog
 
+## 0.0.3 - 2026-03-17
+
+### Added
+
+- CSS: Value semantic colour `constant.other.color`
+- Ctrl+hover colour
+- Cursor colours
+- Debugging and Outline colours (status bar, debug toolbar and sidebar variables)
+- Editor area colours (dropped editor, empty editor and editor borders)
+- Elm, Java, Lua, SourcePawn and TypeScript support
+- Error Lens extension support, adding error, warning and info colours
+- Inactive title bar colour
+- List, input, checkbox and dropdown background, foreground and placeholder colours (includes Settings view)
+- Markdown preview colours for preformatted text and blockquotes
+- Overview ruler colours (seen under vertical scrollbar)
+- Python: Class semantic colours `variable.language.special.self`, `variable.parameter.function.language.special.cls` and `variable.language.special.cls`
+- Python: Function semantic colour `meta.function-call.generic`
+- Python: Keyword semantic colours `constant.character.format.placeholder`, `punctuation.definition.arguments` and `punctuation.definition.dict`
+- Scroll bar colours
+- Tab bar background colour when tabs are not visible
+- Title bar and icon colours
+- XML: Keyword semantic colour `meta.tag.preprocessor`
+- Widget background, shadow and border colours
+- Whitespace colour
+
+### Changed
+
+- `.gitignore` and `.vscodeignore` changes
+- Markdown: `markup.underline.link` changed from function semantic colour to one adjacent to other link colours
+- Python: `support.variable.magic` changed from keyword to constant variable semantic colour
+- Python: `punctuation.definition.arguments` changed from function to keyword semantic colour
+
+### Removed
+
+- `meta.member.access` colour
+
 ## 0.0.2 - 2026-03-12
 
 ### Added
