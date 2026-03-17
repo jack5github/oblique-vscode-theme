@@ -51,6 +51,21 @@ The background colour of inputs looks good as the Command Palette background col
 > - `dropdown.background`
 > - `input.background`
 
+###### Settings
+
+The above background colours do not work well in the Settings view, as they blend in too much with the editor area. Rather than using a 3:2 mix of the editor area colour and the active tab colour, these use a 1:2 mix, ensuring that they stand out without looking polarising.
+
+> - `settings.checkboxBackground`
+> - `settings.dropdownBackground`
+> - `settings.numberInputBackground`
+> - `settings.textInputBackground`
+
+However, the highlight colours too blend in with the above backgrounds, so they must be changed as well. Rather than trying to find more appropriate bright colours, I have chosen to use black alphas, picking the right value for `settings.focusedRowBackground` first (so preformatted text is still legible when an option is focused) and the others second (any lower and they become too hard to see).
+
+> - `settings.rowHoverBackground`
+> - `settings.settingsHeaderHoverForeground`
+> - `settings.focusedRowBackground`
+
 ##### Foregrounds
 
 The foreground colour of inputs can be the same as other text in the IDE, and placeholder text can be the same colour as comments and ignored text.
