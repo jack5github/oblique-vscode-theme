@@ -16,5 +16,6 @@
 - **[Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode)**
 - **[SourcePawn](https://marketplace.visualstudio.com/items?itemName=Sarrus.sourcepawn-vscode)**
 - **[TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)**
+- **TypeScript**
 - **XML**
 - **YAML**

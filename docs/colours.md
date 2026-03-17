@@ -666,6 +666,8 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 >   - `support.variable.single-line.spdoc`
 > - **TOML**
 >   - `support.type.property-name`
+> - **TypeScript**
+>   - `support.variable.property`
 > - **XML**
 >   - `entity.name.tag.localname`
 > - **YAML**
@@ -793,6 +795,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **TOML**
 >   - `punctuation.definition.table`
 >   - `punctuation.eq`
+> - **TypeScript**
+>   - `punctuation.definition.typeparameters`
 > - **XML**
 >   - `meta.tag.preprocessor`
 >   - `meta.tag.xml`

@@ -9,7 +9,7 @@
 - Cursor colours
 - Debugging and Outline colours (status bar, debug toolbar and sidebar variables)
 - Editor area colours (dropped editor, empty editor and editor borders)
-- Elm, Java, Lua and SourcePawn support
+- Elm, Java, Lua, SourcePawn and TypeScript support
 - Error Lens extension support, adding error, warning and info colours
 - Inactive title bar colour
 - List, input, checkbox and dropdown background, foreground and placeholder colours

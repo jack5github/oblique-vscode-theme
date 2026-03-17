@@ -204,6 +204,7 @@
 				"keyword.other.definition",
 				"support.variable.single-line.spdoc",
 				"support.type.property-name",
+				"support.variable.property",
 				"entity.name.tag.localname",
 				"entity.name.tag.yaml"
 			],
@@ -301,6 +302,7 @@
 				"source.sourcepawn",
 				"punctuation.definition.table",
 				"punctuation.eq",
+				"punctuation.definition.typeparameters",
 				"meta.tag.preprocessor",
 				"meta.tag.xml",
 				"punctuation.definition.block",
