@@ -32,13 +32,15 @@ The Command Palette is a very important part of the program, and must communicat
 
 The background of the Command Palette can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
 
-The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead.
+The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
 
-<!-- TODO: List colours are used in multiple places, not just the Command Palette. Change them to use white with different alphas. -->
 > - `quickInput.background`
-> - `list.hoverBackground`
 > - `list.activeSelectionBackground`
+
+The above alpha is also used for the inactive selection, as it merely represents a selection that is not in focus, which is not a distinction that needs to be made when the focus border already does this. A hover alpha of `#0c` is slightly above half the alpha of the active selection, it looking better than `#0b` in the Explorer view.
+
 > - `list.inactiveSelectionBackground`
+> - `list.hoverBackground`
 
 #### Inputs
 
