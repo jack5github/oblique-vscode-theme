@@ -13,6 +13,7 @@
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**
 - **Properties**
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
+- **Regular expressions**
 - **[Robot Framework](https://marketplace.visualstudio.com/items?itemName=d-biehl.robotcode)**
 - **[SourcePawn](https://marketplace.visualstudio.com/items?itemName=Sarrus.sourcepawn-vscode)**
 - **[TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)**

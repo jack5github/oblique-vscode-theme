@@ -20,6 +20,10 @@
   - *Exception:* For variables that are constants, their hue is shifted towards green, the colour of constant values.
 - **Strings are white.**
   - Strings represent text that is either displayed to the user or used in processing. In dark mode, themes uses shades of white for text, as do documents and terminals, so strings should remain close to white for consistency.
+  - *Exceptions:*
+    - Escape characters are given the constant value colour to distinguish them from normal string characters.
+    - In regular expressions, positional markers (e.g. `^` and `$`) are also given the constant value colour, as they are theoretically escape characters that represent empty strings.
+    - In regular expressions, modifiers (e.g. `+`, `?` and `/g`) are given the control flow colour, as they are reserved characters that modify the behaviour of the regular expression.
 - **Numbers and constant values are green.**
   - Numbers and constant values represent data that quantifies aspects of a program. Green is associated with wealth and growth, which is often true for number usage, constants and iteratives respectively.
   - In Markdown, *italics* are treated the same, due to the creator (Jack Stringer) using it to emphasise approximate names and entities, and due to the variable colour already being used by single-line code blocks.

@@ -711,6 +711,9 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.italic`
 > - **JavaScript**
 >   - `constant.character.escape`
+> - **Regular expressions**
+>   - `keyword.control.anchor.regexp`
+>   - `constant.other.character-class.regexp`
 
 ## Classes
 
