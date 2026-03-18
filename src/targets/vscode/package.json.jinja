@@ -32,7 +32,7 @@
 		"themes": [{% set first = true %}{% for mode in variants.modes %}{% for accent in variants.accents %}{% if not first %},{% endif %}
 			{
 				"label": "Oblique {{ mode }} {{ accent }}",
-				"uiTheme": "vs-dark",
+				"uiTheme": "{% if mode === 'Dark' %}vs-dark{% else %}vs{% endif %}",
 				"path": "./themes/Oblique {{ mode }} {{ accent }}-color-theme.json"
 			}{% set first = false %}{% endfor %}{% endfor %}
 		]

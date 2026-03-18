@@ -7,15 +7,20 @@
 		"titleBar.activeForeground": "{{ colours.sidebarsIcons }}",
 		"icon.foreground": "{{ colours.sidebarsIcons }}",
 		"quickInput.background": "{{ colours.pickerBg }}",
+		"quickInputTitle.background": "{{ colours.pickerBg }}",
 		"list.activeSelectionBackground": "{{ colours.listItemBgSelected }}",
 		"list.inactiveSelectionBackground": "{{ colours.listItemBgSelected }}",
 		"list.hoverBackground": "{{ colours.listItemBgHover }}",
-		"dropdown.background": "{{ colours.tabsBgActive }}",
-		"input.background": "{{ colours.tabsBgActive }}",
-		"settings.checkboxBackground": "{{ colours.inputBgSettings }}",
-		"settings.dropdownBackground": "{{ colours.inputBgSettings }}",
-		"settings.numberInputBackground": "{{ colours.inputBgSettings }}",
-		"settings.textInputBackground": "{{ colours.inputBgSettings }}",
+		"checkbox.background": "{{ colours.inputsBg }}",
+		"dropdown.background": "{{ colours.inputsBg }}",
+		"input.background": "{{ colours.inputsBg }}",
+		"settings.checkboxBackground": "{{ colours.inputsBg }}",
+		"settings.dropdownBackground": "{{ colours.inputsBg }}",
+		"settings.numberInputBackground": "{{ colours.inputsBg }}",
+		"settings.textInputBackground": "{{ colours.inputsBg }}",{#
+		"checkbox.border": "{{ colours.sidebarsBg }}",
+		"dropdown.border": "{{ colours.sidebarsBg }}",
+		"input.border": "{{ colours.sidebarsBg }}",#}
 		"settings.rowHoverBackground": "{{ colours.editorSectionBgHover }}",
 		"settings.settingsHeaderHoverForeground": "{{ colours.editorSectionBgHover }}",
 		"settings.focusedRowBackground": "{{ colours.editorSectionBgSelected }}",
@@ -29,7 +34,6 @@
 		"editorWidget.background": "{{ colours.tabsBgActive }}",
 		"editorSuggestWidget.selectedBackground": "{{ colours.listItemBgSelected }}",
 		"notificationCenterHeader.background": "{{ colours.tabsBgActive }}",
-		"checkbox.background": "{{ colours.checkboxBg }}",
 		"widget.shadow": "{{ colours.shadow }}",
 		"scrollbar.shadow": "{{ colours.shadow }}",
 		"widget.border": "{{ colours.transparent }}",
@@ -175,7 +179,9 @@
 				"storage.type.annotation",
 				"meta.brace.round"
 			],
-			"settings": { "foreground": "{{ colours.functions }}" }
+			"settings": {
+				"foreground": "{{ colours.functions }}"
+			}
 		},
 		{
 			"scope": [
@@ -184,11 +190,15 @@
 				"meta.definition.method",
 				"entity.name.function.lua"
 			],
-			"settings": { "fontStyle": "bold" }
+			"settings": {
+				"fontStyle": "bold"
+			}
 		},
 		{
 			"scope": "markup.underline.link",
-			"settings": { "foreground": "{{ colours.linksEditor }}" }
+			"settings": {
+				"foreground": "{{ colours.linksEditor }}"
+			}
 		},
 		{
 			"scope": [
@@ -215,9 +225,16 @@
 				"entity.name.tag.localname",
 				"entity.name.tag.yaml"
 			],
-			"settings": { "foreground": "{{ colours.variables }}" }
+			"settings": {
+				"foreground": "{{ colours.variables }}"
+			}
 		},
-		{ "scope": "markup.italic", "settings": { "fontStyle": "italic" } },
+		{
+			"scope": "markup.italic",
+			"settings": {
+				"fontStyle": "italic"
+			}
+		},
 		{
 			"scope": [
 				"constant.other.caps",
@@ -225,11 +242,21 @@
 				"variable.other.constant",
 				"support.constant"
 			],
-			"settings": { "foreground": "{{ colours.constantVariables }}" }
+			"settings": {
+				"foreground": "{{ colours.constantVariables }}"
+			}
 		},
 		{
-			"scope": ["string", "source.css", "source.ignore", "source.jinja", "source.ini"],
-			"settings": { "foreground": "{{ colours.text }}" }
+			"scope": [
+				"string",
+				"source.css",
+				"source.ignore",
+				"source.jinja",
+				"source.ini"
+			],
+			"settings": {
+				"foreground": "{{ colours.text }}"
+			}
 		},
 		{
 			"scope": [
@@ -244,7 +271,9 @@
 				"keyword.control.anchor.regexp",
 				"constant.other.character-class.regexp"
 			],
-			"settings": { "foreground": "{{ colours.constantValues }}" }
+			"settings": {
+				"foreground": "{{ colours.constantValues }}"
+			}
 		},
 		{
 			"scope": [
@@ -264,11 +293,19 @@
 				"meta.class",
 				"variable.language.this"
 			],
-			"settings": { "foreground": "{{ colours.classes }}" }
+			"settings": {
+				"foreground": "{{ colours.classes }}"
+			}
 		},
 		{
-			"scope": ["entity.name.type.class", "markup.bold", "heading.1"],
-			"settings": { "fontStyle": "bold" }
+			"scope": [
+				"entity.name.type.class",
+				"markup.bold",
+				"heading.1"
+			],
+			"settings": {
+				"fontStyle": "bold"
+			}
 		},
 		{
 			"scope": [
@@ -324,7 +361,9 @@
 				"meta.flow-sequence",
 				"meta.embedded.block"
 			],
-			"settings": { "foreground": "{{ colours.controlFlow }}" }
+			"settings": {
+				"foreground": "{{ colours.controlFlow }}"
+			}
 		},
 		{
 			"scope": [
@@ -338,7 +377,9 @@
 				"storage.type.built-in",
 				"storage.type.tag"
 			],
-			"settings": { "foreground": "{{ colours.types }}" }
+			"settings": {
+				"foreground": "{{ colours.types }}"
+			}
 		},
 		{
 			"scope": [
@@ -348,11 +389,18 @@
 				"meta.setting.documentation.robotframework",
 				"meta.testcase_setting.documentation.robotframework"
 			],
-			"settings": { "foreground": "{{ colours.comments }}" }
+			"settings": {
+				"foreground": "{{ colours.comments }}"
+			}
 		},
 		{
-			"scope": ["comment", "punctuation.definition.comment"],
-			"settings": { "fontStyle": "italic" }
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"fontStyle": "italic"
+			}
 		}
 	]
 }

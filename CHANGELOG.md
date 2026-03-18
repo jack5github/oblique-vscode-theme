@@ -4,6 +4,7 @@
 
 ### Added
 
+- Command Palette title background colour
 - Debug script to generate theme files using multi-theme file building framework
 - Documentation in new `src/palette.json` file
 - Jinja support
@@ -11,6 +12,7 @@
 
 ### Changed
 
+- Checkbox, dropdown and input background colours merged
 - GitHub workflow builds theme files using multi-theme file building framework
 - Visual Studio Code-related files moved to `src/targets/vscode/`
 

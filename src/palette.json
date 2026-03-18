@@ -101,6 +101,8 @@
 		"buttonsBg": "{% if variants.accent == 'Orange' %}#dc3b02{% endif %}",
 		"//": "Large buttons background when hovered. For orange, 25:1 with white.",
 		"buttonsBgHover": "{% if variants.accent == 'Orange' %}#ff490a{% endif %}",
+		"//": "`editorBg` 1:2 with `tabsBgActiveFocused`, used for the majority of input elements, middle of 3 colours during experimentation (others being `#121e1e` and `#1a2525`)",
+		"inputsBg": "#152121",
 		"//": "Small buttons inside inputs background, which are otherwise transparent. For orange, 8:21 with `inputsBg`.",
 		"inputOptionsBgSelected": "{% if variants.accent == 'Orange' %}#a9340a{% endif %}",
 		"//": "## Errors & Warnings",
@@ -124,12 +126,10 @@
 		"//": "## Miscellaneous",
 		"modifiedSettingsBorder": "{% if variants.accent == 'Orange' %}#ff642e{% endif %}",
 		"transparent": "#00000000",
-		"//": "# TODO: Rework these colours so that less are used overall",
+		"//": "TODO: Rework these colours so that less are used overall",
+		"//": "TODO: Replace picker colour with something darker, it is impossible to see the light inputs on it",
 		"pickerBg": "#121e1e",
 		"pickerShortcutsBg": "#1a2626",
-		"inputBg": "#121e1e",
-		"inputBgSettings": "#152121",
-		"checkboxBg": "#1a2525",
 		"editorSectionBgHover": "#0000000e",
 		"editorSectionBgSelected": "#00000022"
 	}

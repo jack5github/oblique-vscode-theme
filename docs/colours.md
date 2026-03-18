@@ -34,9 +34,13 @@ The Command Palette is a very important part of the program, and must communicat
 
 The background of the Command Palette can be the same colour as that of a tab being hovered-over, for it is the perfect colour to distinguish it from the rest of the program while remaining visible, and is unlikely to appear at the same time as its usage.
 
-The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
+The title background can be the same colour, as the different vertical position of the input is evidence enough that the interaction style of the Command Palette has changed.
 
 > - `quickInput.background`
+> - `quickInputTitle.background`
+
+The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
+
 > - `list.activeSelectionBackground`
 
 The above alpha is also used for the inactive selection, as it merely represents a selection that is not in focus, which is not a distinction that needs to be made when the focus border already does this. A hover alpha of `#0c` is slightly above half the alpha of the active selection, it looking better than `#0b` in the Explorer view.
@@ -48,15 +52,12 @@ The above alpha is also used for the inactive selection, as it merely represents
 
 ##### Backgrounds
 
-The background colour of inputs looks good as the Command Palette background colour, for it stands out just enough in the sidebar, and fully blends in inside the Command Palette.
+The background colour of inputs does not work as that of the Command Palette, for the inputs would blend in too much within the editor area, and disappear completely if they appeared in the Command Palette itself (e.g. tool checkboxes). Rather than using a 3:2 mix of the editor area colour and the active tab colour, these use a 1:2 mix, ensuring that they stand out without looking polarising.
 
+<!-- TODO: Add dark border colours for extra visibility -->
+> - `checkbox.background`
 > - `dropdown.background`
 > - `input.background`
-
-###### Settings
-
-The above background colours do not work well in the Settings view, as they blend in too much with the editor area. Rather than using a 3:2 mix of the editor area colour and the active tab colour, these use a 1:2 mix, ensuring that they stand out without looking polarising.
-
 > - `settings.checkboxBackground`
 > - `settings.dropdownBackground`
 > - `settings.numberInputBackground`
@@ -109,13 +110,6 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 The notifications center counts as such a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
 
 > - `notificationCenterHeader.background`
-
-#### Checkboxes
-
-Checkboxes appear when using GitHub Copilot and selecting what tools should be available to the AI model. They do not look good when dark, because they clash too much with the highlight colour in the Command Palette, nor should they be too bright, otherwise they would simply be distracting. Instead, they need to be a mixture of the Command Palette background colour and the highlight colour, so they look good when alternating between the two states. A mix of 5:3 works well.
-
-<!-- TODO: Add dark border colour for maximum visibility -->
-> - `checkbox.background`
 
 #### Shadows
 
