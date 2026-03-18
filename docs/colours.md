@@ -1,5 +1,7 @@
 # Colours
 
+(This document is in the process of being replaced by comments directly in `src/palette.json`.)
+
 ## Title Bar
 
 ### Background
@@ -712,6 +714,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `source.css`
 > - **Ignore**
 >   - `source.ignore`
+> - **Jinja**
+>   - `source.jinja`
 > - **Properties**
 >   - `source.ini`
 
@@ -723,6 +727,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `constant.other.ellipsis`
 > - **CSS**
 >   - `constant.other.color`
+> - **Jinja**
+>   - `meta.scope.jinja.variable`
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
@@ -806,6 +812,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.binding-pattern`
 >   - `punctuation.definition.template-expression`
 >   - `punctuation.terminator`
+> - **Jinja**
+>   - `meta.scope.jinja.tag`
 > - **Lua**
 >   - `source.lua`
 > - **Properties**

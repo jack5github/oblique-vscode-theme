@@ -9,6 +9,7 @@
 - Colour-blind friendly (protanopia)
 - Supports C#, HTML+CSS+JS/TS, Java, JSON, Markdown, Python, Robot Framework, YAML [and more](docs/languages.md)
 - Supports [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) extension
+- [Nunjucks](https://mozilla.github.io/nunjucks/) templating for theme variants and future IDE support
 
 ## Installation
 
@@ -19,7 +20,12 @@
 
 ## Contributing
 
-To start contributing, fork this repository, then use the included debug launch script to see your changes in real-time. Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
+To start contributing, fork this repository, then use the following debug scripts:
+
+- Run **New Window with VSCode Theme** to open a new window that responds to generated theme file changes in real-time.
+- Run **Generate VSCode Themes** to update the theme files based on `src/palette.json` and the templates in `src/targets/vscode/`.
+
+Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
 
 Pull requests are welcome. Please provide a description and screenshots of your changes.
 

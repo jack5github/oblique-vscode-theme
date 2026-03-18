@@ -1,5 +1,8 @@
 .vscode/settings.json
+dist/
 node_modules/
 rnd/
-themes/
+/themes/
+/.vscodeignore
+/package.json
 *.vsix

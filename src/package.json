@@ -1,0 +1,9 @@
+{
+	"scripts": {
+		"generate": "node generate.js",
+		"generate:vscode": "node generate.js vscode .."
+	},
+	"dependencies": {
+		"nunjucks": "^3.2.4"
+	}
+}

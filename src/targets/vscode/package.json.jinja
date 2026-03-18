@@ -29,12 +29,12 @@
 		"Themes"
 	],
 	"contributes": {
-		"themes": [{% for mode in variants.modes %}{% for accent in variants.accents %}
+		"themes": [{% set first = true %}{% for mode in variants.modes %}{% for accent in variants.accents %}{% if not first %},{% endif %}
 			{
 				"label": "Oblique {{ mode }} {{ accent }}",
 				"uiTheme": "vs-dark",
 				"path": "./themes/Oblique {{ mode }} {{ accent }}-color-theme.json"
-			}{% endfor %}
+			}{% set first = false %}{% endfor %}{% endfor %}
 		]
 	}
 }

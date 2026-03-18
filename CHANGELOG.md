@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0 - Unreleased
+
+### Added
+
+- Debug script to generate theme files using multi-theme file building framework
+- Documentation in new `src/palette.json` file
+- Jinja support
+- Multi-theme file building framework created using Nunjucks in Node.js, generate themes from a single palette and template files, will be able to support theme variants and other IDEs in the future
+
+### Changed
+
+- GitHub workflow builds theme files using multi-theme file building framework
+- Visual Studio Code-related files moved to `src/targets/vscode/`
+
 ## 0.0.3 - 2026-03-17
 
 ### Added
