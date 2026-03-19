@@ -793,6 +793,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **C#**
 >   - `punctuation.curlybrace`
 >   - `punctuation.squarebracket`
+>   - `punctuation.definition.interpolation`
 > - **Elm**
 >   - `keyword.type.elm`
 >   - `punctuation.bracket`

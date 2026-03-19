@@ -5,6 +5,7 @@
 ### Added
 
 - Command Palette title background colour
+- C#: Keyword semantic colour `punctuation.definition.interpolation`
 - Debug script to generate theme files using multi-theme file building framework
 - Documentation in new `src/palette.json` file
 - Jinja support
