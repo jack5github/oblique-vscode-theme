@@ -868,3 +868,5 @@ One downside of this approach is that for old languages (such as Java) that have
 > - Italic
 >   - `comment`
 >   - `punctuation.definition.comment`
+> - Normal
+>   - `comment.block`

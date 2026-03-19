@@ -14,6 +14,7 @@
 ### Changed
 
 - Checkbox, dropdown and input background colours merged
+- Comments that fall under `comment.block` are no longer italicised
 - GitHub workflow builds theme files using multi-theme file building framework
 - Visual Studio Code-related files moved to `src/targets/vscode/`
 
