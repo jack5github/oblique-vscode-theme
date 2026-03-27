@@ -8,6 +8,7 @@
 - C#: Keyword semantic colour `punctuation.definition.interpolation`
 - Debug script to generate theme files using multi-theme file building framework
 - Documentation in new `src/palette.json` file
+- Error, warning and info background colours for minimap and Error Lens extension
 - Jinja support
 - Multi-theme file building framework created using Nunjucks in Node.js, generate themes from a single palette and template files, will be able to support theme variants and other IDEs in the future
 
