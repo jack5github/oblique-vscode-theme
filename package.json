@@ -6,7 +6,7 @@
 		"name": "Jack Stringer"
 	},
 	"icon": "icon.png",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"repository": {
 		"url": "https://github.com/jack5github/oblique-vscode-theme"
 	},
@@ -16,6 +16,7 @@
 		"dark-mode",
 		"dark-theme",
 		"dark",
+		"ide-theme",
 		"theme",
 		"visual-studio-code",
 		"vscode-extension",

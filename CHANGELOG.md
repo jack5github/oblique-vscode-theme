@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.0.4 - Unreleased
+
+### Added
+
+- Breadcrumb colours
+- Command Palette title background colour
+- C#: Keyword semantic colour `punctuation.definition.interpolation`
+- Error, warning and info background colours for minimap and Error Lens extension
+- Insert mode cursor text colour
+- Jinja support
+- Terminal normal text and cursor colours
+
+### Changed
+
+- Checkbox, dropdown and input background colours merged
+- Comments that fall under `comment.block` are no longer italicised
+- GitHub Action checkout updated to `v6`
+
 ## 0.0.3 - 2026-03-17
 
 ### Added

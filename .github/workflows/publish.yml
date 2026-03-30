@@ -6,15 +6,16 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
         id: vsmPublish
       - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v2
         with:
-          pat: ${{ secrets.OPEN_VSX_REGISTRY_TOKEN }}
           extensionFile: ${{ steps.vsmPublish.outputs.vsixPath }}
+          pat: ${{ secrets.OPEN_VSX_REGISTRY_TOKEN }}
