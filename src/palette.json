@@ -83,6 +83,8 @@
 		"//": "## Background Elements",
 		"//": "`editorBg` 2:1 with black (cannot be brighter), used for the majority of sidebars that surround the editor (including the title bar)",
 		"sidebarsBg": "#091111",
+		"//": "`editorBg` 5:4 with black, used for input borders (originally intended to be the same as `sidebarsBg`) so they stand out in Command Palette",
+		"sidebarsBgDark": "#070e0e",
 		"//": "Same as `tabsBgActiveFocused`, used only for tiny section headers and separate-purpose sidebars (e.g. sidebar sections and status bar)",
 		"sidebarsBorder": "#192424",
 		"//": "Rather than using a single colour, the status bar will show off the accent colour while debugging. For orange, 5:6 with `sidebarsBg`.",
