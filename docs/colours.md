@@ -512,28 +512,39 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 
 As with the debug view, the icons in the Outline also make use of the semantic colours in this theme.
 
-<!-- TODO: Add remaining Outline symbols, determine if use of constant variable colour is correct -->
 - *Boolean*/*Null*/*Number*: The value colour
-- *Class*: The class colour
-- *Constant*: The constant variable colour (for variety)
+- *Class*/*Enum*/*Interface*/*Struct*: The class colour
+- *Constant*/*Enum Member*: The constant variable colour (for variety)
 - *Constructor*/*Function*/*Method*: The function colour
-- *Field*/*Property*/*Variable*: The variable colour
-- *Module*: The control flow colour
-- *String*: The string colour
+- *Event*/*Field*/*Key*/*Property*/*Variable*: The variable colour
+- *Array*/*Module*/*Namespace*/*Object*/*Operator*/*Package*: The control flow colour
+- *File*/*String*: The string colour
 - *Type Parameter*: The type colour
 
+> - `symbolIcon.arrayForeground`
 > - `symbolIcon.booleanForeground`
 > - `symbolIcon.constantForeground`
 > - `symbolIcon.classForeground`
 > - `symbolIcon.constructorForeground`
+> - `symbolIcon.enumeratorForeground`
+> - `symbolIcon.enumeratorMemberForeground`
+> - `symbolIcon.eventForeground`
 > - `symbolIcon.fieldForeground`
+> - `symbolIcon.fileForeground`
 > - `symbolIcon.functionForeground`
+> - `symbolIcon.interfaceForeground`
+> - `symbolIcon.keyForeground`
+> - `symbolIcon.objectForeground`
+> - `symbolIcon.operatorForeground`
 > - `symbolIcon.methodForeground`
 > - `symbolIcon.moduleForeground`
+> - `symbolIcon.namespaceForeground`
 > - `symbolIcon.nullForeground`
 > - `symbolIcon.numberForeground`
+> - `symbolIcon.packageForeground`
 > - `symbolIcon.propertyForeground`
 > - `symbolIcon.stringForeground`
+> - `symbolIcon.structForeground`
 > - `symbolIcon.typeParameterForeground`
 > - `symbolIcon.variableForeground`
 
