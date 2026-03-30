@@ -19,7 +19,11 @@
 
 ## Contributing
 
-To start contributing, fork this repository, then use the included debug launch script to see your changes in real-time. Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
+To start contributing, fork this repository, then use the following debug scripts:
+
+- Run **New Window with VSCode Theme** to open a new window that responds to generated theme file changes in real-time.
+
+Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
 
 Pull requests are welcome. Please provide a description and screenshots of your changes.
 

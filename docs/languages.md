@@ -8,6 +8,7 @@
 - **Ignore**
 - **Java**
 - **JavaScript**
+- **[Jinja](https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja)**
 - **JSON**
 - **Lua**
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**
