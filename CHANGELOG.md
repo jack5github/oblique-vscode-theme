@@ -16,6 +16,7 @@
 ### Changed
 
 - Checkbox, dropdown and input background colours merged
+- Command Palette background and keybinding colours made darker
 - Comments that fall under `comment.block` are no longer italicised
 - GitHub Action checkout updated to `v6`
 
