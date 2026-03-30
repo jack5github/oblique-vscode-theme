@@ -10,6 +10,7 @@
 - Error, warning and info background colours for minimap and Error Lens extension
 - Insert mode cursor text colour
 - Jinja support
+- Remaining Outline (sidebar variables) colours
 - Terminal normal text and cursor colours
 
 ### Changed
