@@ -52,7 +52,6 @@ The above alpha is also used for the inactive selection, as it merely represents
 
 The background colour of inputs does not work as that of the Command Palette, for the inputs would blend in too much within the editor area, and disappear completely if they appeared in the Command Palette itself (e.g. tool checkboxes). Rather than using a 3:2 mix of the editor area colour and the active tab colour, these use a 1:2 mix, ensuring that they stand out without looking polarising.
 
-<!-- TODO: Add dark border colours for extra visibility -->
 > - `checkbox.background`
 > - `dropdown.background`
 > - `input.background`

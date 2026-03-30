@@ -9,6 +9,7 @@
 - C#: Keyword semantic colour `punctuation.definition.interpolation`
 - Error, warning and info background colours for minimap and Error Lens extension
 - Insert mode cursor text colour
+- Input border colours
 - Jinja support
 - Remaining Outline (sidebar variables) colours
 - Terminal normal text and cursor colours
