@@ -518,8 +518,8 @@ The debug toolbar's icons are given colours similar to the sematic colours in th
 - *Pause*: The variable colour, for it exposes variables and is more visible than the type colour
 - *Continue*: The value colour, for it is green
 - *Step Over*: The function colour, for it implies running a function
-- *Step Into*/*Step Back*: A 1:1 mix of the function and control flow colours, creating a linear gradient
-- *Step Out*: The control flow colour, for it implies exiting a flow
+- *Step Into*/*Step Back*: A 1:1 mix of the function and keyword colours, creating a linear gradient
+- *Step Out*: The keyword colour, for it implies exiting a flow
 - *Restart*: The type colour, for it is unused by the rest of the debug icons and creates a gradient between *Pause* and *Stop*
 - *Stop*/*Disconnect*: The class colour, for it is red
 
@@ -554,21 +554,22 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 > - `debugTokenExpression.type`
 > - `debugTokenExpression.error`
 
-### Outline Symbols
+### Outline Symbol Icons
 
 As with the debug view, the icons in the Outline also make use of the semantic colours in this theme.
 
-- *Boolean*/*Null*/*Number*: The value colour
+- *Boolean*/*Color*/*Null*/*Number*/*Unit*: The value colour
 - *Class*/*Enum*/*Interface*/*Struct*: The class colour
 - *Constant*/*Enum Member*: The constant variable colour (for variety)
-- *Constructor*/*Function*/*Method*: The function colour
+- *Constructor*/*Function*/*Method*/*Snippet*: The function colour
 - *Event*/*Field*/*Key*/*Property*/*Variable*: The variable colour
-- *Array*/*Module*/*Namespace*/*Object*/*Operator*/*Package*: The control flow colour
-- *File*/*String*: The string colour
+- *Array*/*Keyword*/*Module*/*Namespace*/*Object*/*Operator*/*Package*/*Reference*: The keyword colour
+- *File*/*Folder*/*String*/*Text*: The string colour
 - *Type Parameter*: The type colour
 
 > - `symbolIcon.arrayForeground`
 > - `symbolIcon.booleanForeground`
+> - `symbolIcon.colorForeground`
 > - `symbolIcon.constantForeground`
 > - `symbolIcon.classForeground`
 > - `symbolIcon.constructorForeground`
@@ -577,9 +578,11 @@ As with the debug view, the icons in the Outline also make use of the semantic c
 > - `symbolIcon.eventForeground`
 > - `symbolIcon.fieldForeground`
 > - `symbolIcon.fileForeground`
+> - `symbolIcon.folderForeground`
 > - `symbolIcon.functionForeground`
 > - `symbolIcon.interfaceForeground`
 > - `symbolIcon.keyForeground`
+> - `symbolIcon.keywordForeground`
 > - `symbolIcon.objectForeground`
 > - `symbolIcon.operatorForeground`
 > - `symbolIcon.methodForeground`
@@ -589,9 +592,13 @@ As with the debug view, the icons in the Outline also make use of the semantic c
 > - `symbolIcon.numberForeground`
 > - `symbolIcon.packageForeground`
 > - `symbolIcon.propertyForeground`
+> - `symbolIcon.referenceForeground`
+> - `symbolIcon.snippetForeground`
 > - `symbolIcon.stringForeground`
 > - `symbolIcon.structForeground`
+> - `symbolIcon.textForeground`
 > - `symbolIcon.typeParameterForeground`
+> - `symbolIcon.unitForeground`
 > - `symbolIcon.variableForeground`
 
 ## Editor Text
@@ -618,7 +625,7 @@ Whitespace characters must blend in thoroughly with the editor background while 
 
 Visual Studio Code has support for up to 6 different bracket colours, which appear in order when nesting occurs. The first colour is the outermost bracket, the colours looping if excessive levels of nesting exist.
 
-As this theme has defined several semantic token colours, I am using those to define the bracket colours, starting from the control flow colour and sweeping through in the function direction to make a rainbow.
+As this theme has defined several semantic token colours, I am using those to define the bracket colours, starting from the keyword colour and sweeping through in the function direction to make a rainbow.
 
 > - `editorBracketHighlight.foreground1`
 > - `editorBracketHighlight.foreground2`
