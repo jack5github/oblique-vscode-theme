@@ -178,10 +178,12 @@ The active icon border should be disabled, as it is distracting. Instead, a back
 
 Icon badges in Visual Studio Code are meant to represent notifications, however they are used for a large variey of purposes, so many that their presence becomes somewhat of an annoyance. In my theme their background should be toned down, though still be visible. Their foreground can be the same as the active icon colour for simplicity.
 
-Before creating this theme, I used #404040, which is surprisingly too bright of a colour. I have instead taken the inactive icon background and mixed it with the activity bar background, using a 2:5 mix. Any darker and it becomes hard to tell if there is even a badge there. Any brighter and it becomes distracting.
+Before creating this theme, I used #404040, which is surprisingly too bright of a colour. I have instead taken the inactive icon background and mixed it with the activity bar background, using a 2:5 mix. Any darker and it becomes hard to tell if there is even a badge there. Any brighter and it becomes distracting. (For now, all other badges use the same colours.)
 
 > - `activityBarBadge.background`
 > - `activityBarBadge.foreground`
+> - `badge.background`
+> - `badge.foreground`
 
 ### Text
 
@@ -205,6 +207,25 @@ While the editor area text colour may seem too bright for the file and folder na
 Ignored files and folders ought to have a much darker text colour than normal text, as a developer will be acutely aware of all of their ignored files and will most likely not need to actively look for them. I am using a 14:15 mix of the normal text colour and black.
 
 > - `gitDecoration.ignoredResourceForeground`
+
+The other Git decoration colours are borrowed from semantic colours in this theme.
+
+- *Added*/*Untracked*: The function colour
+- *Conflicting*: The warning colour
+- *Deleted*: The class colour
+- *Modified*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
+- *Renamed*: The variable colour (the better-looking out of the two colours adjacent to the constant variable colour)
+- *Submodule*: The keyword colour
+
+> - `gitDecoration.addedResourceForeground`
+> - `gitDecoration.untrackedResourceForeground`
+> - `gitDecoration.conflictingResourceForeground`
+> - `gitDecoration.deletedResourceForeground`
+> - `gitDecoration.stageDeletedResourceForeground`
+> - `gitDecoration.modifiedResourceForeground`
+> - `gitDecoration.stageModifiedResourceForeground`
+> - `gitDecoration.renamedResourceForeground`
+> - `gitDecoration.submoduleResourceForeground`
 
 #### Preformatted (Code)
 

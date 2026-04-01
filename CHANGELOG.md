@@ -4,7 +4,8 @@
 
 ### Added
 
-- Git difference colours
+- Git decoration and difference colours
+- Global badge colours
 
 ## 0.0.4 - 2026-03-30
 
