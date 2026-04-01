@@ -639,17 +639,20 @@ As this theme has defined several semantic token colours, I am using those to de
 Errors must be red, though the class semantic colour is not red enough. Using the same process, a 5:2 mix of `#ff0000` and `#ffffff` produces a more attention-grabbing red that is still legible on both the editor background and the current file selection.
 
 > - `list.errorForeground`
+> - `problemsErrorIcon.foreground`
 > - `editorError.foreground`
 > - `errorLens.errorForeground`
 
 Similarly, warnings are somewhat orange, so the same approach is taken but for the type semantic colour, using a 6:1 mix of its components.
 
 > - `list.warningForeground`
+> - `problemsWarningIcon.foreground`
 > - `editorWarning.foreground`
 > - `errorLens.warningForeground`
 
 As for the info colour, info messages tend to be very annoying, so rather than giving them their default hue of blue, they use a colour even darker than comments, a 5:2 mix of said colour and the editor background colour.
 
+> - `problemsInfoIcon.foreground`
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
 
