@@ -341,6 +341,22 @@ Before creating this theme, I used `#1da1f2fe`. The alpha of #fe was likely a re
 
 > - `extensionIcon.verifiedForeground`
 
+### Testing
+
+The icons that appear in the Testing view share their colours with other semantic colours in this theme.
+
+- *Unset*/*Queued*: The comment colour
+- *Passed*: Same as `debugIcon.startForeground` (`debugIcon.continueForeground` is too bright)
+- *Skipped*: The warning colour
+- *Errored*/*Failed*: The error colour
+
+> - `testing.iconUnset`
+> - `testing.iconQueued`
+> - `testing.iconPassed`
+> - `testing.iconSkipped`
+> - `testing.iconErrored`
+> - `testing.iconFailed`
+
 ## Editor Area
 
 ### Background

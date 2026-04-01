@@ -6,6 +6,7 @@
 
 - Git decoration and difference colours
 - Global badge colours
+- Testing icon colours
 
 ## 0.0.4 - 2026-03-30
 
