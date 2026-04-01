@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.5 - Unreleased
+
+### Added
+
+- Git difference colours
+
 ## 0.0.4 - 2026-03-30
 
 ### Added
