@@ -601,6 +601,35 @@ As with the debug view, the icons in the Outline also make use of the semantic c
 > - `symbolIcon.unitForeground`
 > - `symbolIcon.variableForeground`
 
+## Terminal
+
+| Key                          | Colour                                 |
+| ---------------------------- | -------------------------------------- |
+| `terminal.ansiBrightBlack`   | Comment dark grey                      |
+| `terminal.ansiBrightRed`     | Error red                              |
+| `terminal.ansiBrightGreen`   | Value green                            |
+| `terminal.ansiBrightYellow`  | Pure yellow                            |
+| `terminal.ansiBrightBlue`    | Function blue shifted*                 |
+| `terminal.ansiBrightMagenta` | Keyword pink shifted**                 |
+| `terminal.ansiBrightCyan`    | Function blue shifted***               |
+| `terminal.ansiBrightWhite`   | `sideBarTitle.foreground` white        |
+| `terminal.ansiBlack`         | `terminal.background` black            |
+| `terminal.ansiRed`           | `terminal.ansiBrightRed` shifted^      |
+| `terminal.ansiGreen`         | `terminal.ansiBrightGreen` shifted^^   |
+| `terminal.ansiYellow`        | `terminal.ansiBrightYellow` shifted^^^ |
+| `terminal.ansiBlue`          | `terminal.ansiBrightBlue` shifted^^^^  |
+| `terminal.ansiMagenta`       | `terminal.ansiBrightMagenta` shifted^  |
+| `terminal.ansiCyan`          | `terminal.ansiBrightCyan` shifted^     |
+| `terminal.ansiWhite`         | `sideBar.foreground` light grey        |
+
+\*Shifted to saturation 61 value 100 (#6382ff)<br/>
+\*\*Shifted to hue 318 saturation 51 value 100 (#ff7cd7)<br/>
+\*\*\*Shifted to hue 200 value 90 (#b0d3e5)<br/>
+^Shifted to saturation 100 + black alpha 50<br/>
+^^Shifted to saturation 100 value 58 (#009304)<br/>
+^^^Shifted to value 67 (#aaaa00)<br/>
+^^^^Shifted to saturation 100 value 86 (#002cdd)
+
 ## Editor Text
 
 ### Text Colour

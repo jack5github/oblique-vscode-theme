@@ -23,7 +23,7 @@ To start contributing, fork this repository, then use the following debug script
 
 - Run **New Window with VSCode Theme** to open a new window that responds to generated theme file changes in real-time.
 
-Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
+Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades, and [ANSI-Color-Test](https://github.com/nesterenkovy/ANSI-Color-Test) to preview terminal colours.
 
 Pull requests are welcome. Please provide a description and screenshots of your changes.
 

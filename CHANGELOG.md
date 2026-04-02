@@ -8,6 +8,7 @@
 - Global badge colours
 - More remaining Outline (sidebar variables) colours
 - Problems and Testing icon colours
+- Terminal ANSI colours
 
 ## 0.0.4 - 2026-03-30
 
