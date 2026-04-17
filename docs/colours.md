@@ -178,10 +178,12 @@ The active icon border should be disabled, as it is distracting. Instead, a back
 
 Icon badges in Visual Studio Code are meant to represent notifications, however they are used for a large variey of purposes, so many that their presence becomes somewhat of an annoyance. In my theme their background should be toned down, though still be visible. Their foreground can be the same as the active icon colour for simplicity.
 
-Before creating this theme, I used #404040, which is surprisingly too bright of a colour. I have instead taken the inactive icon background and mixed it with the activity bar background, using a 2:5 mix. Any darker and it becomes hard to tell if there is even a badge there. Any brighter and it becomes distracting.
+Before creating this theme, I used #404040, which is surprisingly too bright of a colour. I have instead taken the inactive icon background and mixed it with the activity bar background, using a 2:5 mix. Any darker and it becomes hard to tell if there is even a badge there. Any brighter and it becomes distracting. (For now, all other badges use the same colours.)
 
 > - `activityBarBadge.background`
 > - `activityBarBadge.foreground`
+> - `badge.background`
+> - `badge.foreground`
 
 ### Text
 
@@ -205,6 +207,25 @@ While the editor area text colour may seem too bright for the file and folder na
 Ignored files and folders ought to have a much darker text colour than normal text, as a developer will be acutely aware of all of their ignored files and will most likely not need to actively look for them. I am using a 14:15 mix of the normal text colour and black.
 
 > - `gitDecoration.ignoredResourceForeground`
+
+The other Git decoration colours are borrowed from semantic colours in this theme.
+
+- *Added*/*Untracked*: The function colour
+- *Conflicting*: The warning colour
+- *Deleted*: The class colour
+- *Modified*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
+- *Renamed*: The variable colour (the better-looking out of the two colours adjacent to the constant variable colour)
+- *Submodule*: The keyword colour
+
+> - `gitDecoration.addedResourceForeground`
+> - `gitDecoration.untrackedResourceForeground`
+> - `gitDecoration.conflictingResourceForeground`
+> - `gitDecoration.deletedResourceForeground`
+> - `gitDecoration.stageDeletedResourceForeground`
+> - `gitDecoration.modifiedResourceForeground`
+> - `gitDecoration.stageModifiedResourceForeground`
+> - `gitDecoration.renamedResourceForeground`
+> - `gitDecoration.submoduleResourceForeground`
 
 #### Preformatted (Code)
 
@@ -320,6 +341,22 @@ Before creating this theme, I used `#1da1f2fe`. The alpha of #fe was likely a re
 
 > - `extensionIcon.verifiedForeground`
 
+### Testing
+
+The icons that appear in the Testing view share their colours with other semantic colours in this theme.
+
+- *Unset*/*Queued*: The comment colour
+- *Passed*: Same as `debugIcon.startForeground` (`debugIcon.continueForeground` is too bright)
+- *Skipped*: The warning colour
+- *Errored*/*Failed*: The error colour
+
+> - `testing.iconUnset`
+> - `testing.iconQueued`
+> - `testing.iconPassed`
+> - `testing.iconSkipped`
+> - `testing.iconErrored`
+> - `testing.iconFailed`
+
 ## Editor Area
 
 ### Background
@@ -402,6 +439,18 @@ Before creating this theme, I used an alpha of `#20`, but this is a bit too brig
 > - `selection.background`
 > - `editor.inactiveSelectionBackground`
 
+### Difference Indicators
+
+Text difference indicators should not change from their well-known colours, red and green, but they must be set to the correct lightnesses and transparencies so that they do not obscure any text, especially comments.
+
+<!-- TODO: Revisit these colours when making light theme -->
+From initial testing, a dark red and bright green were chosen, specifically `#0d351a` (the darkest yet most legible red) and `#0c2f18` (a 10:1 mix of the editor area colour and pure green). However, these opaque colours would not be compatible with theme variants. To rectify this, green was changed to `#00ff0018` (a near identical match) and red to `#ff00002b` (roughly equal to green in terms of lightness). The highlight colours are identical.
+
+> - `diffEditor.removedLineBackground`
+> - `diffEditor.insertedLineBackground`
+> - `diffEditor.removedTextBackground`
+> - `diffEditor.insertedTextBackground`
+
 ### Scroll Bar
 
 Due to the very faint colours in use by various selection components in this theme, the scrollbar needs to be able to show these while still remaining visible. The alphas for the below three states (seen in order) were chosen carefully to maintain a visual distinction between each state while remaining dark and still showing what is behind them.
@@ -469,8 +518,8 @@ The debug toolbar's icons are given colours similar to the sematic colours in th
 - *Pause*: The variable colour, for it exposes variables and is more visible than the type colour
 - *Continue*: The value colour, for it is green
 - *Step Over*: The function colour, for it implies running a function
-- *Step Into*/*Step Back*: A 1:1 mix of the function and control flow colours, creating a linear gradient
-- *Step Out*: The control flow colour, for it implies exiting a flow
+- *Step Into*/*Step Back*: A 1:1 mix of the function and keyword colours, creating a linear gradient
+- *Step Out*: The keyword colour, for it implies exiting a flow
 - *Restart*: The type colour, for it is unused by the rest of the debug icons and creates a gradient between *Pause* and *Stop*
 - *Stop*/*Disconnect*: The class colour, for it is red
 
@@ -505,21 +554,22 @@ Because the debug view in the sidebar represents actual programmatic concepts, t
 > - `debugTokenExpression.type`
 > - `debugTokenExpression.error`
 
-### Outline Symbols
+### Outline Symbol Icons
 
 As with the debug view, the icons in the Outline also make use of the semantic colours in this theme.
 
-- *Boolean*/*Null*/*Number*: The value colour
+- *Boolean*/*Color*/*Null*/*Number*/*Unit*: The value colour
 - *Class*/*Enum*/*Interface*/*Struct*: The class colour
 - *Constant*/*Enum Member*: The constant variable colour (for variety)
-- *Constructor*/*Function*/*Method*: The function colour
+- *Constructor*/*Function*/*Method*/*Snippet*: The function colour
 - *Event*/*Field*/*Key*/*Property*/*Variable*: The variable colour
-- *Array*/*Module*/*Namespace*/*Object*/*Operator*/*Package*: The control flow colour
-- *File*/*String*: The string colour
+- *Array*/*Keyword*/*Module*/*Namespace*/*Object*/*Operator*/*Package*/*Reference*: The keyword colour
+- *File*/*Folder*/*String*/*Text*: The string colour
 - *Type Parameter*: The type colour
 
 > - `symbolIcon.arrayForeground`
 > - `symbolIcon.booleanForeground`
+> - `symbolIcon.colorForeground`
 > - `symbolIcon.constantForeground`
 > - `symbolIcon.classForeground`
 > - `symbolIcon.constructorForeground`
@@ -528,9 +578,11 @@ As with the debug view, the icons in the Outline also make use of the semantic c
 > - `symbolIcon.eventForeground`
 > - `symbolIcon.fieldForeground`
 > - `symbolIcon.fileForeground`
+> - `symbolIcon.folderForeground`
 > - `symbolIcon.functionForeground`
 > - `symbolIcon.interfaceForeground`
 > - `symbolIcon.keyForeground`
+> - `symbolIcon.keywordForeground`
 > - `symbolIcon.objectForeground`
 > - `symbolIcon.operatorForeground`
 > - `symbolIcon.methodForeground`
@@ -540,10 +592,43 @@ As with the debug view, the icons in the Outline also make use of the semantic c
 > - `symbolIcon.numberForeground`
 > - `symbolIcon.packageForeground`
 > - `symbolIcon.propertyForeground`
+> - `symbolIcon.referenceForeground`
+> - `symbolIcon.snippetForeground`
 > - `symbolIcon.stringForeground`
 > - `symbolIcon.structForeground`
+> - `symbolIcon.textForeground`
 > - `symbolIcon.typeParameterForeground`
+> - `symbolIcon.unitForeground`
 > - `symbolIcon.variableForeground`
+
+## Terminal
+
+| Key                          | Colour                                 |
+| ---------------------------- | -------------------------------------- |
+| `terminal.ansiBrightBlack`   | Comment dark grey                      |
+| `terminal.ansiBrightRed`     | Error red                              |
+| `terminal.ansiBrightGreen`   | Value green                            |
+| `terminal.ansiBrightYellow`  | Pure yellow                            |
+| `terminal.ansiBrightBlue`    | Function blue shifted*                 |
+| `terminal.ansiBrightMagenta` | Keyword pink shifted**                 |
+| `terminal.ansiBrightCyan`    | Function blue shifted***               |
+| `terminal.ansiBrightWhite`   | `sideBarTitle.foreground` white        |
+| `terminal.ansiBlack`         | `terminal.background` black            |
+| `terminal.ansiRed`           | `terminal.ansiBrightRed` shifted^      |
+| `terminal.ansiGreen`         | `terminal.ansiBrightGreen` shifted^^   |
+| `terminal.ansiYellow`        | `terminal.ansiBrightYellow` shifted^^^ |
+| `terminal.ansiBlue`          | `terminal.ansiBrightBlue` shifted^^^^  |
+| `terminal.ansiMagenta`       | `terminal.ansiBrightMagenta` shifted^  |
+| `terminal.ansiCyan`          | `terminal.ansiBrightCyan` shifted^     |
+| `terminal.ansiWhite`         | `sideBar.foreground` light grey        |
+
+\*Shifted to saturation 61 value 100 (#6382ff)<br/>
+\*\*Shifted to hue 318 saturation 51 value 100 (#ff7cd7)<br/>
+\*\*\*Shifted to hue 200 value 90 (#b0d3e5)<br/>
+^Shifted to saturation 100 + black alpha 50<br/>
+^^Shifted to saturation 100 value 58 (#009304)<br/>
+^^^Shifted to value 67 (#aaaa00)<br/>
+^^^^Shifted to saturation 100 value 86 (#002cdd)
 
 ## Editor Text
 
@@ -569,7 +654,7 @@ Whitespace characters must blend in thoroughly with the editor background while 
 
 Visual Studio Code has support for up to 6 different bracket colours, which appear in order when nesting occurs. The first colour is the outermost bracket, the colours looping if excessive levels of nesting exist.
 
-As this theme has defined several semantic token colours, I am using those to define the bracket colours, starting from the control flow colour and sweeping through in the function direction to make a rainbow.
+As this theme has defined several semantic token colours, I am using those to define the bracket colours, starting from the keyword colour and sweeping through in the function direction to make a rainbow.
 
 > - `editorBracketHighlight.foreground1`
 > - `editorBracketHighlight.foreground2`
@@ -583,17 +668,20 @@ As this theme has defined several semantic token colours, I am using those to de
 Errors must be red, though the class semantic colour is not red enough. Using the same process, a 5:2 mix of `#ff0000` and `#ffffff` produces a more attention-grabbing red that is still legible on both the editor background and the current file selection.
 
 > - `list.errorForeground`
+> - `problemsErrorIcon.foreground`
 > - `editorError.foreground`
 > - `errorLens.errorForeground`
 
 Similarly, warnings are somewhat orange, so the same approach is taken but for the type semantic colour, using a 6:1 mix of its components.
 
 > - `list.warningForeground`
+> - `problemsWarningIcon.foreground`
 > - `editorWarning.foreground`
 > - `errorLens.warningForeground`
 
 As for the info colour, info messages tend to be very annoying, so rather than giving them their default hue of blue, they use a colour even darker than comments, a 5:2 mix of said colour and the editor background colour.
 
+> - `problemsInfoIcon.foreground`
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
 

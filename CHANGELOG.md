@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.5 - 2026-04-17
+
+### Added
+
+- Git decoration and difference colours
+- Global badge colours
+- More remaining Outline (sidebar variables) colours
+- Problems and Testing icon colours
+- Terminal ANSI colours
+
 ## 0.0.4 - 2026-03-30
 
 ### Added
