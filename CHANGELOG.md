@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.6 - Unreleased
+
+### Added
+
+- Editor gutter difference indicator background colours
+- Missing word highlight background colours
+- Notifications center background and foreground colours
+- Python: Editor-safe accent colour `keyword.codetag.notation`
+
+### Changed
+
+- Swapped added and modified Git decoration colours to match difference indicators
+
 ## 0.0.5 - 2026-04-17
 
 ### Added

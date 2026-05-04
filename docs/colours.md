@@ -104,9 +104,16 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 > - `editorWidget.background`
 > - `editorSuggestWidget.selectedBackground`
 
-The notifications center counts as such a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
+##### Notifications Center
+
+The notifications center counts as a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
 
 > - `notificationCenterHeader.background`
+> - `notifications.background`
+
+The foreground of the notifications, however, needs to be more discernable than normal, so it uses the same foreground colour as the activity bar.
+
+> - `notifications.foreground`
 
 #### Shadows
 
@@ -208,12 +215,12 @@ Ignored files and folders ought to have a much darker text colour than normal te
 
 > - `gitDecoration.ignoredResourceForeground`
 
-The other Git decoration colours are borrowed from semantic colours in this theme.
+The other Git decoration colours are borrowed from semantic colours in this theme, partially based on the difference indicators of this theme.
 
-- *Added*/*Untracked*: The function colour
+- *Added*/*Untracked*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
 - *Conflicting*: The warning colour
 - *Deleted*: The class colour
-- *Modified*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
+- *Modified*: The function colour
 - *Renamed*: The variable colour (the better-looking out of the two colours adjacent to the constant variable colour)
 - *Submodule*: The keyword colour
 
@@ -321,7 +328,11 @@ The background of the currently selected match also tends to be white with a set
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
 > - `editor.wordHighlightBackground`
+> - `editor.wordHighlightStrongBackground`
+> - `editor.wordHighlightTextBackground`
 > - `editorOverviewRuler.wordHighlightForeground`
+> - `editorOverviewRuler.wordHighlightStrongForeground`
+> - `editorOverviewRuler.wordHighlightTextForeground`
 
 ### Extensions
 
@@ -361,7 +372,7 @@ The icons that appear in the Testing view share their colours with other semanti
 
 ### Background
 
-The background of the editor area needs to be a dark colour, but just light enough that it isn't difficult to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
+The background of the editor area needs to be a dark colour, but just light enough that it isn't hard to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
 
 Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two.
 
@@ -387,7 +398,7 @@ I have taken a similar approach to the blockquote border colour when choosing th
 
 #### Tab Colours
 
-Tab colours are used to distinguish between different files, and are often the first thing that users notice when they open a new file. They are also used to show off the accent colour along their borders.
+Tab colours are used to distinguish between multiple files, and are often the first thing that users notice when they open a new file. They are also used to show off the accent colour along their borders.
 
 With my use of Visual Studio Code, I have found that it is better for the active tab to be highlighted and for the inactive tabs to blend in, rather than for the active tab to blend in and the inactive tabs to be lighter.
 
@@ -450,6 +461,12 @@ From initial testing, a dark red and bright green were chosen, specifically `#0d
 > - `diffEditor.insertedLineBackground`
 > - `diffEditor.removedTextBackground`
 > - `diffEditor.insertedTextBackground`
+
+Difference indicators are also present under the scroll bar. For these, the same colours are used as above with the exception of changed opacities, except for the addition of a new colour for modified lines (the function colour). Transparencies have been chosen which give these colours slightly less importance than error, warning and info markers, to encourage smaller, more informed commits.
+
+> - `editorGutter.deletedBackground`
+> - `editorGutter.modifiedBackground`
+> - `editorGutter.addedBackground`
 
 ### Scroll Bar
 
@@ -954,10 +971,13 @@ One downside of this approach is that for old languages (such as Java) that have
 
 ## Comments
 
+In Python, `keyword.codetag.notation` is a special type of comment, as it commonly refers to TODOs (the responsibility of the developer). Therefore, it alone uses the editor-safe accent colour (also used by URLs), while all other comments use the normal comment colour.
+
 > - **Python**
 >   - `comment`
 >   - `punctuation.definition.comment`
 >   - `string.quoted.docstring`
+>   - `keyword.codetag.notation`
 > - **Robot Framework**
 >   - `meta.setting.documentation.robotframework`
 >   - `meta.testcase_setting.documentation.robotframework`
