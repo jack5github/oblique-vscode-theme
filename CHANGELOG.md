@@ -5,7 +5,7 @@
 ### Added
 
 - Breakpoints foreground colour
-- Command center (Command Palette collapsed) background and border colours
+- Command center (Command Palette collapsed) colours
 - Diagonal fill colour for difference editor
 - Editor gutter difference indicator background colours
 - Input validation background and border colours
@@ -14,8 +14,8 @@
 - Missing status bar colours
 - Missing tab border colours
 - Missing word highlight background colours
-- Notifications center background, border and foreground colours
-- Peek view (symbol references) background, border and foreground colours
+- Notifications center colours
+- Peek view (symbol references) colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
 - Status bar item hover background colour
 

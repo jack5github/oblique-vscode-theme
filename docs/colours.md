@@ -19,6 +19,9 @@ By default, when defocusing Visual Studio Code, the title bar becomes too washed
 The title bar foreground controls not only the text in the Command Palette while it's closed, but also the layout icons and Windows buttons. In order for it to blend in and not distract from development, it is being set to the same foreground colour as the status bar.
 
 > - `titleBar.activeForeground`
+> - `commandCenter.foreground`
+> - `commandCenter.inactiveForeground`
+> - `commandCenter.activeForeground`
 
 The same will be true for generic icons used throughout Visual Studio Code, such as those present at the sides of the file selection list, in the top-right of the editor area and in the top-right of various sidebars. These should also blend in, as their presence can be distracting.
 
@@ -39,10 +42,20 @@ The title background can be the same colour, as the different vertical position 
 
 #### Command Center
 
-The command center is visible when the Command Palette is collapsed at the top of the window. It also includes the AI chat button. Its background is a 4:5 mix of the active tab colour and active title bar colour, which almost fully blends in when the window is inactive and is the perfect intermediary colour when active. The border colour is the same as sidebar tab borders.
+The command center is visible when the Command Palette is collapsed at the top of the window. It also includes the AI chat button. Its background is a 4:5 mix of the active tab colour and active title bar colour, which almost fully blends in when the window is inactive and is the perfect intermediary colour when active. The border colour is the same as sidebar tab borders, and the debugging colour is fully transparent to ensure the status bar is the only component with a debug-aware colour.
 
 > - `commandCenter.background`
+> - `commandCenter.debuggingBackground`
+
+The active (hover) colour of the command center is difficult to get right, as there is a separate colour also being applied to it, most noticeable when hovering over the AI chat button and looking at the portion of it not being hovered over. For this reason, a transparent white is being used (`#10`), just enough to be able to tell between the two colours.
+
+> - `commandCenter.activeBackground`
+
+The border of the command center is the same as the inputs border colour.
+
 > - `commandCenter.border`
+> - `commandCenter.inactiveBorder`
+> - `commandCenter.activeBorder`
 
 ### List Items
 
