@@ -8,6 +8,8 @@
 		"icon.foreground": "#8ea5a5",
 		"quickInput.background": "#101d1d",
 		"quickInputTitle.background": "#101d1d",
+		"commandCenter.background": "#101919",
+		"commandCenter.border": "#192424",
 		"list.activeSelectionBackground": "#ffffff16",
 		"list.inactiveSelectionBackground": "#ffffff16",
 		"list.hoverBackground": "#ffffff0c",

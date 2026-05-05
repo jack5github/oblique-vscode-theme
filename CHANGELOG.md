@@ -4,6 +4,7 @@
 
 ### Added
 
+- Command center (Command Palette collapsed) background and border colours
 - Editor gutter difference indicator background colours
 - Minimap background and selection colours
 - Missing word highlight background colours

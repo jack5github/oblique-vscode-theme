@@ -37,6 +37,13 @@ The title background can be the same colour, as the different vertical position 
 > - `quickInput.background`
 > - `quickInputTitle.background`
 
+#### Command Center
+
+The command center is visible when the Command Palette is collapsed at the top of the window. It also includes the AI chat button. Its background is a 4:5 mix of the active tab colour and active title bar colour, which almost fully blends in when the window is inactive and is the perfect intermediary colour when active. The border colour is the same as sidebar tab borders.
+
+> - `commandCenter.background`
+> - `commandCenter.border`
+
 ### List Items
 
 Command Palette highlighted items need to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
