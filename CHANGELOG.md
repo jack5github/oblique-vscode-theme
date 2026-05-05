@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.0.6 - 2026-05-05
+
+### Added
+
+- Breakpoints foreground colour
+- Command center (Command Palette collapsed) colours
+- Diagonal fill colour for difference editor
+- Editor gutter difference indicator background colours
+- Inline suggestion lightbulb colours
+- Input validation background and border colours
+- Merge conflict background colours
+- Minimap background and selection colours
+- Missing drop-in background colours
+- Missing status bar colours
+- Missing tab border colours
+- Missing word highlight background colours
+- Notifications center colours
+- Peek view (symbol references) colours
+- Python: Editor-safe accent colour `keyword.codetag.notation`
+- Selection range background colours
+- Status bar item hover background colour
+- Symbol highlight background colour
+
+### Changed
+
+- Swapped added and modified Git decoration colours to match difference indicators
+
 ## 0.0.5 - 2026-04-17
 
 ### Added

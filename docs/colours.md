@@ -19,6 +19,9 @@ By default, when defocusing Visual Studio Code, the title bar becomes too washed
 The title bar foreground controls not only the text in the Command Palette while it's closed, but also the layout icons and Windows buttons. In order for it to blend in and not distract from development, it is being set to the same foreground colour as the status bar.
 
 > - `titleBar.activeForeground`
+> - `commandCenter.foreground`
+> - `commandCenter.inactiveForeground`
+> - `commandCenter.activeForeground`
 
 The same will be true for generic icons used throughout Visual Studio Code, such as those present at the sides of the file selection list, in the top-right of the editor area and in the top-right of various sidebars. These should also blend in, as their presence can be distracting.
 
@@ -37,14 +40,35 @@ The title background can be the same colour, as the different vertical position 
 > - `quickInput.background`
 > - `quickInputTitle.background`
 
-The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
+#### Command Center
+
+The command center is visible when the Command Palette is collapsed at the top of the window. It also includes the AI chat button. Its background is a 4:5 mix of the active tab colour and active title bar colour, which almost fully blends in when the window is inactive and is the perfect intermediary colour when active. The border colour is the same as sidebar tab borders, and the debugging colour is fully transparent to ensure the status bar is the only component with a debug-aware colour.
+
+> - `commandCenter.background`
+> - `commandCenter.debuggingBackground`
+
+The active (hover) colour of the command center is difficult to get right, as there is a separate colour also being applied to it, most noticeable when hovering over the AI chat button and looking at the portion of it not being hovered over. For this reason, a transparent white is being used (`#10`), just enough to be able to tell between the two colours.
+
+> - `commandCenter.activeBackground`
+
+The border of the command center is the same as the inputs border colour.
+
+> - `commandCenter.border`
+> - `commandCenter.inactiveBorder`
+> - `commandCenter.activeBorder`
+
+### List Items
+
+Command Palette highlighted items need to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view. Since the status bar uses the same background colour as the sidebar, it can share these hover colours.
 
 > - `list.activeSelectionBackground`
+> - `statusBarItem.activeBackground`
 
 The above alpha is also used for the inactive selection, as it merely represents a selection that is not in focus, which is not a distinction that needs to be made when the focus border already does this. A hover alpha of `#0c` is slightly above half the alpha of the active selection, it looking better than `#0b` in the Explorer view.
 
 > - `list.inactiveSelectionBackground`
 > - `list.hoverBackground`
+> - `statusBarItem.hoverBackground`
 
 #### Inputs
 
@@ -103,10 +127,29 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 
 > - `editorWidget.background`
 > - `editorSuggestWidget.selectedBackground`
+> - `peekViewTitle.background`
+> - `peekViewEditor.matchHighlightBackground`
+> - `peekViewResult.background`
+> - `peekViewResult.matchHighlightBackground`
 
-The notifications center counts as such a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
+The lone exception to the above is the peek view (symbol references) code background. It is not safe for it to be brighter than the editor area because it contains editor text. For this reason, it is a 1:1 mix of the editor background and the editor gutter. Any brighter and it blends in with the surrounding editor area, any darker and the same is true for the editor gutter.
+
+> - `peekViewEditor.background`
+
+##### Notifications Center
+
+The notifications center counts as a widget. Having its header be the same colour as its items means the header has less importance, which is intended as it only contains the number of notifications.
 
 > - `notificationCenterHeader.background`
+> - `notifications.background`
+
+As for the border colour, it should appear similarly to sidebar section header borders. This requires a different approach to standard colour mixing, as notifications are brighter than section headers. Instead, the sidebar section headers were observed to have a [contrast ratio](https://webaim.org/resources/contrastchecker/) of 1.11:1, so a foreground colour of a slightly brighter ratio was used for the notifications border (1.13:1).
+
+> - `notifications.border`
+
+The foreground of the notifications, however, needs to be more discernable than normal, so it uses the same foreground colour as the activity bar.
+
+> - `notifications.foreground`
 
 #### Shadows
 
@@ -120,6 +163,7 @@ For widgets with shadows (e.g. Find and Replace), a very specific black alpha wa
 As in the standard Visual Studio Code dark theme, there is no reason for widgets to have border colours. All these serve to do is distract the user, so they have been kept as transparent.
 
 - `widget.border`
+- `peekView.border`
 
 ## Sidebars
 
@@ -208,12 +252,12 @@ Ignored files and folders ought to have a much darker text colour than normal te
 
 > - `gitDecoration.ignoredResourceForeground`
 
-The other Git decoration colours are borrowed from semantic colours in this theme.
+The other Git decoration colours are borrowed from semantic colours in this theme, partially based on the difference indicators of this theme.
 
-- *Added*/*Untracked*: The function colour
+- *Added*/*Untracked*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
 - *Conflicting*: The warning colour
 - *Deleted*: The class colour
-- *Modified*: The constant variable colour (as the normal variable colour is too bright compared to the sidebar text colour)
+- *Modified*: The function colour
 - *Renamed*: The variable colour (the better-looking out of the two colours adjacent to the constant variable colour)
 - *Submodule*: The keyword colour
 
@@ -292,6 +336,8 @@ The focus border is the line that appears around the active element, which is of
 `#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 
 > - `focusBorder`
+> - `statusBar.focusBorder`
+> - `statusBarItem.focusBorder`
 
 ### Input Buttons
 
@@ -306,22 +352,38 @@ For the border, I found that the input options look better when they have no bor
 
 ### Search & Word Matches
 
-Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area and the overview ruler underneath the scrollbar. It is intended to be a transparent colour.
+Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area, the overview ruler underneath the scrollbar and the minimap. It is intended to be a transparent colour.
 
 Search is often used as a means of finding and replacing text, which is an operation that requires extra scrutiny, so I have chosen white with the lowest alpha that is still legible on the sidebar, namely `#11`.
 
 > - `editor.findMatchHighlightBackground`
 <!-- TODO: Review transparencies for overview ruler markers -->
 > - `editorOverviewRuler.findMatchForeground`
+> - `minimap.findMatchHighlight`
 
-The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
+The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white. The above also applies to hovering over a symbol to open its widget.
 
 > - `editor.findMatchBackground`
+> - `editor.hoverHighlightBackground`
+
+If the search is being limited by a selection, that selection needs to be a less perceivable white. `#05` is approximately halfway between the standard selection colour and complete transparency.
+
+> - `editor.findRangeHighlightBackground`
 
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
 > - `editor.wordHighlightBackground`
+> - `editor.wordHighlightStrongBackground`
+> - `editor.wordHighlightTextBackground`
 > - `editorOverviewRuler.wordHighlightForeground`
+> - `editorOverviewRuler.wordHighlightStrongForeground`
+> - `editorOverviewRuler.wordHighlightTextForeground`
+> - `editor.selectionHighlightBackground`
+> - `minimap.selectionOccurrenceHighlight`
+
+The above also applies to the background colour of the line on which the currently selected match is located.
+
+> - `editor.rangeHighlightBackground`
 
 ### Extensions
 
@@ -361,15 +423,25 @@ The icons that appear in the Testing view share their colours with other semanti
 
 ### Background
 
-The background of the editor area needs to be a dark colour, but just light enough that it isn't difficult to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
+The background of the editor area needs to be a dark colour, but just light enough that it isn't hard to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
 
-Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two.
+Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two. The minimap background is completely transparent as it should blend in with the editor area.
 
 > - `editor.background`
+> - `minimap.background`
 
-When an editor area is being dropped on another, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`.
+When something is being dropped into any component, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`. The same is true for rearranging list items.
 
 > - `editorGroup.dropBackground`
+> - `sidebar.dropBackground`
+> - `panelSection.dropBackground`
+> - `terminal.dropBackground`
+> - `list.dropBackground`
+> - `list.dropBetweenBackground`
+
+The message that appears when doing so isn't dark enough to be readable, so it is now the sidebar background colour. Essentially, the editor gutter and area become lighter as a result, so the closest dark colour is being used.
+
+> - `editorGroup.dropIntoPromptBackground`
 
 In the case where an editor area is blank (starting Visual Studio Code or creating a split view with one file), the chosen background colour above was too bright. It didn't take very long to find that the inactive title bar colour is the best for this use case. Even when a blank editor area is defocused, it doesn't get as bright as the sidebar tabs.
 
@@ -387,7 +459,7 @@ I have taken a similar approach to the blockquote border colour when choosing th
 
 #### Tab Colours
 
-Tab colours are used to distinguish between different files, and are often the first thing that users notice when they open a new file. They are also used to show off the accent colour along their borders.
+Tab colours are used to distinguish between multiple files, and are often the first thing that users notice when they open a new file. They are also used to show off the accent colour along their borders.
 
 With my use of Visual Studio Code, I have found that it is better for the active tab to be highlighted and for the inactive tabs to blend in, rather than for the active tab to blend in and the inactive tabs to be lighter.
 
@@ -408,11 +480,14 @@ If a tab is not focused, it should be dimmed, so I am repurposing the hover colo
 
 #### Tab Borders
 
-Borders are required to separate tabs from the editor area. Borders should not be used to separate tabs from each other, as this proves to be distracting.
+Borders are required to separate tabs from the editor area. Borders should not be used to separate tabs from each other, as this proves to be distracting, so the following colours are fully transparent.
+
+> - `tab.border`
+> - `editorGroupHeader.tabsBorder`
+> - `editorGroupHeader.border`
 
 The active tab border should be the same as the focus colour. Unfocused active tabs can have the same colour, as their borders are thinner which makes them dimmer by themselves. Inactive tabs should not have a border.
 
-> - `tab.border` (invisible)
 > - `tab.activeBorder`
 > - `tab.unfocusedActiveBorder`
 
@@ -433,11 +508,31 @@ Modified settings show a vertical bar on their left side. While this can be simi
 
 Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
 
-Before creating this theme, I used an alpha of `#20`, but this is a bit too bright. When focused, the selection background should be no darker than `#1b`, and when unfocused, `#0f`. The selection background can be the same when the window is inactive, for the rest of the window communicates this to the user.
+Before creating this theme, I used an alpha of `#20`, but this is a bit too bright. When focused, the selection background should be no darker than `#1b`, and when unfocused, `#0f`. The selection background can be the same when the window is inactive, for the rest of the window's colours communicates this to the user.
 
 > - `editor.selectionBackground`
 > - `selection.background`
+> - `minimap.selectionHighlight`
 > - `editor.inactiveSelectionBackground`
+
+### Inline Suggestions
+
+These icons appear when there is an error that VSCode can automatically resolve. The lightbulb that appears in the context menu is pure yellow, while the inline auto-fix lightbulb needs to be darker, so it is a 4:1 mix with the editor background.
+
+> - `editorLightBulb.foreground`
+> - `editorLightBulbAutoFix.foreground`
+
+### Peek View (Symbol References)
+
+The primary colour of the peek view widget, for filenames and matches, is identical to the sidebar foreground, as both refer to filenames.
+
+> - `peekViewTitleLabel.foreground`
+> - `peekViewResult.fileForeground`
+
+As for the file path and irrelevant text, they use the breadcrumbs foreground and ignored colour respectively.
+
+> - `peekViewTitleDescriptionLabel.foreground`
+> - `peekViewResult.lineForeground`
 
 ### Difference Indicators
 
@@ -450,6 +545,25 @@ From initial testing, a dark red and bright green were chosen, specifically `#0d
 > - `diffEditor.insertedLineBackground`
 > - `diffEditor.removedTextBackground`
 > - `diffEditor.insertedTextBackground`
+
+Difference indicators are also present under the scroll bar. For these, the same colours are used as above with the exception of changed opacities, except for the addition of a new colour for modified lines (the function colour). Transparencies have been chosen which give these colours slightly less importance than error, warning and info markers, to encourage smaller, more informed commits.
+
+> - `editorGutter.deletedBackground`
+> - `editorGutter.modifiedBackground`
+> - `editorGutter.addedBackground`
+
+As an aside, the difference viewer displays a diagonal pattern in areas where a line is present on one side and isn't on the other due to word wrap. This needs to be a light colour to allude to the existence of text, while being dark enough to not be distracting. A 1:2 mix of the ignored text colour and the editor area colour was chosen.
+
+> - `diffEditor.diagonalFill`
+
+### Merge Conflicts
+
+Unlike difference indicators, merge conflicts are more complicated and require a more nuanced approach. The colour scheme here uses the theme's accent colour for current changes, and the colour with the exact opposite hue for the incoming changes. Transparencies were chosen to ensure that the code is still visible over the top of these colours, no matter their hue.
+
+> - `merge.currentHeaderBackground`
+> - `merge.currentContentBackground`
+> - `merge.incomingContentBackground`
+> - `merge.incomingHeaderBackground`
 
 ### Scroll Bar
 
@@ -491,9 +605,10 @@ When debugging, the border uses a 10:1 mix of the background colour and pure whi
 
 ### Foreground
 
-The status bar foreground is a 5:1 mix of the editor text and the background colour, the darkest it can get before it looks disabled.
+The status bar foreground is a 5:1 mix of the editor text and the background colour, the darkest it can get before it looks disabled. Hovering has no effect on the colour, as with the sidebar text.
 
 > - `statusBar.foreground`
+> - `statusBarItem.hoverForeground`
 > - `statusBar.noFolderForeground`
 
 For debugging, this dark colour is no longer appropriate, and so the editor text colour is used as-is.
@@ -501,6 +616,12 @@ For debugging, this dark colour is no longer appropriate, and so the editor text
 > - `statusBar.debuggingForeground`
 
 ## Debugging
+
+### Breakpoints
+
+Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active. They use the error colour, as it is red enough to indicate a stop while light enough to be visible when hovering.
+
+> - `debugIcon.breakpointForeground`
 
 ### Toolbar
 
@@ -684,6 +805,17 @@ As for the info colour, info messages tend to be very annoying, so rather than g
 > - `problemsInfoIcon.foreground`
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
+
+### Input Validation
+
+Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
+
+> - `inputValidation.errorBackground`
+> - `inputValidation.errorBorder`
+> - `inputValidation.warningBackground`
+> - `inputValidation.warningBorder`
+> - `inputValidation.infoBackground`
+> - `inputValidation.infoBorder`
 
 ## Cursors
 
@@ -954,10 +1086,13 @@ One downside of this approach is that for old languages (such as Java) that have
 
 ## Comments
 
+In Python, `keyword.codetag.notation` is a special type of comment, as it commonly refers to TODOs (the responsibility of the developer). Therefore, it alone uses the editor-safe accent colour (also used by URLs), while all other comments use the normal comment colour.
+
 > - **Python**
 >   - `comment`
 >   - `punctuation.definition.comment`
 >   - `string.quoted.docstring`
+>   - `keyword.codetag.notation`
 > - **Robot Framework**
 >   - `meta.setting.documentation.robotframework`
 >   - `meta.testcase_setting.documentation.robotframework`
