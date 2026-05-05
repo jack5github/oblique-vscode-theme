@@ -10,6 +10,7 @@
 - Editor gutter difference indicator background colours
 - Inline suggestion lightbulb colours
 - Input validation background and border colours
+- Merge conflict background colours
 - Minimap background and selection colours
 - Missing drop-in background colours
 - Missing status bar colours

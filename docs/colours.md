@@ -547,6 +547,15 @@ As an aside, the difference viewer displays a diagonal pattern in areas where a 
 
 > - `diffEditor.diagonalFill`
 
+### Merge Conflicts
+
+Unlike difference indicators, merge conflicts are more complicated and require a more nuanced approach. The colour scheme here uses the theme's accent colour for current changes, and the colour with the exact opposite hue for the incoming changes. Transparencies were chosen to ensure that the code is still visible over the top of these colours, no matter their hue.
+
+> - `merge.currentHeaderBackground`
+> - `merge.currentContentBackground`
+> - `merge.incomingContentBackground`
+> - `merge.incomingHeaderBackground`
+
 ### Scroll Bar
 
 Due to the very faint colours in use by various selection components in this theme, the scrollbar needs to be able to show these while still remaining visible. The alphas for the below three states (seen in order) were chosen carefully to maintain a visual distinction between each state while remaining dark and still showing what is behind them.
