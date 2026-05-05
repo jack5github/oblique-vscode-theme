@@ -719,6 +719,17 @@ As for the info colour, info messages tend to be very annoying, so rather than g
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
 
+### Input Validation
+
+Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
+
+> - `inputValidation.errorBackground`
+> - `inputValidation.errorBorder`
+> - `inputValidation.warningBackground`
+> - `inputValidation.warningBorder`
+> - `inputValidation.infoBackground`
+> - `inputValidation.infoBorder`
+
 ## Cursors
 
 Surprisingly, despite the cursor being thinner than editor text, when using the same colour it turns out to be too bright. To resolve this, an 11:2 mix is used between the editor text colour and the background colour.

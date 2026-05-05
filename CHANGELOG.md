@@ -6,6 +6,7 @@
 
 - Command center (Command Palette collapsed) background and border colours
 - Editor gutter difference indicator background colours
+- Input validation background and border colours
 - Minimap background and selection colours
 - Missing word highlight background colours
 - Notifications center background and foreground colours
