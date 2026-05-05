@@ -366,6 +366,10 @@ The background of the currently selected match also tends to be white with a set
 > - `editor.findMatchBackground`
 > - `editor.hoverHighlightBackground`
 
+If the search is being limited by a selection, that selection needs to be a less perceivable white. `#05` is approximately halfway between the standard selection colour and complete transparency.
+
+> - `editor.findRangeHighlightBackground`
+
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
 > - `editor.wordHighlightBackground`
@@ -374,7 +378,12 @@ Word matches are much less important than search terms, but still need to be leg
 > - `editorOverviewRuler.wordHighlightForeground`
 > - `editorOverviewRuler.wordHighlightStrongForeground`
 > - `editorOverviewRuler.wordHighlightTextForeground`
+> - `editor.selectionHighlightBackground`
 > - `minimap.selectionOccurrenceHighlight`
+
+The above also applies to the background colour of the line on which the currently selected match is located.
+
+> - `editor.rangeHighlightBackground`
 
 ### Extensions
 

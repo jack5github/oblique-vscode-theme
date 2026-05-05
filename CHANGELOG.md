@@ -19,6 +19,7 @@
 - Notifications center colours
 - Peek view (symbol references) colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
+- Selection range background colours
 - Status bar item hover background colour
 - Symbol highlight background colour
 
