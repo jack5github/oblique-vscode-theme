@@ -124,6 +124,10 @@ The notifications center counts as a widget. Having its header be the same colou
 > - `notificationCenterHeader.background`
 > - `notifications.background`
 
+As for the border colour, it should appear similarly to sidebar section header borders. This requires a different approach to standard colour mixing, as notifications are brighter than section headers. Instead, the sidebar section headers were observed to have a [contrast ratio](https://webaim.org/resources/contrastchecker/) of 1.11:1, so a foreground colour of a slightly brighter ratio was used for the notifications border (1.13:1).
+
+> - `notifications.border`
+
 The foreground of the notifications, however, needs to be more discernable than normal, so it uses the same foreground colour as the activity bar.
 
 > - `notifications.foreground`

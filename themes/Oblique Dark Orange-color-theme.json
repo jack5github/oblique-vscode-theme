@@ -38,6 +38,7 @@
 		"editorSuggestWidget.selectedBackground": "#ffffff16",
 		"notificationCenterHeader.background": "#121e1e",
 		"notifications.background": "#121e1e",
+		"notifications.border": "#192929",
 		"notifications.foreground": "#dce7e7",
 		"widget.shadow": "#0000006d",
 		"scrollbar.shadow": "#0000006d",

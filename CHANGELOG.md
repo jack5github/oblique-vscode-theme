@@ -9,7 +9,7 @@
 - Input validation background and border colours
 - Minimap background and selection colours
 - Missing word highlight background colours
-- Notifications center background and foreground colours
+- Notifications center background, border and foreground colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
 - Status bar item hover background colour
 
