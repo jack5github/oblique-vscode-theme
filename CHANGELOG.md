@@ -19,6 +19,7 @@
 - Peek view (symbol references) colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
 - Status bar item hover background colour
+- Symbol highlight background colour
 
 ### Changed
 

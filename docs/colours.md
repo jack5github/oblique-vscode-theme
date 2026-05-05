@@ -361,9 +361,10 @@ Search is often used as a means of finding and replacing text, which is an opera
 > - `editorOverviewRuler.findMatchForeground`
 > - `minimap.findMatchHighlight`
 
-The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
+The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white. The above also applies to hovering over a symbol to open its widget.
 
 > - `editor.findMatchBackground`
+> - `editor.hoverHighlightBackground`
 
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 

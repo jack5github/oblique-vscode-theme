@@ -105,6 +105,7 @@
 		"editorOverviewRuler.findMatchForeground": "#ffffff11",
 		"minimap.findMatchHighlight": "#ffffff11",
 		"editor.findMatchBackground": "#ffffff11",
+		"editor.hoverHighlightBackground": "#ffffff11",
 		"editor.wordHighlightBackground": "#ffffff09",
 		"editor.wordHighlightStrongBackground": "#ffffff09",
 		"editor.wordHighlightTextBackground": "#ffffff09",
