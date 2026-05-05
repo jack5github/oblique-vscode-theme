@@ -5,6 +5,7 @@
 ### Added
 
 - Editor gutter difference indicator background colours
+- Minimap background and selection colours
 - Missing word highlight background colours
 - Notifications center background and foreground colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`

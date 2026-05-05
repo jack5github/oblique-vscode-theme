@@ -319,13 +319,14 @@ For the border, I found that the input options look better when they have no bor
 
 ### Search & Word Matches
 
-Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area and the overview ruler underneath the scrollbar. It is intended to be a transparent colour.
+Searching for text in files doesn't only highlight the search term as it appears in the sidebar, but also as it appears in the editor area, the overview ruler underneath the scrollbar and the minimap. It is intended to be a transparent colour.
 
 Search is often used as a means of finding and replacing text, which is an operation that requires extra scrutiny, so I have chosen white with the lowest alpha that is still legible on the sidebar, namely `#11`.
 
 > - `editor.findMatchHighlightBackground`
 <!-- TODO: Review transparencies for overview ruler markers -->
 > - `editorOverviewRuler.findMatchForeground`
+> - `minimap.findMatchHighlight`
 
 The background of the currently selected match also tends to be white with a set alpha. Since match highlights stack from both the sidebar and the editor area, and making the selected match any brighter will only create complications when combined with other highlights (e.g. word matches), it too uses the same transparent white.
 
@@ -339,6 +340,7 @@ Word matches are much less important than search terms, but still need to be leg
 > - `editorOverviewRuler.wordHighlightForeground`
 > - `editorOverviewRuler.wordHighlightStrongForeground`
 > - `editorOverviewRuler.wordHighlightTextForeground`
+> - `minimap.selectionOccurrenceHighlight`
 
 ### Extensions
 
@@ -380,9 +382,10 @@ The icons that appear in the Testing view share their colours with other semanti
 
 The background of the editor area needs to be a dark colour, but just light enough that it isn't hard to phase it out when reading code. It is the main background colour which all other background colours are derived from, so it is important to get right.
 
-Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two.
+Before creating this theme, I would use `#001b1b`. Making this colour any dimmer causes it to be too dark, but it can be construed as being too blue-greenish. The grey equivalent of the colour is `#191919`, but it is distractingly desaturated. Therefore, I have settled on a 1:1 mix of the two. The minimap background is completely transparent as it should blend in with the editor area.
 
 > - `editor.background`
+> - `minimap.background`
 
 When an editor area is being dropped on another, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`.
 
@@ -450,10 +453,11 @@ Modified settings show a vertical bar on their left side. While this can be simi
 
 Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
 
-Before creating this theme, I used an alpha of `#20`, but this is a bit too bright. When focused, the selection background should be no darker than `#1b`, and when unfocused, `#0f`. The selection background can be the same when the window is inactive, for the rest of the window communicates this to the user.
+Before creating this theme, I used an alpha of `#20`, but this is a bit too bright. When focused, the selection background should be no darker than `#1b`, and when unfocused, `#0f`. The selection background can be the same when the window is inactive, for the rest of the window's colours communicates this to the user.
 
 > - `editor.selectionBackground`
 > - `selection.background`
+> - `minimap.selectionHighlight`
 > - `editor.inactiveSelectionBackground`
 
 ### Difference Indicators
