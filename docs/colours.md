@@ -416,6 +416,10 @@ When something is being dropped into any component, this theme uses a pure white
 > - `list.dropBackground`
 > - `list.dropBetweenBackground`
 
+The message that appears when doing so isn't dark enough to be readable, so it is now the sidebar background colour. Essentially, the editor gutter and area become lighter as a result, so the closest dark colour is being used.
+
+> - `editorGroup.dropIntoPromptBackground`
+
 In the case where an editor area is blank (starting Visual Studio Code or creating a split view with one file), the chosen background colour above was too bright. It didn't take very long to find that the inactive title bar colour is the best for this use case. Even when a blank editor area is defocused, it doesn't get as bright as the sidebar tabs.
 
 > - `editorGroup.emptyBackground`
@@ -572,6 +576,12 @@ For debugging, this dark colour is no longer appropriate, and so the editor text
 > - `statusBar.debuggingForeground`
 
 ## Debugging
+
+### Breakpoints
+
+Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active. They use the error colour, as it is red enough to indicate a stop while light enough to be visible when hovering.
+
+> - `debugIcon.breakpointForeground`
 
 ### Toolbar
 

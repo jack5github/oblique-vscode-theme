@@ -4,6 +4,7 @@
 
 ### Added
 
+- Breakpoints foreground colour
 - Command center (Command Palette collapsed) background and border colours
 - Diagonal fill colour for difference editor
 - Editor gutter difference indicator background colours
