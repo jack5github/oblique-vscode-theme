@@ -46,17 +46,15 @@ The command center is visible when the Command Palette is collapsed at the top o
 
 ### List Items
 
-Command Palette highlighted items need to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
+Command Palette highlighted items need to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view. Since the status bar uses the same background colour as the sidebar, it can share these hover colours.
 
 > - `list.activeSelectionBackground`
+> - `statusBarItem.activeBackground`
 
 The above alpha is also used for the inactive selection, as it merely represents a selection that is not in focus, which is not a distinction that needs to be made when the focus border already does this. A hover alpha of `#0c` is slightly above half the alpha of the active selection, it looking better than `#0b` in the Explorer view.
 
 > - `list.inactiveSelectionBackground`
 > - `list.hoverBackground`
-
-The hover colour of status bar items should be the same as the Explorer view's hover colour, so the transparency was adjusted to match visually (`#10`).
-
 > - `statusBarItem.hoverBackground`
 
 #### Inputs
@@ -325,6 +323,8 @@ The focus border is the line that appears around the active element, which is of
 `#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 
 > - `focusBorder`
+> - `statusBar.focusBorder`
+> - `statusBarItem.focusBorder`
 
 ### Input Buttons
 
@@ -566,9 +566,10 @@ When debugging, the border uses a 10:1 mix of the background colour and pure whi
 
 ### Foreground
 
-The status bar foreground is a 5:1 mix of the editor text and the background colour, the darkest it can get before it looks disabled.
+The status bar foreground is a 5:1 mix of the editor text and the background colour, the darkest it can get before it looks disabled. Hovering has no effect on the colour, as with the sidebar text.
 
 > - `statusBar.foreground`
+> - `statusBarItem.hoverForeground`
 > - `statusBar.noFolderForeground`
 
 For debugging, this dark colour is no longer appropriate, and so the editor text colour is used as-is.

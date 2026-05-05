@@ -11,6 +11,7 @@
 - Input validation background and border colours
 - Minimap background and selection colours
 - Missing drop-in background colours
+- Missing status bar colours
 - Missing tab border colours
 - Missing word highlight background colours
 - Notifications center background, border and foreground colours
