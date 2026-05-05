@@ -8,6 +8,7 @@
 - Missing word highlight background colours
 - Notifications center background and foreground colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
+- Status bar item hover background colour
 
 ### Changed
 

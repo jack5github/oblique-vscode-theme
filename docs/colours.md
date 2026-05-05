@@ -37,7 +37,9 @@ The title background can be the same colour, as the different vertical position 
 > - `quickInput.background`
 > - `quickInputTitle.background`
 
-The highlighted item, on the other hand, needs to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
+### List Items
+
+Command Palette highlighted items need to be a bright colour, but not be too bright to make it look distracting. Starting with the background colour and moving towards white, a mix of 11:1 works well. When it is being highlighted by hovering, it is a 19:1 mix instead. This has been converted to a pure white alpha (`#16`) so it works for all lists, especially the Explorer view.
 
 > - `list.activeSelectionBackground`
 
@@ -45,6 +47,10 @@ The above alpha is also used for the inactive selection, as it merely represents
 
 > - `list.inactiveSelectionBackground`
 > - `list.hoverBackground`
+
+The hover colour of status bar items should be the same as the Explorer view's hover colour, so the transparency was adjusted to match visually (`#10`).
+
+> - `statusBarItem.hoverBackground`
 
 #### Inputs
 

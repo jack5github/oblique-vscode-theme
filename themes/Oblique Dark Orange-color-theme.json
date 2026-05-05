@@ -11,6 +11,7 @@
 		"list.activeSelectionBackground": "#ffffff16",
 		"list.inactiveSelectionBackground": "#ffffff16",
 		"list.hoverBackground": "#ffffff0c",
+		"statusBarItem.hoverBackground": "#ffffff10",
 		"checkbox.background": "#152121",
 		"dropdown.background": "#152121",
 		"input.background": "#152121",
