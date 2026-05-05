@@ -453,11 +453,14 @@ If a tab is not focused, it should be dimmed, so I am repurposing the hover colo
 
 #### Tab Borders
 
-Borders are required to separate tabs from the editor area. Borders should not be used to separate tabs from each other, as this proves to be distracting.
+Borders are required to separate tabs from the editor area. Borders should not be used to separate tabs from each other, as this proves to be distracting, so the following colours are fully transparent.
+
+> - `tab.border`
+> - `editorGroupHeader.tabsBorder`
+> - `editorGroupHeader.border`
 
 The active tab border should be the same as the focus colour. Unfocused active tabs can have the same colour, as their borders are thinner which makes them dimmer by themselves. Inactive tabs should not have a border.
 
-> - `tab.border` (invisible)
 > - `tab.activeBorder`
 > - `tab.unfocusedActiveBorder`
 
@@ -514,6 +517,10 @@ Difference indicators are also present under the scroll bar. For these, the same
 > - `editorGutter.deletedBackground`
 > - `editorGutter.modifiedBackground`
 > - `editorGutter.addedBackground`
+
+As an aside, the difference viewer displays a diagonal pattern in areas where a line is present on one side and isn't on the other due to word wrap. This needs to be a light colour to allude to the existence of text, while being dark enough to not be distracting. A 1:2 mix of the ignored text colour and the editor area colour was chosen.
+
+> - `diffEditor.diagonalFill`
 
 ### Scroll Bar
 

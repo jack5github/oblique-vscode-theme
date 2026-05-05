@@ -5,10 +5,12 @@
 ### Added
 
 - Command center (Command Palette collapsed) background and border colours
+- Diagonal fill colour for difference editor
 - Editor gutter difference indicator background colours
 - Input validation background and border colours
 - Minimap background and selection colours
 - Missing drop-in background colours
+- Missing tab border colours
 - Missing word highlight background colours
 - Notifications center background, border and foreground colours
 - Peek view (symbol references) background, border and foreground colours
