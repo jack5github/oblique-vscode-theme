@@ -8,8 +8,10 @@
 - Editor gutter difference indicator background colours
 - Input validation background and border colours
 - Minimap background and selection colours
+- Missing drop-in background colours
 - Missing word highlight background colours
 - Notifications center background, border and foreground colours
+- Peek view (symbol references) background, border and foreground colours
 - Python: Editor-safe accent colour `keyword.codetag.notation`
 - Status bar item hover background colour
 

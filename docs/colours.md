@@ -116,6 +116,14 @@ This also includes widgets, which appear in a similar fashion to menus, as boxes
 
 > - `editorWidget.background`
 > - `editorSuggestWidget.selectedBackground`
+> - `peekViewTitle.background`
+> - `peekViewEditor.matchHighlightBackground`
+> - `peekViewResult.background`
+> - `peekViewResult.matchHighlightBackground`
+
+The lone exception to the above is the peek view (symbol references) code background. It is not safe for it to be brighter than the editor area because it contains editor text. For this reason, it is a 1:1 mix of the editor background and the editor gutter. Any brighter and it blends in with the surrounding editor area, any darker and the same is true for the editor gutter.
+
+> - `peekViewEditor.background`
 
 ##### Notifications Center
 
@@ -144,6 +152,7 @@ For widgets with shadows (e.g. Find and Replace), a very specific black alpha wa
 As in the standard Visual Studio Code dark theme, there is no reason for widgets to have border colours. All these serve to do is distract the user, so they have been kept as transparent.
 
 - `widget.border`
+- `peekView.border`
 
 ## Sidebars
 
@@ -398,9 +407,14 @@ Before creating this theme, I would use `#001b1b`. Making this colour any dimmer
 > - `editor.background`
 > - `minimap.background`
 
-When an editor area is being dropped on another, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`.
+When something is being dropped into any component, this theme uses a pure white that is just opaque enough to indicate that something will happen, specifically using an alpha of `#0c`. The same is true for rearranging list items.
 
 > - `editorGroup.dropBackground`
+> - `sidebar.dropBackground`
+> - `panelSection.dropBackground`
+> - `terminal.dropBackground`
+> - `list.dropBackground`
+> - `list.dropBetweenBackground`
 
 In the case where an editor area is blank (starting Visual Studio Code or creating a split view with one file), the chosen background colour above was too bright. It didn't take very long to find that the inactive title bar colour is the best for this use case. Even when a blank editor area is defocused, it doesn't get as bright as the sidebar tabs.
 
@@ -470,6 +484,18 @@ Before creating this theme, I used an alpha of `#20`, but this is a bit too brig
 > - `selection.background`
 > - `minimap.selectionHighlight`
 > - `editor.inactiveSelectionBackground`
+
+### Peek View (Symbol References)
+
+The primary colour of the peek view widget, for filenames and matches, is identical to the sidebar foreground, as both refer to filenames.
+
+> - `peekViewTitleLabel.foreground`
+> - `peekViewResult.fileForeground`
+
+As for the file path and irrelevant text, they use the breadcrumbs foreground and ignored colour respectively.
+
+> - `peekViewTitleDescriptionLabel.foreground`
+> - `peekViewResult.lineForeground`
 
 ### Difference Indicators
 
