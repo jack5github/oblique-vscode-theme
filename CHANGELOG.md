@@ -8,6 +8,7 @@
 - Command center (Command Palette collapsed) colours
 - Diagonal fill colour for difference editor
 - Editor gutter difference indicator background colours
+- Inline suggestion lightbulb colours
 - Input validation background and border colours
 - Minimap background and selection colours
 - Missing drop-in background colours

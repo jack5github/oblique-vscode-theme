@@ -505,6 +505,13 @@ Before creating this theme, I used an alpha of `#20`, but this is a bit too brig
 > - `minimap.selectionHighlight`
 > - `editor.inactiveSelectionBackground`
 
+### Inline Suggestions
+
+These icons appear when there is an error that VSCode can automatically resolve. The lightbulb that appears in the context menu is pure yellow, while the inline auto-fix lightbulb needs to be darker, so it is a 4:1 mix with the editor background.
+
+> - `editorLightBulb.foreground`
+> - `editorLightBulbAutoFix.foreground`
+
 ### Peek View (Symbol References)
 
 The primary colour of the peek view widget, for filenames and matches, is identical to the sidebar foreground, as both refer to filenames.
