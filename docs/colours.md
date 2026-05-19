@@ -890,6 +890,7 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 >   - `entity.other.attribute-name`
 > - **CSS**
 >   - `entity.name.tag.css`
+>   - `meta.function.variable.css`
 > - **Elm**
 >   - `meta.record.field`
 > - **Java**
@@ -1032,6 +1033,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.function.type-record`
 >   - `constant.unit.elm`
 > - **JavaScript**
+>   - `punctuation.definition.bracket.curly.begin.jsdoc`
+>   - `punctuation.definition.bracket.curly.end.jsdoc`
+>   - `punctuation.definition.optional-value.begin.bracket.square.jsdoc`
+>   - `punctuation.definition.optional-value.end.bracket.square.jsdoc`
 >   - `storage.type`
 >   - `meta.array`
 >   - `punctuation.definition.binding-pattern`
