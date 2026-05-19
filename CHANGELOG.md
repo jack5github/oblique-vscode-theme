@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.7 - Unreleased
+
+### Added
+
+- Markdown: Keyword semantic colours `punctuation.definition.begin.frontmatter` and `punctuation.definition.end.frontmatter`
+
 ## 0.0.6 - 2026-05-05
 
 ### Added

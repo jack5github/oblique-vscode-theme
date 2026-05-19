@@ -1006,6 +1006,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.structure.array`
 >   - `meta.structure.dictionary`
 > - **Markdown**
+>   - `punctuation.definition.begin.frontmatter`
+>   - `punctuation.definition.end.frontmatter`
 >   - `markup.heading`
 >   - `entity.name.section.markdown`
 >   - `punctuation.definition.heading`

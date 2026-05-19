@@ -453,6 +453,8 @@
 				"punctuation.parenthesis",
 				"meta.structure.array",
 				"meta.structure.dictionary",
+				"punctuation.definition.begin.frontmatter",
+				"punctuation.definition.end.frontmatter",
 				"markup.heading",
 				"entity.name.section.markdown",
 				"punctuation.definition.heading",
