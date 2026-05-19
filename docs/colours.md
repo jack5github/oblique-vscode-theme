@@ -372,6 +372,7 @@ If the search is being limited by a selection, that selection needs to be a less
 
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
+> - `editor.symbolHighlightBackground`
 > - `editor.wordHighlightBackground`
 > - `editor.wordHighlightStrongBackground`
 > - `editor.wordHighlightTextBackground`
@@ -384,6 +385,23 @@ Word matches are much less important than search terms, but still need to be leg
 The above also applies to the background colour of the line on which the currently selected match is located.
 
 > - `editor.rangeHighlightBackground`
+
+### Linked Editing
+
+Linked editing is an experimental feature of VSCode that allows an opening and closing tag to be edited together. It is not always enabled, therefore it needs to be obvious when it is about to happen. Since it is common that linked editing happens with HTML tags, it will use the same colour as them, that being the variable colour but transparent. An alpha of `#16` seems to work well, being obvious but not garish.
+
+> - `editor.linkedEditingBackground`
+
+### Input Validation
+
+Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
+
+> - `inputValidation.errorBackground`
+> - `inputValidation.errorBorder`
+> - `inputValidation.warningBackground`
+> - `inputValidation.warningBorder`
+> - `inputValidation.infoBackground`
+> - `inputValidation.infoBorder`
 
 ### Extensions
 
@@ -504,6 +522,14 @@ Modified settings show a vertical bar on their left side. While this can be simi
 
 > - `settings.modifiedItemIndicator`
 
+### Line Highlight
+
+The line on which the cursor is located is highlighted if there is no active selection. This stacks with word highlighting. The default of the background being fully transparent is fine as is. As for the border, the word highlight background colour was too hard to see, so the search highlight background colour is used instead. `editor.inactiveLineHighlightBorder` does not exist.
+
+> - `editor.lineHighlightBackground`
+> - `editor.inactiveLineHighlightBackground`
+> - `editor.lineHighlightBorder`
+
 ### Text Selection
 
 Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
@@ -564,6 +590,12 @@ Unlike difference indicators, merge conflicts are more complicated and require a
 > - `merge.currentContentBackground`
 > - `merge.incomingContentBackground`
 > - `merge.incomingHeaderBackground`
+
+### Folded Regions
+
+Folded regions reduce the amount of text that is visible, and are indicated by a small '⋯' symbol. There is also the option for a background colour, but it is distracting, so it is made transparent.
+
+> - `editor.foldBackground`
 
 ### Scroll Bar
 
@@ -805,17 +837,6 @@ As for the info colour, info messages tend to be very annoying, so rather than g
 > - `problemsInfoIcon.foreground`
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
-
-### Input Validation
-
-Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
-
-> - `inputValidation.errorBackground`
-> - `inputValidation.errorBorder`
-> - `inputValidation.warningBackground`
-> - `inputValidation.warningBorder`
-> - `inputValidation.infoBackground`
-> - `inputValidation.infoBorder`
 
 ## Cursors
 
