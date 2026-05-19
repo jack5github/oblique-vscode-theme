@@ -1016,6 +1016,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.quote`
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
+>   - `meta.separator.markdown`
 > - **HTML**
 >   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`

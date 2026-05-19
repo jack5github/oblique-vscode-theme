@@ -6,7 +6,7 @@
 
 - CSS: Variable semantic colour `meta.function.variable.css`
 - JavaScript: Keyword semantic colours `punctuation.definition.bracket.curly.begin/end.jsdoc` and `punctuation.definition.optional-value.begin/end.bracket.square.jsdoc`
-- Markdown: Keyword semantic colours `punctuation.definition.begin/end.frontmatter`
+- Markdown: Keyword semantic colours `meta.separator.markdown` and `punctuation.definition.begin/end.frontmatter`
 
 ## 0.0.6 - 2026-05-05
 
