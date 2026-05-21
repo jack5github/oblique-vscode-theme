@@ -12,6 +12,10 @@
 - Markdown: Keyword semantic colours `meta.separator.markdown` and `punctuation.definition.begin/end.frontmatter`
 - Missing symbol highlight background colour
 
+## Changed
+
+- Merge conflict background colour transparencies
+
 ## 0.0.6 - 2026-05-05
 
 ### Added
