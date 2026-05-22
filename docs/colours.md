@@ -624,6 +624,10 @@ One option is to use a mix between the function colour and the normal status bar
 
 > - `statusBar.debuggingBackground`
 
+When remote coding, the bottom-left of the status bar is a separate colour. It feels natural for this to be blue, like the status bar normally is in other themes, specifically `terminal.ansiBlue`, which feels like a good colour to represent the internet. A 4:10 mix of it and the normal status bar colour was chosen.
+
+> - `statusBarItem.remoteBackground`
+
 ### Border
 
 The chosen background colour needs a border to distinguish it from the sidebar. For that reason, I am using the same border colour as the tabs in the sidebar, as that colour is distinguished from all side panels and the editor area.
@@ -643,9 +647,11 @@ The status bar foreground is a 5:1 mix of the editor text and the background col
 > - `statusBarItem.hoverForeground`
 > - `statusBar.noFolderForeground`
 
-For debugging, this dark colour is no longer appropriate, and so the editor text colour is used as-is.
+For debugging and remote coding, this dark colour is no longer appropriate, and so the editor text colour is used as-is, both when hovering and not.
 
 > - `statusBar.debuggingForeground`
+> - `statusBar.remoteForeground`
+> - `statusBar.remoteHoverForeground`
 
 ## Debugging
 
