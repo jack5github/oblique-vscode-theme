@@ -653,9 +653,13 @@ For debugging, this dark colour is no longer appropriate, and so the editor text
 
 ### Breakpoints
 
-Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active. They use the error colour, as it is red enough to indicate a stop while light enough to be visible when hovering.
+Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active.
 
-> - `debugIcon.breakpointForeground`
+> - `debugIcon.breakpointForeground` - Error colour (red enough to indicate a stop while light enough to be visible when hovering)
+> - `debugIcon.breakpointDisabledForeground` - 4:5 mix of comment semantic colour and editor gutter background colour
+> - `debugIcon.breakpointCurrentStackframeForeground` - Debug continue icon colour
+> - `debugIcon.breakpointStackframeForeground` - Debug start icon colour
+> - `debugIcon.breakpointUnverifiedForeground` - 3:1 mix of error colour and editor gutter background colour
 
 ### Toolbar
 

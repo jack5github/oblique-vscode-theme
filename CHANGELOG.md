@@ -10,6 +10,7 @@
 - Line highlight background and border colours
 - Linked editing background colour
 - Markdown: Keyword semantic colours `meta.separator.markdown` and `punctuation.definition.begin/end.frontmatter`
+- Missing breakpoint foreground colours
 - Missing symbol highlight background colour
 
 ## Changed
