@@ -7,6 +7,7 @@
 - CSS: Variable semantic colour `meta.function.variable.css`
 - Folded region background colour
 - JavaScript: Keyword semantic colours `punctuation.definition.bracket.curly.begin/end.jsdoc` and `punctuation.definition.optional-value.begin/end.bracket.square.jsdoc`
+- Inlay hint foreground colours
 - Line highlight background and border colours
 - Linked editing background colour
 - Markdown: Keyword semantic colours `meta.separator.markdown` and `punctuation.definition.begin/end.frontmatter`

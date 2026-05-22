@@ -844,6 +844,14 @@ As for the info colour, info messages tend to be very annoying, so rather than g
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
 
+### Inlay Hints
+
+Inlay hints are what appears in the absence of code when working with common languages and extensions, such as [basedpyright](https://marketplace.visualstudio.com/items?itemName=detachhead.basedpyright) with Python. In this extension in particular, it is most common to see attribute hints (e.g., `name=`) and type hints (e.g., `: str`). All of the below are mixed with the editor background colour after the fact.
+
+> - `editorInlayHint.foreground` - 1:2 mix of `editorInlayHint.parameterForeground` and `editorInlayHint.typeForeground` (before they're mixed with editor background), then 3:4 mix
+> - `editorInlayHint.parameterForeground` - Variable colour, then 1:2 mix
+> - `editorInlayHint.typeForeground` - Type colour, then 1:1 mix
+
 ## Cursors
 
 Surprisingly, despite the cursor being thinner than editor text, when using the same colour it turns out to be too bright. To resolve this, an 11:2 mix is used between the editor text colour and the background colour.
