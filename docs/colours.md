@@ -526,8 +526,6 @@ Modified settings show a vertical bar on their left side. While this can be simi
 
 The line on which the cursor is located is highlighted if there is no active selection. This stacks with word highlighting. The default of the background being fully transparent is fine as is. As for the border, the word highlight background colour was too hard to see, so the search highlight background colour is used instead. `editor.inactiveLineHighlightBorder` does not exist.
 
-> - `editor.lineHighlightBackground`
-> - `editor.inactiveLineHighlightBackground`
 > - `editor.lineHighlightBorder`
 
 ### Text Selection
@@ -851,6 +849,12 @@ Inlay hints are what appears in the absence of code when working with common lan
 > - `editorInlayHint.foreground` - 1:2 mix of `editorInlayHint.parameterForeground` and `editorInlayHint.typeForeground` (before they're mixed with editor background), then 3:4 mix
 > - `editorInlayHint.parameterForeground` - Variable colour, then 1:2 mix
 > - `editorInlayHint.typeForeground` - Type colour, then 1:1 mix
+
+### Code Lens
+
+Code Lens text appears above method names, most commonly in .NET projects. Because it creates gaps in the code and its font family and size are indeterminate, it is imperative that it blends in with comments, but even with the comment colour it is still too bright. Therefore, a 5:2 mix of the comment colour and the editor background colour is used.
+
+> - `editorCodeLens.foreground`
 
 ## Cursors
 
