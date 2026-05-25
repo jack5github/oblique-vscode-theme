@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.8 - Unreleased
+
+### Added
+
+- Merge editor background and border colours
+
 ## 0.0.7 - 2026-05-25
 
 ### Added

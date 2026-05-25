@@ -591,6 +591,17 @@ Unlike difference indicators, merge conflicts are more complicated and require a
 > - `merge.incomingContentBackground`
 > - `merge.incomingHeaderBackground`
 
+#### Editor
+
+The merge editor doesn't split current and incoming changes, so both become the accent colour when unhandled, and the comment colour when handled. A transparency of `#4a` was chosen for minimap rulers to have them sit between word highlights and the scrollbar in terms of visibility (regardless of their colour), and the region highlights re-use the background colours from merge conflicts.
+
+> - `mergeEditor.conflict.unhandledFocused.border`
+> - `mergeEditor.conflict.handledFocused.border`
+> - `mergeEditor.conflict.unhandled.minimapOverViewRuler`
+> - `mergeEditor.conflict.handled.minimapOverViewRuler`
+> - `mergeEditor.change.background`
+> - `mergeEditor.change.word.background`
+
 ### Folded Regions
 
 Folded regions reduce the amount of text that is visible, and are indicated by a small '⋯' symbol. There is also the option for a background colour, but it is distracting, so it is made transparent.
