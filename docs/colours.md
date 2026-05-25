@@ -372,6 +372,7 @@ If the search is being limited by a selection, that selection needs to be a less
 
 Word matches are much less important than search terms, but still need to be legible. I found that an alpha of `#09` ensures the matches are still legible, while ensuring they are less important than search terms. All in all, it is still possible to read comments in the editor area even when fully highlighted, if only barely. (*Note: Variable-access symbol highlights, from initial observation, appear to be implemented by extensions, which are not possible to change.*)
 
+> - `editor.symbolHighlightBackground`
 > - `editor.wordHighlightBackground`
 > - `editor.wordHighlightStrongBackground`
 > - `editor.wordHighlightTextBackground`
@@ -384,6 +385,23 @@ Word matches are much less important than search terms, but still need to be leg
 The above also applies to the background colour of the line on which the currently selected match is located.
 
 > - `editor.rangeHighlightBackground`
+
+### Linked Editing
+
+Linked editing is an experimental feature of VSCode that allows an opening and closing tag to be edited together. It is not always enabled, therefore it needs to be obvious when it is about to happen. Since it is common that linked editing happens with HTML tags, it will use the same colour as them, that being the variable colour but transparent. An alpha of `#16` seems to work well, being obvious but not garish.
+
+> - `editor.linkedEditingBackground`
+
+### Input Validation
+
+Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
+
+> - `inputValidation.errorBackground`
+> - `inputValidation.errorBorder`
+> - `inputValidation.warningBackground`
+> - `inputValidation.warningBorder`
+> - `inputValidation.infoBackground`
+> - `inputValidation.infoBorder`
 
 ### Extensions
 
@@ -504,6 +522,12 @@ Modified settings show a vertical bar on their left side. While this can be simi
 
 > - `settings.modifiedItemIndicator`
 
+### Line Highlight
+
+The line on which the cursor is located is highlighted if there is no active selection. This stacks with word highlighting. The default of the background being fully transparent is fine as is. As for the border, the word highlight background colour was too hard to see, so the search highlight background colour is used instead. `editor.inactiveLineHighlightBorder` does not exist.
+
+> - `editor.lineHighlightBorder`
+
 ### Text Selection
 
 Selecting text is distracting if the selection background is any colour other than white. With this in mind, a perfect transparency must be achieved, so that selecting text is not distracting while still being fully visible.
@@ -556,7 +580,9 @@ As an aside, the difference viewer displays a diagonal pattern in areas where a 
 
 > - `diffEditor.diagonalFill`
 
-### Merge Conflicts
+### Merging
+
+#### Conflicts
 
 Unlike difference indicators, merge conflicts are more complicated and require a more nuanced approach. The colour scheme here uses the theme's accent colour for current changes, and the colour with the exact opposite hue for the incoming changes. Transparencies were chosen to ensure that the code is still visible over the top of these colours, no matter their hue.
 
@@ -564,6 +590,12 @@ Unlike difference indicators, merge conflicts are more complicated and require a
 > - `merge.currentContentBackground`
 > - `merge.incomingContentBackground`
 > - `merge.incomingHeaderBackground`
+
+### Folded Regions
+
+Folded regions reduce the amount of text that is visible, and are indicated by a small '⋯' symbol. There is also the option for a background colour, but it is distracting, so it is made transparent.
+
+> - `editor.foldBackground`
 
 ### Scroll Bar
 
@@ -592,6 +624,10 @@ One option is to use a mix between the function colour and the normal status bar
 
 > - `statusBar.debuggingBackground`
 
+When remote coding, the bottom-left of the status bar is a separate colour. It feels natural for this to be blue, like the status bar normally is in other themes, specifically `terminal.ansiBlue`, which feels like a good colour to represent the internet. A 4:10 mix of it and the normal status bar colour was chosen.
+
+> - `statusBarItem.remoteBackground`
+
 ### Border
 
 The chosen background colour needs a border to distinguish it from the sidebar. For that reason, I am using the same border colour as the tabs in the sidebar, as that colour is distinguished from all side panels and the editor area.
@@ -611,17 +647,23 @@ The status bar foreground is a 5:1 mix of the editor text and the background col
 > - `statusBarItem.hoverForeground`
 > - `statusBar.noFolderForeground`
 
-For debugging, this dark colour is no longer appropriate, and so the editor text colour is used as-is.
+For debugging and remote coding, this dark colour is no longer appropriate, and so the editor text colour is used as-is, both when hovering and not.
 
 > - `statusBar.debuggingForeground`
+> - `statusBar.remoteForeground`
+> - `statusBar.remoteHoverForeground`
 
 ## Debugging
 
 ### Breakpoints
 
-Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active. They use the error colour, as it is red enough to indicate a stop while light enough to be visible when hovering.
+Breakpoints appear on the editor gutter in a half-transparent state when hovering, and fully opaque when active.
 
-> - `debugIcon.breakpointForeground`
+> - `debugIcon.breakpointForeground` - Error colour (red enough to indicate a stop while light enough to be visible when hovering)
+> - `debugIcon.breakpointDisabledForeground` - 4:5 mix of comment semantic colour and editor gutter background colour
+> - `debugIcon.breakpointCurrentStackframeForeground` - Debug continue icon colour
+> - `debugIcon.breakpointStackframeForeground` - Debug start icon colour
+> - `debugIcon.breakpointUnverifiedForeground` - 3:1 mix of error colour and editor gutter background colour
 
 ### Toolbar
 
@@ -806,16 +848,19 @@ As for the info colour, info messages tend to be very annoying, so rather than g
 > - `editorInfo.foreground`
 > - `errorLens.infoForeground`
 
-### Input Validation
+### Inlay Hints
 
-Input validation messages appear under the search box when using the Search view. They are also broken into error, warning and info messages, but their background colours cannot be identical to the problem colours due to being too bright, so they are mixed 2:7 with the sidebar background (except the info background, which is just the input background). The borders are instead mixed 5:2, so they blend in with the focus border colour.
+Inlay hints are what appears in the absence of code when working with common languages and extensions, such as [basedpyright](https://marketplace.visualstudio.com/items?itemName=detachhead.basedpyright) with Python. In this extension in particular, it is most common to see attribute hints (e.g., `name=`) and type hints (e.g., `: str`). All of the below are mixed with the editor background colour after the fact.
 
-> - `inputValidation.errorBackground`
-> - `inputValidation.errorBorder`
-> - `inputValidation.warningBackground`
-> - `inputValidation.warningBorder`
-> - `inputValidation.infoBackground`
-> - `inputValidation.infoBorder`
+> - `editorInlayHint.foreground` - 1:2 mix of `editorInlayHint.parameterForeground` and `editorInlayHint.typeForeground` (before they're mixed with editor background), then 3:4 mix
+> - `editorInlayHint.parameterForeground` - Variable colour, then 1:2 mix
+> - `editorInlayHint.typeForeground` - Type colour, then 1:1 mix
+
+### Code Lens
+
+Code Lens text appears above method names, most commonly in .NET projects. Because it creates gaps in the code and its font family and size are indeterminate, it is imperative that it blends in with comments, but even with the comment colour it is still too bright. Therefore, a 5:2 mix of the comment colour and the editor background colour is used.
+
+> - `editorCodeLens.foreground`
 
 ## Cursors
 
@@ -890,6 +935,7 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 >   - `entity.other.attribute-name`
 > - **CSS**
 >   - `entity.name.tag.css`
+>   - `meta.function.variable.css`
 > - **Elm**
 >   - `meta.record.field`
 > - **Java**
@@ -1006,6 +1052,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.structure.array`
 >   - `meta.structure.dictionary`
 > - **Markdown**
+>   - `punctuation.definition.begin.frontmatter`
+>   - `punctuation.definition.end.frontmatter`
 >   - `markup.heading`
 >   - `entity.name.section.markdown`
 >   - `punctuation.definition.heading`
@@ -1013,6 +1061,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.quote`
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
+>   - `meta.separator.markdown`
 > - **HTML**
 >   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
@@ -1030,6 +1079,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `meta.function.type-record`
 >   - `constant.unit.elm`
 > - **JavaScript**
+>   - `punctuation.definition.bracket.curly.begin.jsdoc`
+>   - `punctuation.definition.bracket.curly.end.jsdoc`
+>   - `punctuation.definition.optional-value.begin.bracket.square.jsdoc`
+>   - `punctuation.definition.optional-value.end.bracket.square.jsdoc`
 >   - `storage.type`
 >   - `meta.array`
 >   - `punctuation.definition.binding-pattern`
