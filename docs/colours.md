@@ -666,6 +666,10 @@ When remote coding, the bottom-left of the status bar is a separate colour. It f
 
 > - `statusBarItem.remoteBackground`
 
+If a remote coding session goes offline, the bottom-left of the status bar changes to a 3:8 mix of the error colour and the status bar background colour.
+
+> - `statusBarItem.offlineBackground`
+
 ### Border
 
 The chosen background colour needs a border to distinguish it from the sidebar. For that reason, I am using the same border colour as the tabs in the sidebar, as that colour is distinguished from all side panels and the editor area.
@@ -688,8 +692,10 @@ The status bar foreground is a 5:1 mix of the editor text and the background col
 For debugging and remote coding, this dark colour is no longer appropriate, and so the editor text colour is used as-is, both when hovering and not.
 
 > - `statusBar.debuggingForeground`
-> - `statusBar.remoteForeground`
-> - `statusBar.remoteHoverForeground`
+> - `statusBarItem.remoteForeground`
+> - `statusBarItem.remoteHoverForeground`
+> - `statusBarItem.offlineForeground`
+> - `statusBarItem.offlineHoverForeground`
 
 ## Debugging
 

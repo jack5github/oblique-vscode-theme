@@ -6,6 +6,7 @@
 
 - Merge editor background and border colours
 - Panel foreground and border colours
+- Status bar offline item background and foreground colours
 
 ### Changed
 
