@@ -98,6 +98,15 @@ The foreground colour of inputs can be the same as other text in the IDE, and pl
 > - `input.foreground`
 > - `input.placeholderForeground`
 
+##### Borders
+
+All inputs share the same dark border colour to stand out on backgrounds that are lighter than usual.
+
+> - `checkbox.border`
+> - `dropdown.border`
+> - `input.border`
+> - `panelInput.border`
+
 #### Picker Groups
 
 Picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
@@ -617,6 +626,23 @@ Due to the very faint colours in use by various selection components in this the
 > - `scrollbarSlider.activeBackground`
 
 `scrollbar.background` is intentionally not set, as if it is, it only appears when the editor area is focused, and it hides Find and Replace highlights. (If I could set it, it would be the empty editor colour.)
+
+## Panel
+
+### Borders
+
+The panel is located at the bottom of the window above the status bar, and contains the Output, Debug Console and Ports views. As with other views surrounding the editor area, it has no outside border. An inside border is needed to separate its titles from the view, so the status bar border colour is used.
+
+> - `panel.border`
+> - `panelTitle.border`
+
+### Titles
+
+As the panel titles are in close proximity to the sidebar and status bar, their colours are borrowed from those components. Namely, inactive titles use the status bar text colour and active titles use the sidebar tab title colour. No underline is used to indicate that a particular view is active, as no other component uses underlines in this way.
+
+> - `panelTitle.inactiveForeground`
+> - `panelTitle.activeForeground`
+> - `panelTitle.activeBorder`
 
 ## Status Bar
 

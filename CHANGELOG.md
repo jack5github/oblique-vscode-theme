@@ -5,6 +5,7 @@
 ### Added
 
 - Merge editor background and border colours
+- Panel foreground and border colours
 
 ## 0.0.7 - 2026-05-25
 
