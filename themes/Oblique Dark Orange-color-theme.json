@@ -99,7 +99,7 @@
 		"editorLink.activeForeground": "#ffe0d5",
 		"focusBorder": "#e33c02",
 		"statusBar.focusBorder": "#e33c02",
-		"statusBarItem.focusBorder": "#e33c02",
+		"statusBarItem.focusBorder": "#ff490a",
 		"inputOption.activeBackground": "#a9340a",
 		"inputOption.activeBorder": "#00000000",
 		"editor.findMatchHighlightBackground": "#ffffff11",

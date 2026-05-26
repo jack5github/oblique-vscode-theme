@@ -340,12 +340,13 @@ Active links can also appear in the editor when holding Ctrl and hovering over a
 
 ### Focus Border
 
-The focus border is the line that appears around the active element, which is often the sidebar when one of its icons is clicked.
-
-`#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
+The focus border appears around the current active element, which is often the sidebar when one of its icons is clicked. `#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 
 > - `focusBorder`
 > - `statusBar.focusBorder`
+
+The focus border colour of status bar items is instead the button hover colour, for the border only applies to the left and right sides of the items, thus it needs to be brighter.
+
 > - `statusBarItem.focusBorder`
 
 ### Input Buttons

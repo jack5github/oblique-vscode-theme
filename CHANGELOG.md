@@ -7,6 +7,10 @@
 - Merge editor background and border colours
 - Panel foreground and border colours
 
+### Changed
+
+- Brighter status bar item focus border colour
+
 ## 0.0.7 - 2026-05-25
 
 ### Added
