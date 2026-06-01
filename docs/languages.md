@@ -12,6 +12,7 @@
 - **JSON**
 - **Lua**
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**
+- **[MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)**
 - **Properties**
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
 - **Regular expressions**

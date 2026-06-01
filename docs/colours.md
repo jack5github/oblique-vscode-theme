@@ -942,6 +942,11 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Markdown**
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
+> - **MDX**
+>   - `string.other.begin.link`
+>   - `string.other.end.link`
+>   - `string.other.begin.mdx`
+>   - `string.other.end.mdx`
 > - **Java**
 >   - `meta.declaration.annotation`
 >   - `storage.type.annotation`
@@ -962,7 +967,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 
 While grouped under functions, URLs should use the accent-defined link colour, as that is how they are defined in other parts of the theme. However, said colour does not look good when paired with editor text, so a 6:1 mix between the link colour and pure white is used.
 
-> - `markup.underline.link`
+> - **Markdown** - `markup.underline.link`
+> - **MDX** - `string.other.link.destination`
 
 ## Variables
 
@@ -1028,6 +1034,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `source.ignore`
 > - **Jinja**
 >   - `source.jinja`
+> - **MDX**
+>   - `meta.paragraph`
 > - **Properties**
 >   - `source.ini`
 
@@ -1044,6 +1052,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
+> - **MDX**
+>   - `string.other.emphasis`
 > - **JavaScript**
 >   - `constant.character.escape`
 > - **Regular expressions**
@@ -1065,6 +1075,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
+> - **MDX**
+>   - `string.other.strong`
 > - **Java**
 >   - `storage.type.java`
 >   - `storage.type.object.array.java`
@@ -1078,6 +1090,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - **Markdown**
 >     - `markup.bold`
 >     - `heading.1`
+>   - **MDX**
+>     - `string.other.strong`
 
 ## Keywords and Control Flow
 
@@ -1106,6 +1120,18 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
 >   - `meta.separator.markdown`
+> - **MDX**
+>   - `string.other.begin.yaml`
+>   - `string.other.end.yaml`
+>   - `entity.name.section.mdx`
+>   - `variable.unordered.list`
+>   - `string.other.number.mdx`
+>   - `variable.ordered.list`
+>   - `markup.list.table-delimiter`
+>   - `string.other.begin.code`
+>   - `string.other.end.code`
+>   - `string.other.begin.expression`
+>   - `string.other.end.expression`
 > - **HTML**
 >   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
@@ -1176,6 +1202,8 @@ One downside of this approach is that for old languages (such as Java) that have
 >   - `storage.type.primitive`
 > - **Markdown**
 >   - `fenced_code.block.language`
+> - **MDX**
+>   - `entity.name.function.mdx`
 > - **SourcePawn**
 >   - `storage.type.built-in`
 > - **YAML**
