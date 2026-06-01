@@ -5,21 +5,20 @@ import { fileURLToPath } from 'url';
 
 /**
  * The generate main script, which generates theme files for each target.
- * @param {string?} argv[1] The targets to generate themes for, either a single target or a JSON array of targets as a string (e.g. '[\"vscode\"]'). If undefined, will generate for all targets. Defaults to undefined.
- * @param {string?} argv[2] The directory to save themes in. If specified and only one target is being generated, no subdirectories will be created. If undefined, will use the 'dist' directory, and will create subdirectories no matter what. Defaults to undefined.
+ * @param {string?} targetsStr The targets to generate themes for, either a single target or a JSON array of targets as a string (e.g. '[\"vscode\"]'). If undefined, will generate for all targets. Defaults to undefined.
+ * @param {string?} outputDir The directory to save themes in. If specified and only one target is being generated, no subdirectories will be created. If undefined, will use the 'dist' directory, and will create subdirectories no matter what. Defaults to undefined.
  */
-const __file__ = fileURLToPath(import.meta.url);
-if (process.argv[1] === __file__) {
+export default function generate(targetsStr, outputDir) {
 	// Set build targets
 	let targets;
-	if (process.argv[2] === undefined) {
+	if (targetsStr === undefined) {
 		const targetsDir = path.join(path.dirname(__file__), 'targets');
 		targets = fs.readdirSync(targetsDir);
 	} else {
 		try {
-			targets = JSON.parse(process.argv[2]);
+			targets = JSON.parse(targetsStr);
 		} catch {
-			targets = process.argv[2];
+			targets = targetsStr;
 		}
 		if (typeof targets !== 'string' && !Array.isArray(targets)) {
 			throw new Error('targets must be a string or array');
@@ -62,8 +61,8 @@ if (process.argv[1] === __file__) {
 	}
 	// Generate theme for each target
 	let buildDir = '../dist';
-	if (process.argv[3] !== undefined) {
-		buildDir = process.argv[3];
+	if (outputDir !== undefined) {
+		buildDir = outputDir;
 	}
 	for (let target of targets) {
 		console.log(`Generating themes for target: ${target}`);
@@ -124,4 +123,9 @@ if (process.argv[1] === __file__) {
 		}
 	}
 	console.log('Themes generated successfully');
+}
+
+const __file__ = fileURLToPath(import.meta.url);
+if (process.argv[1] === __file__) {
+	generate(process.argv[2], process.argv[3]);
 }

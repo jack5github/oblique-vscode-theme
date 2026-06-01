@@ -8,12 +8,11 @@
 			"args": ["--extensionDevelopmentPath=${workspaceFolder}"]
 		},
 		{
-			"name": "Generate VSCode Themes",
+			"name": "Watch and Generate on Save",
 			"type": "node",
 			"request": "launch",
 			"cwd": "${workspaceFolder}/src",
-			"program": "generate.js",
-			"args": ["vscode", ".."]
+			"program": "watch.js"
 		}
 	]
 }

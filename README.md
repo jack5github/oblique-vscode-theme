@@ -23,7 +23,7 @@
 To start contributing, fork this repository, then use the following debug scripts:
 
 - Run **New Window with VSCode Theme** to open a new window that responds to generated theme file changes in real-time.
-- Run **Generate VSCode Themes** to update the theme files based on `src/palette.json` and the templates in `src/targets/vscode/`.
+- Run **Watch and Generate on Save** to update the theme files when changes in the `src/` directory are detected.
 
 Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
 
