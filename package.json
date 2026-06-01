@@ -10,6 +10,7 @@
 	"repository": {
 		"url": "https://github.com/jack5github/oblique-vscode-theme"
 	},
+	"type": "module",
 	"publisher": "jack-stringer",
 	"keywords": [
 		"color-blindness",

@@ -18,7 +18,7 @@
 
 ## Contributing
 
-To start contributing, fork this repository, then use the included debug launch script to see your changes in real-time. Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
+To start contributing, fork this repository, then use the included debug launch scripts to see your changes in real-time. Use a [colour mixer](https://colordesigner.io/color-mixer) to experiment with colours and shades.
 
 Pull requests are welcome. Please provide a description and screenshots of your changes.
 

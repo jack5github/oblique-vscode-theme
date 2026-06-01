@@ -108,85 +108,100 @@ function rgbaToHex(rgba) {
 /**
  * Generates theme files for the Oblique Visual Studio Code theme by reading the variants and colours from a JSON file.
  */
-let coloursJson = JSON.parse(fs.readFileSync('./src/colours.json', 'utf8'));
-let packageJsonPath = './package.json';
-let packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-packageJson.contributes.themes = [];
-let iters = [{}];
-// For each variant, go through the list of iterations and duplicate them for each variant value.
-for (let varId in coloursJson.variants) {
-	if (varId.startsWith('//')) {
-		continue;
+export default function generate() {
+	let coloursJson = JSON.parse(fs.readFileSync('./src/colours.json', 'utf8'));
+	let packageJsonPath = './package.json';
+	let packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+	packageJson.contributes.themes = [];
+	let iters = [{}];
+	// For each variant, go through the list of iterations and duplicate them for each variant value.
+	for (let varId in coloursJson.variants) {
+		if (varId.startsWith('//')) {
+			continue;
+		}
+		let itersLen = iters.length;
+		for (let i = 0; i < itersLen; i++) {
+			for (let j = 0; j < coloursJson.variants[varId].length; j++) {
+				if (j === 0) {
+					iters[i][varId] = coloursJson.variants[varId][j];
+				} else {
+					iters.push({
+						...iters[i],
+						[varId]: coloursJson.variants[varId][j],
+					});
+				}
+			}
+		}
 	}
-	let itersLen = iters.length;
-	for (let i = 0; i < itersLen; i++) {
-		for (let j = 0; j < coloursJson.variants[varId].length; j++) {
-			if (j === 0) {
-				iters[i][varId] = coloursJson.variants[varId][j];
-			} else {
-				iters.push({
-					...iters[i],
-					[varId]: coloursJson.variants[varId][j],
+	for (let i = 0; i < iters.length; i++) {
+		console.log(`Generating theme file with ${JSON.stringify(iters[i])}`);
+		// Evaluate colours
+		let colours = new Map();
+		for (let colourId in coloursJson.colours) {
+			if (colourId === '//') {
+				continue;
+			}
+			colours[colourId] = evalColour(
+				coloursJson.colours[colourId],
+				colours,
+				iters[i]
+			);
+		}
+		let themeName = 'Oblique';
+		for (let varId in iters[i]) {
+			if (varId === '') {
+				continue;
+			}
+			themeName += ` ${iters[i][varId]}`;
+		}
+		let themeJson = JSON.parse(fs.readFileSync('./src/template.json', 'utf8'));
+		themeJson.name = themeName;
+		for (let colourId in colours) {
+			let hex = rgbaToHex(colours[colourId]);
+			console.log(`${colourId}: ${hex} ${JSON.stringify(colours[colourId])}`);
+			let elements = coloursJson.colours[colourId].elements;
+			if (elements !== undefined) {
+				if (typeof elements === 'string') {
+					elements = [elements];
+				}
+				for (let i = 0; i < elements.length; i++) {
+					if (elements[i].startsWith('//')) {
+						continue;
+					}
+					themeJson.colors[elements[i]] = hex;
+				}
+			}
+			let semantics = coloursJson.colours[colourId].semantics;
+			if (semantics !== undefined) {
+				if (typeof semantics === 'string') {
+					semantics = [semantics];
+				}
+				for (let i = 0; i < semantics.length; i++) {
+					if (semantics[i].startsWith('//')) {
+						continue;
+					}
+					themeJson.semanticTokenColors[semantics[i]] = hex;
+				}
+			}
+			let tokens = coloursJson.colours[colourId].tokens;
+			if (tokens !== undefined) {
+				if (typeof tokens === 'string') {
+					tokens = [tokens];
+				}
+				for (let i = tokens.length - 1; i >= 0; i--) {
+					if (tokens[i].startsWith('//')) {
+						tokens.splice(i, 1);
+					}
+				}
+				themeJson.tokenColors.push({
+					scope: tokens,
+					settings: { foreground: hex },
 				});
 			}
 		}
-	}
-}
-for (let i = 0; i < iters.length; i++) {
-	console.log(`Generating theme file with ${JSON.stringify(iters[i])}`);
-	// Evaluate colours
-	let colours = new Map();
-	for (let colourId in coloursJson.colours) {
-		if (colourId === '//') {
-			continue;
-		}
-		colours[colourId] = evalColour(
-			coloursJson.colours[colourId],
-			colours,
-			iters[i]
-		);
-	}
-	let themeName = 'Oblique';
-	for (let varId in iters[i]) {
-		if (varId === '') {
-			continue;
-		}
-		themeName += ` ${iters[i][varId]}`;
-	}
-	let themeJson = JSON.parse(fs.readFileSync('./src/template.json', 'utf8'));
-	themeJson.name = themeName;
-	for (let colourId in colours) {
-		let hex = rgbaToHex(colours[colourId]);
-		console.log(`${colourId}: ${hex} ${JSON.stringify(colours[colourId])}`);
-		let elements = coloursJson.colours[colourId].elements;
-		if (elements !== undefined) {
-			if (typeof elements === 'string') {
-				elements = [elements];
-			}
-			for (let i = 0; i < elements.length; i++) {
-				if (elements[i].startsWith('//')) {
-					continue;
-				}
-				themeJson.colors[elements[i]] = hex;
-			}
-		}
-		let semantics = coloursJson.colours[colourId].semantics;
-		if (semantics !== undefined) {
-			if (typeof semantics === 'string') {
-				semantics = [semantics];
-			}
-			for (let i = 0; i < semantics.length; i++) {
-				if (semantics[i].startsWith('//')) {
-					continue;
-				}
-				themeJson.semanticTokenColors[semantics[i]] = hex;
-			}
-		}
-		let tokens = coloursJson.colours[colourId].tokens;
-		if (tokens !== undefined) {
-			if (typeof tokens === 'string') {
-				tokens = [tokens];
-			}
+		// Append font styles
+		for (let i = 0; i < coloursJson.fontStyles.length; i++) {
+			let tokens = coloursJson.fontStyles[i].tokens;
 			for (let i = tokens.length - 1; i >= 0; i--) {
 				if (tokens[i].startsWith('//')) {
 					tokens.splice(i, 1);
@@ -194,30 +209,17 @@ for (let i = 0; i < iters.length; i++) {
 			}
 			themeJson.tokenColors.push({
 				scope: tokens,
-				settings: { foreground: hex },
+				settings: coloursJson.fontStyles[i].settings,
 			});
 		}
-	}
-	// Append font styles
-	for (let i = 0; i < coloursJson.fontStyles.length; i++) {
-		let tokens = coloursJson.fontStyles[i].tokens;
-		for (let i = tokens.length - 1; i >= 0; i--) {
-			if (tokens[i].startsWith('//')) {
-				tokens.splice(i, 1);
-			}
-		}
-		themeJson.tokenColors.push({
-			scope: tokens,
-			settings: coloursJson.fontStyles[i].settings,
+		// Save theme file and update package.json
+		let themePath = `./themes/${themeName}-color-theme.json`;
+		fs.writeFileSync(themePath, JSON.stringify(themeJson, null, '\t') + '\n');
+		packageJson.contributes.themes.push({
+			label: themeName,
+			uiTheme: iters[i].mode.includes('Light') ? 'vs' : 'vs-dark',
+			path: themePath,
 		});
 	}
-	// Save theme file and update package.json
-	let themePath = `./themes/${themeName}-color-theme.json`;
-	fs.writeFileSync(themePath, JSON.stringify(themeJson, null, '\t') + '\n');
-	packageJson.contributes.themes.push({
-		label: themeName,
-		uiTheme: iters[i].mode.includes('Light') ? 'vs' : 'vs-dark',
-		path: themePath,
-	});
+	fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, '\t') + '\n');
 }
-fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, '\t') + '\n');
