@@ -345,6 +345,7 @@
 				"string.other.end.link",
 				"string.other.begin.mdx",
 				"string.other.end.mdx",
+				"keyword.control.lessmark",
 				"meta.declaration.annotation",
 				"storage.type.annotation",
 				"meta.brace.round"
@@ -422,6 +423,7 @@
 				"string",
 				"source.css",
 				"source.ignore",
+				"source.lessmark",
 				"source.jinja",
 				"meta.paragraph",
 				"source.ini"
@@ -517,6 +519,7 @@
 				"string.other.end.code",
 				"string.other.begin.expression",
 				"string.other.end.expression",
+				"entity.name.section.lessmark",
 				"meta.tag.metadata.doctype",
 				"punctuation.definition.tag",
 				"punctuation.section",

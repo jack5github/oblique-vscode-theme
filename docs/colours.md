@@ -947,6 +947,8 @@ Semantic token colours are an abstraction of token colours, which may or may not
 >   - `string.other.end.link`
 >   - `string.other.begin.mdx`
 >   - `string.other.end.mdx`
+> - **Lessmark**
+>   - `keyword.control.lessmark`
 > - **Java**
 >   - `meta.declaration.annotation`
 >   - `storage.type.annotation`
@@ -1032,6 +1034,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `source.css`
 > - **Ignore**
 >   - `source.ignore`
+> - **Lessmark**
+>   - `source.lessmark`
 > - **Jinja**
 >   - `source.jinja`
 > - **MDX**
@@ -1132,6 +1136,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `string.other.end.code`
 >   - `string.other.begin.expression`
 >   - `string.other.end.expression`
+> - **Lessmark**
+>   - `entity.name.section.lessmark`
 > - **HTML**
 >   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
