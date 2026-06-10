@@ -1,4 +1,4 @@
-<img src="icon.png" width="256px"/>
+<img src="icon.png" width="256px" alt="Oblique Theme icon"/>
 
 # Oblique Theme
 

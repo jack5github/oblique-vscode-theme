@@ -1,4 +1,6 @@
-# General Philosophy
+# Philosophy
+
+## General
 
 - Cyan (green-blue, `#00ffff`) is commonly mixed into colours that would otherwise be shades of black, grey or white.
   - **Reason:** On low-power screens, particularly laptop screens, purely grey shades look distractingly dull, and through testing, only reducing the red channel makes them look more natural.
@@ -9,11 +11,11 @@
   - It is possible that some colours may look strange to those without colour-blindness. If so, they can be changed, so long as this theme's usability is not affected for those with colour-blindness.
 - The theme icon is an abstract version of the original Obsidian texture from Minecraft, using the theme's semantic colours.
 
-# Text Colour Philosophy
+## Text Colours
 
 - **Functions are blue.**
   - Functions represent blocks of code, executed to increase the stability or scope of a program. Blue is a colour associated with cleanliness and stability, which functions should strive for.
-  - *Exception:* In Markdown, [links](#) are treated the same, except for URL components, which are given the accent-defined link colour.
+  - *Exception:* In Markdown, [links](philosophy.md#text-colours) are treated the same, except for URL components, which are given the accent-defined link colour.
 - **Variables are yellow.**
   - Variables represent pieces of data that come together to form a picture of some aspect of a program. Yellow is a colour associated with creativity, but also danger (a trait inherited from orange), which is true for any use of variables.
   - In Markdown, `single-line code blocks` are treated the same, as they are most commonly referring to a variable name and must be differentiated from normal text.
@@ -39,11 +41,11 @@
   - Types objectify variables, rigidly defining their scope and usage. They lie somewhere between variables (yellow) and classes (red), being rigidly-defined variables themselves.
   - The orange is not too saturated, in order to differentiate itself from warning orange.
 
-## Discarded
+### Discarded
 
 - Imports represent external code that is being brought into a program. They essentially comprise functionality (blue) and constants (yellow) being brought in from other sources, cyan being the logical mix of the two. This isn't possible to implement due to many languages not having tokens for imports, so the variable colour is used instead.
 
-# Text Style Philosophy
+## Text Styles
 
 If a language does not provide the tokens needed to make the below distinctions, normal text is used instead.
 

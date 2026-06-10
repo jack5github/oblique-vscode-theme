@@ -29,7 +29,7 @@
 - Missing symbol highlight background colour
 - Status bar remote item background and foreground colours
 
-## Changed
+### Changed
 
 - Merge conflict background colour transparencies
 

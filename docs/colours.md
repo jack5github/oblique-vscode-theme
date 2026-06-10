@@ -916,7 +916,7 @@ In the event that there are multiple cursors, decreasing the brightness of any o
 
 > - `editorMultiCursor.primary.foreground`
 
-# Semantic Token Colours
+## Semantic Token Colours
 
 Semantic token colours are an abstraction of token colours, which may or may not be used by Visual Studio Code extensions. Non-existant semantic tokens are also defined here, so they may be replicated in `tokenColors`.
 
@@ -929,9 +929,9 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - `type` - 4:1 mix of `#ff8000` and `#00f5f5`
 > - `comment` - Same as `gitDecoration.ignoredResourceForeground`
 
-# Token Colours
+## Token Colours
 
-## Functions
+### Functions
 
 > - **Python**
 >   - `entity.name.function`
@@ -965,14 +965,14 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - *Removed*
 >   - `meta.member.access`
 
-### URLs
+#### URLs
 
 While grouped under functions, URLs should use the accent-defined link colour, as that is how they are defined in other parts of the theme. However, said colour does not look good when paired with editor text, so a 6:1 mix between the link colour and pure white is used.
 
 > - **Markdown** - `markup.underline.link`
 > - **MDX** - `string.other.link.destination`
 
-## Variables
+### Variables
 
 > - **Python**
 >   - `source`
@@ -1014,7 +1014,7 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 > - Italic
 >   - `markup.italic`
 
-### Constant Variables
+#### Constant Variables
 
 The constant variable name colour is a 29:18 mix between variable and constant value colours.
 
@@ -1026,7 +1026,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **CSS**
 >   - `support.constant`
 
-## Strings
+### Strings
 
 > - **Python**
 >   - `string`
@@ -1043,7 +1043,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Properties**
 >   - `source.ini`
 
-## Constant Values
+### Constant Values
 
 > - **Python**
 >   - `constant.numeric`
@@ -1064,7 +1064,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `keyword.control.anchor.regexp`
 >   - `constant.other.character-class.regexp`
 
-## Classes
+### Classes
 
 > - **Python**
 >   - `entity.name.type`
@@ -1097,7 +1097,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - **MDX**
 >     - `string.other.strong`
 
-## Keywords and Control Flow
+### Keywords and Control Flow
 
 > - **Python**
 >   - `keyword`
@@ -1190,7 +1190,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - **GitHub Actions**
 >     - `meta.embedded.block`
 
-## Types
+### Types
 
 The types semantic colour only applies to built-in types, differentiating them from user-defined types.
 
@@ -1215,7 +1215,7 @@ One downside of this approach is that for old languages (such as Java) that have
 > - **YAML**
 >   - `storage.type.tag`
 
-## Comments
+### Comments
 
 In Python, `keyword.codetag.notation` is a special type of comment, as it commonly refers to TODOs (the responsibility of the developer). Therefore, it alone uses the editor-safe accent colour (also used by URLs), while all other comments use the normal comment colour.
 
