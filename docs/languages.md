@@ -10,8 +10,10 @@
 - **JavaScript**
 - **[Jinja](https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja)**
 - **JSON**
+- **[Lessmark](https://marketplace.visualstudio.com/items?itemName=JasperDevs.lessmark-vscode)**
 - **Lua**
 - **[Markdown](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)**
+- **[MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)**
 - **Properties**
 - **[Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)**
 - **Regular expressions**

@@ -98,6 +98,15 @@ The foreground colour of inputs can be the same as other text in the IDE, and pl
 > - `input.foreground`
 > - `input.placeholderForeground`
 
+##### Borders
+
+All inputs share the same dark border colour to stand out on backgrounds that are lighter than usual.
+
+> - `checkbox.border`
+> - `dropdown.border`
+> - `input.border`
+> - `panelInput.border`
+
 #### Picker Groups
 
 Picker group text, which appears to the right of Command Palette items, can be the same colour as text links, for it can be used to show off the accent colour and takes the form of text.
@@ -331,12 +340,13 @@ Active links can also appear in the editor when holding Ctrl and hovering over a
 
 ### Focus Border
 
-The focus border is the line that appears around the active element, which is often the sidebar when one of its icons is clicked.
-
-`#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
+The focus border appears around the current active element, which is often the sidebar when one of its icons is clicked. `#dc3b02` is too dark, yet `#ff4200` is too bright, so I settled on a 4:1 mix, which looks orange enough without being too distracting.
 
 > - `focusBorder`
 > - `statusBar.focusBorder`
+
+The focus border colour of status bar items is instead the button hover colour, for the border only applies to the left and right sides of the items, thus it needs to be brighter.
+
 > - `statusBarItem.focusBorder`
 
 ### Input Buttons
@@ -591,6 +601,17 @@ Unlike difference indicators, merge conflicts are more complicated and require a
 > - `merge.incomingContentBackground`
 > - `merge.incomingHeaderBackground`
 
+#### Editor
+
+The merge editor doesn't split current and incoming changes, so both become the accent colour when unhandled, and the comment colour when handled. A transparency of `#4a` was chosen for minimap rulers to have them sit between word highlights and the scrollbar in terms of visibility (regardless of their colour), and the region highlights re-use the background colours from merge conflicts.
+
+> - `mergeEditor.conflict.unhandledFocused.border`
+> - `mergeEditor.conflict.handledFocused.border`
+> - `mergeEditor.conflict.unhandled.minimapOverViewRuler`
+> - `mergeEditor.conflict.handled.minimapOverViewRuler`
+> - `mergeEditor.change.background`
+> - `mergeEditor.change.word.background`
+
 ### Folded Regions
 
 Folded regions reduce the amount of text that is visible, and are indicated by a small '⋯' symbol. There is also the option for a background colour, but it is distracting, so it is made transparent.
@@ -606,6 +627,23 @@ Due to the very faint colours in use by various selection components in this the
 > - `scrollbarSlider.activeBackground`
 
 `scrollbar.background` is intentionally not set, as if it is, it only appears when the editor area is focused, and it hides Find and Replace highlights. (If I could set it, it would be the empty editor colour.)
+
+## Panel
+
+### Borders
+
+The panel is located at the bottom of the window above the status bar, and contains the Output, Debug Console and Ports views. As with other views surrounding the editor area, it has no outside border. An inside border is needed to separate its titles from the view, so the status bar border colour is used.
+
+> - `panel.border`
+> - `panelTitle.border`
+
+### Titles
+
+As the panel titles are in close proximity to the sidebar and status bar, their colours are borrowed from those components. Namely, inactive titles use the status bar text colour and active titles use the sidebar tab title colour. No underline is used to indicate that a particular view is active, as no other component uses underlines in this way.
+
+> - `panelTitle.inactiveForeground`
+> - `panelTitle.activeForeground`
+> - `panelTitle.activeBorder`
 
 ## Status Bar
 
@@ -627,6 +665,10 @@ One option is to use a mix between the function colour and the normal status bar
 When remote coding, the bottom-left of the status bar is a separate colour. It feels natural for this to be blue, like the status bar normally is in other themes, specifically `terminal.ansiBlue`, which feels like a good colour to represent the internet. A 4:10 mix of it and the normal status bar colour was chosen.
 
 > - `statusBarItem.remoteBackground`
+
+If a remote coding session goes offline, the bottom-left of the status bar changes to a 3:8 mix of the error colour and the status bar background colour.
+
+> - `statusBarItem.offlineBackground`
 
 ### Border
 
@@ -650,8 +692,10 @@ The status bar foreground is a 5:1 mix of the editor text and the background col
 For debugging and remote coding, this dark colour is no longer appropriate, and so the editor text colour is used as-is, both when hovering and not.
 
 > - `statusBar.debuggingForeground`
-> - `statusBar.remoteForeground`
-> - `statusBar.remoteHoverForeground`
+> - `statusBarItem.remoteForeground`
+> - `statusBarItem.remoteHoverForeground`
+> - `statusBarItem.offlineForeground`
+> - `statusBarItem.offlineHoverForeground`
 
 ## Debugging
 
@@ -872,7 +916,7 @@ In the event that there are multiple cursors, decreasing the brightness of any o
 
 > - `editorMultiCursor.primary.foreground`
 
-# Semantic Token Colours
+## Semantic Token Colours
 
 Semantic token colours are an abstraction of token colours, which may or may not be used by Visual Studio Code extensions. Non-existant semantic tokens are also defined here, so they may be replicated in `tokenColors`.
 
@@ -885,9 +929,9 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - `type` - 4:1 mix of `#ff8000` and `#00f5f5`
 > - `comment` - Same as `gitDecoration.ignoredResourceForeground`
 
-# Token Colours
+## Token Colours
 
-## Functions
+### Functions
 
 > - **Python**
 >   - `entity.name.function`
@@ -898,6 +942,13 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - **Markdown**
 >   - `punctuation.definition.link`
 >   - `punctuation.definition.metadata`
+> - **MDX**
+>   - `string.other.begin.link`
+>   - `string.other.end.link`
+>   - `string.other.begin.mdx`
+>   - `string.other.end.mdx`
+> - **Lessmark**
+>   - `keyword.control.lessmark`
 > - **Java**
 >   - `meta.declaration.annotation`
 >   - `storage.type.annotation`
@@ -914,13 +965,14 @@ Semantic token colours are an abstraction of token colours, which may or may not
 > - *Removed*
 >   - `meta.member.access`
 
-### URLs
+#### URLs
 
 While grouped under functions, URLs should use the accent-defined link colour, as that is how they are defined in other parts of the theme. However, said colour does not look good when paired with editor text, so a 6:1 mix between the link colour and pure white is used.
 
-> - `markup.underline.link`
+> - **Markdown** - `markup.underline.link`
+> - **MDX** - `string.other.link.destination`
 
-## Variables
+### Variables
 
 > - **Python**
 >   - `source`
@@ -962,7 +1014,7 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 > - Italic
 >   - `markup.italic`
 
-### Constant Variables
+#### Constant Variables
 
 The constant variable name colour is a 29:18 mix between variable and constant value colours.
 
@@ -974,7 +1026,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **CSS**
 >   - `support.constant`
 
-## Strings
+### Strings
 
 > - **Python**
 >   - `string`
@@ -982,12 +1034,16 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `source.css`
 > - **Ignore**
 >   - `source.ignore`
+> - **Lessmark**
+>   - `source.lessmark`
 > - **Jinja**
 >   - `source.jinja`
+> - **MDX**
+>   - `meta.paragraph`
 > - **Properties**
 >   - `source.ini`
 
-## Constant Values
+### Constant Values
 
 > - **Python**
 >   - `constant.numeric`
@@ -1000,13 +1056,15 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.italic`
 >   - `punctuation.definition.italic`
+> - **MDX**
+>   - `string.other.emphasis`
 > - **JavaScript**
 >   - `constant.character.escape`
 > - **Regular expressions**
 >   - `keyword.control.anchor.regexp`
 >   - `constant.other.character-class.regexp`
 
-## Classes
+### Classes
 
 > - **Python**
 >   - `entity.name.type`
@@ -1021,6 +1079,8 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 > - **Markdown**
 >   - `markup.bold`
 >   - `punctuation.definition.bold`
+> - **MDX**
+>   - `string.other.strong`
 > - **Java**
 >   - `storage.type.java`
 >   - `storage.type.object.array.java`
@@ -1034,8 +1094,10 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - **Markdown**
 >     - `markup.bold`
 >     - `heading.1`
+>   - **MDX**
+>     - `string.other.strong`
 
-## Keywords and Control Flow
+### Keywords and Control Flow
 
 > - **Python**
 >   - `keyword`
@@ -1062,6 +1124,20 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - `punctuation.definition.raw`
 >   - `punctuation.definition.markdown`
 >   - `meta.separator.markdown`
+> - **MDX**
+>   - `string.other.begin.yaml`
+>   - `string.other.end.yaml`
+>   - `entity.name.section.mdx`
+>   - `variable.unordered.list`
+>   - `string.other.number.mdx`
+>   - `variable.ordered.list`
+>   - `markup.list.table-delimiter`
+>   - `string.other.begin.code`
+>   - `string.other.end.code`
+>   - `string.other.begin.expression`
+>   - `string.other.end.expression`
+> - **Lessmark**
+>   - `entity.name.section.lessmark`
 > - **HTML**
 >   - `meta.tag.metadata.doctype`
 >   - `punctuation.definition.tag`
@@ -1114,7 +1190,7 @@ The constant variable name colour is a 29:18 mix between variable and constant v
 >   - **GitHub Actions**
 >     - `meta.embedded.block`
 
-## Types
+### Types
 
 The types semantic colour only applies to built-in types, differentiating them from user-defined types.
 
@@ -1132,12 +1208,14 @@ One downside of this approach is that for old languages (such as Java) that have
 >   - `storage.type.primitive`
 > - **Markdown**
 >   - `fenced_code.block.language`
+> - **MDX**
+>   - `entity.name.function.mdx`
 > - **SourcePawn**
 >   - `storage.type.built-in`
 > - **YAML**
 >   - `storage.type.tag`
 
-## Comments
+### Comments
 
 In Python, `keyword.codetag.notation` is a special type of comment, as it commonly refers to TODOs (the responsibility of the developer). Therefore, it alone uses the editor-safe accent colour (also used by URLs), while all other comments use the normal comment colour.
 

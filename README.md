@@ -1,4 +1,4 @@
-<img src="icon.png" width="256px"/>
+<img src="icon.png" width="256px" alt="Oblique Theme icon"/>
 
 # Oblique Theme
 
@@ -7,7 +7,7 @@
 - Dark IDE theme
 - Purposefully-chosen colours and shades
 - Colour-blind friendly (protanopia)
-- Supports C#, HTML+CSS+JS/TS, Java, JSON, Markdown, Python, Robot Framework, YAML [and more](docs/languages.md)
+- Supports C#, HTML+CSS+JS/TS, Java, JSON, Markdown (and its flavours), Python, Robot Framework, YAML [and more](docs/languages.md)
 - Supports [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) extension
 
 ## Installation

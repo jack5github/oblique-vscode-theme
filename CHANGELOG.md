@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.8 - 2026-06-10
+
+### Added
+
+- Lessmark and MDX support
+- Merge editor background and border colours
+- Panel foreground and border colours
+- Status bar offline item background and foreground colours
+
+### Changed
+
+- Brighter status bar item focus border colour
+
 ## 0.0.7 - 2026-05-25
 
 ### Added
@@ -16,7 +29,7 @@
 - Missing symbol highlight background colour
 - Status bar remote item background and foreground colours
 
-## Changed
+### Changed
 
 - Merge conflict background colour transparencies
 
