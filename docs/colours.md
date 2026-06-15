@@ -1,5 +1,8 @@
 # Colours
 
+> [!NOTE]
+> This document describes the choices that were made at the time of choosing the colours for this theme. Minor updates to the colours, such as colour merging, are not documented here.
+
 ## Title Bar
 
 ### Background
