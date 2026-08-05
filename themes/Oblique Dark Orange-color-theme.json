@@ -379,6 +379,7 @@
 				"meta.indexed-name",
 				"markup.inline.raw",
 				"meta.tag.structure",
+				"meta.tag.object",
 				"meta.tag.metadata",
 				"entity.other.attribute-name",
 				"entity.name.tag.css",

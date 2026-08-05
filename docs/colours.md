@@ -986,6 +986,7 @@ While grouped under functions, URLs should use the accent-defined link colour, a
 >   - `markup.inline.raw`
 > - **HTML**
 >   - `meta.tag.structure`
+>   - `meta.tag.object`
 >   - `meta.tag.metadata`
 >   - `entity.other.attribute-name`
 > - **CSS**
