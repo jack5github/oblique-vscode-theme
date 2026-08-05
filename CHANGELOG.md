@@ -1,12 +1,15 @@
 # Changelog
 
-## 0.0.9 - Unreleased
+## 0.0.9 - 2026-08-05
+
+### Added
+
+- HTML: Variable semantic colour `meta.tag.object`
 
 ### Changed
 
 - Accent colours merged to reduce total amount: Button background, modified settings indicator and merge editor colours
 - Grey colours merged to reduce total amount: Inactive title bar, Command Palette and Center, input borders, empty editor, editor borders, activity bar colours, blockquote border, sidebar section header border, active tab, diff editor diagonal fill, panel title and status bar borders, disabled breakpoint and cursors
-- HTML: Variable semantic colour `meta.tag.object`
 - Transparent colours merged to reduce total amount: Active Command Center, range highlight, selection highlights and scrollbar background
 
 ## 0.0.8 - 2026-06-10
